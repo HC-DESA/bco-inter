@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="                http://www.springframework.org/schema/beans                 
+    http://www.springframework.org/schema/beans/spring-beans.xsd                        
+    http://camel.apache.org/schema/spring                       
+    http://camel.apache.org/schema/spring/camel-spring-2.25.4.xsd">
+    <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
+        <onException>
+            <exception>java.lang.Exception</exception>
+            <handled>
+                <simple>true</simple>
+            </handled>
+            <log message="*** Exception Validation *** : ${exception}, ${body}, ${date:now}"/>
+            <setProperty propertyName="RESPONSE">
+                <simple>Parametros de entrada incorrectos</simple>
+            </setProperty>
+            <to uri="direct:generateResponse"/>
+        </onException>
+        <!-- Configuracion base REST DSL -->
+        <restConfiguration bindingMode="off" component="servlet" contextPath="/rest"/>
+        <rest apiDocs="true" consumes="application/json" id="rest-1"
+            path="/service" produces="application/json">
+            <post id="5ad04d09-a849-4b63-8732-ab4c51f535c7" uri="/ingresoDatos">
+                <to uri="direct:routeBussines"/>
+            </post>
+            <get id="54ea2bc2-a246-4c79-9e19-a5157f18b83e" uri="/obtieneDatos">
+                <to uri="direct:routeBussines"/>
+            </get>
+        </rest>
+        <route id="_route1" streamCache="true">
+            <from id="_fromIR1" uri="direct:routeBussines"/>
+            <log id="_log1" message="DATA IN => \n${body}"/>
+            <to id="_to1" uri="direct:generateResponse"/>
+        </route>
+        <route id="_route2">
+            <from id="_from1" uri="direct:generateResponse"/>
+            <log id="_log2" message="Los datos fueron validados correctamente"/>
+            <setBody id="_setBody1">
+                <simple>{"RESULT": "SUCCESS" }</simple>
+            </setBody>
+            <setHeader headerName="Content-Type" id="_setHeader1">
+                <constant>application/json; charset:utf-8</constant>
+            </setHeader>
+        </route>
+    </camelContext>
+</beans>
