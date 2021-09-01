@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:context="http://www.springframework.org/schema/context"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xsi:schemaLocation="                http://www.springframework.org/schema/beans                 
-    http://www.springframework.org/schema/beans/spring-beans.xsd                        
-    http://camel.apache.org/schema/spring                       
-    http://camel.apache.org/schema/spring/camel-spring-2.25.4.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="                http://www.springframework.org/schema/beans                      http://www.springframework.org/schema/beans/spring-beans.xsd                             http://camel.apache.org/schema/spring                            http://camel.apache.org/schema/spring/camel-spring-2.25.4.xsd">
     <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
         <onException>
             <exception>java.lang.Exception</exception>
@@ -13,9 +9,6 @@
                 <simple>true</simple>
             </handled>
             <log message="*** Exception Validation *** : ${exception}, ${body}, ${date:now}"/>
-            <setProperty propertyName="RESPONSE">
-                <simple>Parametros de entrada incorrectos</simple>
-            </setProperty>
             <to uri="direct:generateResponse"/>
         </onException>
         <!-- Configuracion base REST DSL -->
@@ -26,7 +19,7 @@
                 <to uri="direct:routeBussines"/>
             </post>
             <get id="54ea2bc2-a246-4c79-9e19-a5157f18b83e" uri="/obtieneDatos">
-                <to uri="direct:routeBussines"/>
+                <to uri="direct:routeObtieneDatos"/>
             </get>
         </rest>
         <route id="_route1" streamCache="true">
@@ -43,6 +36,13 @@
             <setHeader headerName="Content-Type" id="_setHeader1">
                 <constant>application/json; charset:utf-8</constant>
             </setHeader>
+        </route>
+        <route id="_route3">
+            <from id="_from3" uri="direct:routeObtieneDatos"/>
+            <setHeader headerName="Content-Type" id="_setHeader2">
+                <constant>application/json; charset:utf-8</constant>
+            </setHeader>
+            <to id="_to2" uri="velocity:velocity/RespuestaOK.vm"/>
         </route>
     </camelContext>
 </beans>
