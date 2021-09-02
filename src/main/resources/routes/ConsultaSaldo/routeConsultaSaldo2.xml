@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+    <routeContext id="routeConsultaSaldo2" xmlns="http://camel.apache.org/schema/spring">
+        <route id="simple-route2">
+            <from id="route-timer2" uri="direct:testRoute2"/>
+            <setBody id="route-setBody2">
+                <simple>Hello World from camel-route-2.xml</simple>
+            </setBody>
+            <log id="route-log2" message=">>> ${body}"/>
+        </route>
+    </routeContext>
+</beans>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        
+    					http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+    <routeContext id="routeConsultaSaldo" xmlns="http://camel.apache.org/schema/spring">
+        <route id="_route1" streamCache="true">
+            <from id="_fromIR1" uri="direct:routeConsultaSaldos"/>
+            <log id="_log1" message="DATA IN => \n${body}"/>
+            <to id="_to1" uri="direct:generateResponse"/>
+        </route>
+        <route id="_route2">
+            <from id="_from1" uri="direct:generateResponse"/>
+            <log id="_log2" message="Los datos fueron validados correctamente"/>
+            <setBody id="_setBody1">
+                <simple>{"RESULT": "SUCCESS" }</simple>
+            </setBody>
+            <setHeader id="_setHeader1" headerName="Content-Type">
+                <constant>application/json; charset:utf-8</constant>
+            </setHeader>
+        </route>
+        <route id="_route3">
+            <from id="_from3" uri="direct:routeObtieneDatos"/>
+            <setHeader id="_setHeader2" headerName="Content-Type">
+                <constant>application/json; charset:utf-8</constant>
+            </setHeader>
+            <to id="_to2" uri="velocity:velocity/RespuestaOK.vm"/>
+        </route>
+    </routeContext>
+</beans>
