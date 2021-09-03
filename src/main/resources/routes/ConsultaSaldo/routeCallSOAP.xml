@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+    <routeContext id="routeCallSOAP" xmlns="http://camel.apache.org/schema/spring">
+        <route id="routeCallSOAP">
+            <from id="route_CallSOAP" uri="direct:routeConsultaSaldosSOAP"/>
+            <log id="_log_INFO_SOAP" message="** SET FILE MOCK RESPONSE SOAP **"/>
+            <to id="_SetDatosResponseSOAP" uri="velocity:velocity/ConsultaSaldo/DUMMY-Response-NEXUS.vm"/>
+            <log id="_log_INFO_SOAP_RESPONSE" message="RESPONSE DATA OF SOAP: \n${body}"/>      
+            <to id="_toRouteforResponseConsultaSaldos" uri="direct:generateResponseConsultaSaldo"/>   		
+            
+        </route>
+    </routeContext>
+</beans>

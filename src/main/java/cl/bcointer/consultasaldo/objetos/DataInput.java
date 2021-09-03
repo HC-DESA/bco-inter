@@ -1,29 +1,29 @@
-package cl.bancoint.consultasaldo.pojo;
+package cl.bcointer.consultasaldo.objetos;
 
-//import javax.validation.constraints.NotNull;
-//import javax.validation.constraints.Size;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 
 public class DataInput {
 
-//	@NotNull(message = "NotNull canal")
-//	@Size(min=10, max=10, message = "Largo caracteres canal")
+	@NotNull(message = "NotNull canal")
+	@Size(min=1, max=8, message = "Largo caracteres canal")
 	private String canal;
 	
-//	@NotNull(message = "NotNull canal")
-//	@Size(min=10, max=10, message = "Largo caracteres canal")
+	@NotNull(message = "NotNull idEmisor")
+	@Size(min=1, max=20, message = "Largo caracteres idEmisor")
 	private String id_emisor_servicio;
-//	
-//	@NotNull(message = "NotNull canal")
-//	@Size(min=10, max=10, message = "Largo caracteres canal")
+	
+	@NotNull(message = "NotNull idRequerimiento")
+	@Size(min=10, max=10, message = "Largo caracteres idRequerimiento")
 	private String idRequerimiento;
 	
-//	@NotNull(message = "NotNull canal")
-//	@Size(min=10, max=10, message = "Largo caracteres canal")
+	@NotNull(message = "NotNull numCta")
+	@Size(min=01, max=19, message = "Largo caracteres numCta")
 	private String num_cta_tar;
 	
-//	@NotNull(message = "NotNull canal")
-//	@Size(min=10, max=10, message = "Largo caracteres canal")
+	@NotNull(message = "NotNull secuenciaTarjeta")
+	@Size(min=4, max=4, message = "Largo caracteres secuenciaTarjeta")
 	private String secuencia_tarjeta;
 
 	public String getCanal() {
@@ -75,6 +75,12 @@ public class DataInput {
 		this.num_cta_tar = num_cta_tar;
 		this.secuencia_tarjeta = secuencia_tarjeta;
 	}
+
+	public DataInput() {
+		super();
+	}
+	
+	
 	
 	
 	
