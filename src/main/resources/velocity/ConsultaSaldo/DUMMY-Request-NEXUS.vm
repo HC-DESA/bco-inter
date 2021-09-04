@@ -1,0 +1,4 @@
+  <tem:Add xmlns:tem="http://tempuri.org/">
+     <tem:intA>2</tem:intA>
+     <tem:intB>3</tem:intB>
+  </tem:Add>
