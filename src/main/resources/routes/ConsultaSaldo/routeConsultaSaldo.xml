@@ -29,7 +29,6 @@
             <log id="_log-CONSULTA-SALDOS_DatosCallSOAP" message="*** XML PARA SOAP CONSULTA-SALDOS ***\n${body}"/>
             <to id="_to_callSOAP-CONSULTA-SALDO" uri="direct:routeConsultaSaldosSOAP"/>
         </route>
-        
         <route id="_route_GenerarRespuesta">
             <from id="_from1" uri="direct:generateResponseConsultaSaldo"/>
             <!-- TODO: Generar transfomacion y mapping de datos -->
@@ -38,6 +37,5 @@
             </setHeader>
             <to id="_to2" uri="velocity:velocity/ConsultaSaldo/RespuestaOK.vm"/>
         </route>
-
     </routeContext>
 </beans>

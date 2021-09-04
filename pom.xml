@@ -40,7 +40,14 @@
       <artifactId>camel-spring-boot-starter</artifactId>
       <version>2.23.2.fuse-780036-redhat-00001</version>
     </dependency>
-
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-cxf</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-rt-transports-http-jetty</artifactId>
+    </dependency>
 	
 	<!-- Dependencies -->
     <dependency>

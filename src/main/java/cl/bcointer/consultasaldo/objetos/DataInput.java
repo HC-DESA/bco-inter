@@ -10,14 +10,6 @@ public class DataInput {
 	@Size(min=1, max=8, message = "Largo caracteres canal")
 	private String canal;
 	
-	@NotNull(message = "NotNull idEmisor")
-	@Size(min=1, max=20, message = "Largo caracteres idEmisor")
-	private String id_emisor_servicio;
-	
-	@NotNull(message = "NotNull idRequerimiento")
-	@Size(min=10, max=10, message = "Largo caracteres idRequerimiento")
-	private String idRequerimiento;
-	
 	@NotNull(message = "NotNull numCta")
 	@Size(min=01, max=19, message = "Largo caracteres numCta")
 	private String num_cta_tar;
@@ -32,22 +24,6 @@ public class DataInput {
 
 	public void setCanal(String canal) {
 		this.canal = canal;
-	}
-
-	public String getId_emisor_servicio() {
-		return id_emisor_servicio;
-	}
-
-	public void setId_emisor_servicio(String id_emisor_servicio) {
-		this.id_emisor_servicio = id_emisor_servicio;
-	}
-
-	public String getIdRequerimiento() {
-		return idRequerimiento;
-	}
-
-	public void setIdRequerimiento(String idRequerimiento) {
-		this.idRequerimiento = idRequerimiento;
 	}
 
 	public String getNum_cta_tar() {
@@ -70,8 +46,6 @@ public class DataInput {
 			String secuencia_tarjeta) {
 		super();
 		this.canal = canal;
-		this.id_emisor_servicio = id_emisor_servicio;
-		this.idRequerimiento = idRequerimiento;
 		this.num_cta_tar = num_cta_tar;
 		this.secuencia_tarjeta = secuencia_tarjeta;
 	}
