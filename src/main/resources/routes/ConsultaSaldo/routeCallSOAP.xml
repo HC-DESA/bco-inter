@@ -4,18 +4,16 @@
     <routeContext id="routeCallSOAP" xmlns="http://camel.apache.org/schema/spring">
         <route id="routeCallSOAP" trace="true">
             <from id="route_CallSOAP" uri="direct:routeConsultaSaldosSOAP"/>
-            <to id="_to1" uri="velocity:velocity/ConsultaSaldo/DUMMY-Request-NEXUS.vm"/>
-            <log message="antes de llamar a ws: \n${body}"/>
+            <to id="_tovelocityreq" uri="velocity:velocity/ConsultaSaldo/DUMMY-Request-NEXUS.vm"/>
+            <log id="_logantesdummy" message="antes de llamar a ws dummy nexus: \n${body}"/>
             <convertBodyTo id="_convertBodyTo1" type="javax.xml.transform.stream.StreamSource"/>
-            <log message="request cxf: \n${body}"/>
             <setHeader headerName="SOAPAction" id="_setHeader1">
                 <simple>http://tempuri.org/IWSST247/MolST247Consultas</simple>
             </setHeader>
-            <to uri="cxf:http://127.0.0.1:8088/mockBasic?dataFormat=MESSAGE&amp;exchangePattern=InOut"/>
-            <unmarshal id="_unmarshal1">
-                <gzip/>
-            </unmarshal>
-            <log message="despues de llamar a ws: \n${body} \nheaders:\n${headers}"/>
+            <!--             <to uri="cxf:http://127.0.0.1:8088/mockBasic?dataFormat=MESSAGE&amp;exchangePattern=InOut"/> -->
+            <to id="_tocalldummy" uri="cxf:http://127.0.0.1/dummyNexus/wsDummyNexus_Service?dataFormat=MESSAGE&amp;exchangePattern=InOut"/>
+            <convertBodyTo id="_convertBodyTo2" type="java.lang.String"/>
+            <log id="_logheaders" message="despues de llamar a ws: \n${body} \nheaders:\n${headers}"/>
             <log id="_log_INFO_SOAP" message="** SET FILE MOCK RESPONSE SOAP **"/>
             <!--             <to id="_SetDatosResponseSOAP" uri="velocity:velocity/ConsultaSaldo/DUMMY-Response-NEXUS.vm"/> -->
             <log id="_log_INFO_SOAP_RESPONSE" message="RESPONSE DATA OF SOAP: \n${body}"/>
