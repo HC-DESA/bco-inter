@@ -1,4 +1,4 @@
-package cl.bcointer.consultasaldos.bean;
+package cl.bcointer.consultasaldo.bean;
 
 import org.apache.camel.Exchange;
 
