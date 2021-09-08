@@ -1,8 +1,8 @@
 <DATA>
   <cod_servicio>!${exchange.properties.CODIGO-SERVICIO}</cod_servicio>
-  <cod_usuario></cod_usuario>
-  <dir_ip></dir_ip>
-  <id_emisor_servicio>!${exchange.properties.CODIGO-SERVICIO}</id_emisor_servicio>
+  <cod_usuario>!${exchange.properties.CODIGO-USUARIO}</cod_usuario>
+  <dir_ip>!${exchange.properties.DIR-IP}</dir_ip>
+  <id_emisor_servicio>!${exchange.properties.ID-EMISOR}</id_emisor_servicio>
   <filler_01></filler_01>
   <num_cta_tar>${body.getNum_cta_tar()}</num_cta_tar>
   <secuencia_tarjeta>${body.getSecuencia_tarjeta()}</secuencia_tarjeta>
