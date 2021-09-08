@@ -2,10 +2,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd                                 http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring-2.25.4.xsd">
     <bean class="cl.bcointer.consultasaldo.objetos.DataInput" id="dataInputConsultaSaldo"/>
+    <bean class="cl.bcointer.consultasaldo.bean.DataConsultaServicio" id="loadDataConsultaServicio"/>
     <routeContext id="routeConsultaSaldo" xmlns="http://camel.apache.org/schema/spring">
         <route id="_route_ReceptionData" streamCache="true">
             <from id="_fromIR1" uri="direct:routeConsultaSaldos"/>
             <log id="_log1" message="DATA IN -- CONSULTA-SALDOS -- => \n${body}"/>
+            <bean method="loadDataCM" ref="loadDataConsultaServicio"/>
             <doTry id="_doTry1">
                 <unmarshal id="_transObjectConsultaSaldo" ref="jsonToObjectConsultaSaldo"/>
                 <to id="_beanValidatorConsultaSaldo" uri="bean-validator://dataInputConsultaSaldo"/>
@@ -30,8 +32,8 @@
             <to id="_to_callSOAP-CONSULTA-SALDO" uri="direct:routeConsultaSaldosSOAP"/>
         </route>
         <route id="_route_GenerarRespuesta">
-            <from id="_from1" uri="direct:generateResponseConsultaSaldo"/>
             <!-- TODO: Generar transfomacion y mapping de datos -->
+            <from id="_from1" uri="direct:generateResponseConsultaSaldo"/>
             <setHeader headerName="Content-Type" id="_setHeaderResp-ConsultaSaldos">
                 <constant>application/json; charset:utf-8</constant>
             </setHeader>
