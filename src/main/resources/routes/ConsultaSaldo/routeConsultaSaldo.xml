@@ -29,7 +29,9 @@
             <log id="_log-CONSULTA-SALDOS_ValidacionCorrecta" message="*** Los datos fueron validados correctamente ***"/>
             <to id="_SetDatosParaSOAP" uri="velocity:velocity/ConsultaSaldo/DataForSOAP.vm"/>
             <log id="_log-CONSULTA-SALDOS_DatosCallSOAP" message="*** XML PARA SOAP CONSULTA-SALDOS ***\n${body}"/>
-            <to id="_to_callSOAP-CONSULTA-SALDO" uri="direct:routeConsultaSaldosSOAP"/>
+<!--             <to id="_to_callSOAP-CONSULTA-SALDO" uri="direct:routeConsultaSaldosSOAP"/> -->
+
+            <to id="_to_callSOAP-CONSULTA-SALDO-RESP" uri="direct:generateResponseConsultaSaldo"/>
         </route>
         <route id="_route_GenerarRespuesta">
             <!-- TODO: Generar transfomacion y mapping de datos -->
