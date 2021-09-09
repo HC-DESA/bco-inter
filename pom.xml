@@ -10,11 +10,11 @@
   <properties>
     <spring-boot.version>1.5.4.RELEASE</spring-boot.version>
     <fabric8.version>3.0.11.fuse-770009-redhat-00002</fabric8.version>
-    <fabric8.maven.plugin.version>3.5.42.fuse-770010-redhat-00001</fabric8.maven.plugin.version>
     <maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
+    <fabric8.maven.plugin.version>3.5.42.fuse-770010-redhat-00001</fabric8.maven.plugin.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
     <cxf.version>3.4.0</cxf.version>
+    <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -45,24 +45,22 @@
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-cxf</artifactId>
     </dependency>
-<!-- 	<dependency>     -->
-<!--         <groupId>org.apache.cxf</groupId> -->
-<!--         <artifactId>cxf-spring-boot-starter-jaxws</artifactId> -->
-<!--     </dependency>     -->
     <dependency>
       <groupId>org.apache.cxf</groupId>
       <artifactId>cxf-rt-transports-http-jetty</artifactId>
     </dependency>
-	
-	<!-- Dependencies -->
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-dozer</artifactId>
+    </dependency>
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-servlet</artifactId>
-    </dependency>  
+    </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jdbc</artifactId>
-    </dependency> 
+    </dependency>
     <dependency>
       <groupId>com.microsoft.sqlserver</groupId>
       <artifactId>mssql-jdbc</artifactId>
@@ -79,32 +77,36 @@
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-bean-validator</artifactId>
-      <!--       <scope>provided</scope> -->
     </dependency>
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-jackson</artifactId>
     </dependency>
-    <!-- API, java.xml.bind module -->
     <dependency>
-        <groupId>jakarta.xml.bind</groupId>
-        <artifactId>jakarta.xml.bind-api</artifactId>
-        <version>2.3.2</version>
+      <groupId>jakarta.xml.bind</groupId>
+      <artifactId>jakarta.xml.bind-api</artifactId>
+      <version>2.3.2</version>
     </dependency>
-
-    <!-- Runtime, com.sun.xml.bind module -->
     <dependency>
-        <groupId>org.glassfish.jaxb</groupId>
-        <artifactId>jaxb-runtime</artifactId>
-        <version>2.3.2</version>
+      <groupId>org.glassfish.jaxb</groupId>
+      <artifactId>jaxb-runtime</artifactId>
+      <version>2.3.2</version>
     </dependency>
-    
     <dependency>
-       <groupId>org.apache.camel</groupId>
-       <artifactId>camel-velocity</artifactId>
-       <scope>provided</scope>
-	</dependency>			
-    
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-velocity</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-dozer-starter</artifactId>
+      <version>2.23.2.fuse-780036-redhat-00001</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-jaxb</artifactId>
+      <version>2.23.2.fuse-780036-redhat-00001</version>
+    </dependency>
   </dependencies>
   <repositories>
     <repository>
@@ -136,6 +138,14 @@
   </pluginRepositories>
   <build>
     <defaultGoal>spring-boot:run</defaultGoal>
+    <resources>
+      <resource>
+        <directory>.transformations</directory>
+      </resource>
+      <resource>
+        <directory>src/main/resources/</directory>
+      </resource>
+    </resources>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -170,28 +180,39 @@
           </execution>
         </executions>
       </plugin>
-		<plugin>
-		    <groupId>org.apache.cxf</groupId>
-		    <artifactId>cxf-codegen-plugin</artifactId>
-		    <version>${cxf.version}</version>
-		    <executions>
-		        <execution>
-		            <id>generate-sources</id>
-		            <phase>generate-sources</phase>
-		            <configuration>
-		                <sourceRoot>${project.build.directory}/generated-sources/cxf</sourceRoot>
-		                <wsdlOptions>
-		                    <wsdlOption>
-		                      <wsdl>${basedir}/src/main/resources/wsdl/mockBasic_1.wsdl</wsdl>  
-		                    </wsdlOption>
-		                </wsdlOptions>
-		            </configuration>
-		            <goals>
-		                <goal>wsdl2java</goal>
-		            </goals>
-		        </execution>
-		    </executions>
-		</plugin>      
+      <plugin>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-codegen-plugin</artifactId>
+        <version>${cxf.version}</version>
+        <executions>
+          <execution>
+            <id>generate-sources</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>wsdl2java</goal>
+            </goals>
+            <configuration>
+              <sourceRoot>${project.build.directory}/generated-sources/cxf</sourceRoot>
+              <wsdlOptions>
+                <wsdlOption>
+                  <wsdl>${basedir}/src/main/resources/wsdl/mockBasic_1.wsdl</wsdl>
+                </wsdlOption>
+              </wsdlOptions>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <version>3.2.0</version>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Import-Package>*</Import-Package>
+          </instructions>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 </project>
