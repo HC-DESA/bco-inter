@@ -45,12 +45,19 @@ public class DataConsultaServicio {
 		object.setFecha_prox_venc_calend(string2.split(";")[1]);
 		
 		// Get TAG <string3>
-		// 2019080720991231
-		// AAAAMMDDAAAAMMDDX
 		String string3 = XPathBuilder.xpath("/DATA/string3").evaluate(exchange.getContext(), bodyXML);
 		object.setFecha_vig_eecc_desde(string3.substring(0, 8));
 		object.setFecha_vig_eecc_hasta(string3.substring(8, 16));
-//		object.setMarca(string3.substring(16, 17));
+		object.setMarca(string3.substring(16, 17));
 		
-		}
+		// Set TIMESTAMP
+		object.setTimestamp(exchange.getProperty("TIMESTAMP_RESPONSE",String.class));
+
+		// Set CANAL
+		object.setCanal(exchange.getProperty("OBJECT_REQUEST", DataInput.class).getCanal());
+		
+
+		// Set ID_EMISOR
+		object.setId_emisor_servicio(exchange.getProperty("ID_EMISOR", String.class));		
+	}
 }

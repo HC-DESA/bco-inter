@@ -112,7 +112,7 @@
         </field>
         <field>
             <a>numero4</a>
-            <b>rutDeudorOTitular</b>
+            <b>numero4</b>
         </field>
         <field>
             <a>numero5</a>
@@ -264,7 +264,7 @@
         </field>
         <field>
             <a>string31</a>
-            <b>marcaChip</b>
+            <b>string31</b>
         </field>
         <field>
             <a>string22</a>
@@ -340,7 +340,7 @@
         </field>
         <field>
             <a>filler_04</a>
-            <b>mailEeccVirtual</b>
+            <b>filler04</b>
         </field>
         <field>
             <a>filler_05</a>
@@ -356,7 +356,7 @@
         </field>
         <field>
             <a>flag11</a>
-            <b>flagLinea2Tarjeta</b>
+            <b>flag11</b>
         </field>
         <field>
             <a>flag12</a>
@@ -408,19 +408,19 @@
         </field>
         <field>
             <a>flag4</a>
-            <b>dvRutDeudorOTitular</b>
+            <b>flag4</b>
         </field>
         <field>
             <a>flag3</a>
-            <b>dvRutAval</b>
+            <b>flag3</b>
         </field>
         <field>
             <a>flag2</a>
-            <b>flagLinea2NivelCuenta</b>
+            <b>flag2</b>
         </field>
         <field>
             <a>flag1</a>
-            <b>indEeccVirtual</b>
+            <b>flag1</b>
         </field>
         <field>
             <a>flag_actv_tjta_anterior</a>
