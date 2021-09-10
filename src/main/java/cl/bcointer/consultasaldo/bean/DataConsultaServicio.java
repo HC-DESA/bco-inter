@@ -31,22 +31,26 @@ public class DataConsultaServicio {
 	}
 	
 	public void loadDataXPATH(Exchange exchange) {
-		// DATA CONFIG-MAP
-//		fecha_ult_fact_dolar
-//		String bodyXML  = exchange.getIn().getBody(String.class);
 		String bodyXML  = exchange.getProperty("XML_RESPONSE_NEXUS", String.class);
-
-		String coderror = XPathBuilder.xpath("/DATA/string1").evaluate(exchange.getContext(), bodyXML);
-
-		logger.info(">>> Fecha String 1 : " + coderror);
-		logger.info(">>> Fecha String 1 : " + coderror.split(";")[0]);
 		DataToReturn object = exchange.getIn().getBody(DataToReturn.class);
-		object.setFecha_ult_fact_dolar(coderror.split(";")[0]);
-		
-		
-		
-		
-		
 
-	}
+		// Get TAG <string1>
+		String string1 = XPathBuilder.xpath("/DATA/string1").evaluate(exchange.getContext(), bodyXML);
+		object.setFecha_ult_fact_dolar(string1.split(";")[0]);
+		object.setFecha_venc_fact_dolar(string1.split(";")[1]);
+		
+		// Get TAG <string2>
+		String string2 = XPathBuilder.xpath("/DATA/string2").evaluate(exchange.getContext(), bodyXML);
+		object.setFecha_prox_fact_calend(string2.split(";")[0]);
+		object.setFecha_prox_venc_calend(string2.split(";")[1]);
+		
+		// Get TAG <string3>
+		// 2019080720991231
+		// AAAAMMDDAAAAMMDDX
+		String string3 = XPathBuilder.xpath("/DATA/string3").evaluate(exchange.getContext(), bodyXML);
+		object.setFecha_vig_eecc_desde(string3.substring(0, 8));
+		object.setFecha_vig_eecc_hasta(string3.substring(8, 16));
+//		object.setMarca(string3.substring(16, 17));
+		
+		}
 }

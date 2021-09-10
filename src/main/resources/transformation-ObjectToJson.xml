@@ -112,7 +112,7 @@
         </field>
         <field>
             <a>numero4</a>
-            <b>numero4</b>
+            <b>rutDeudorOTitular</b>
         </field>
         <field>
             <a>numero5</a>
@@ -264,7 +264,7 @@
         </field>
         <field>
             <a>string31</a>
-            <b>string31</b>
+            <b>marcaChip</b>
         </field>
         <field>
             <a>string22</a>
@@ -340,7 +340,7 @@
         </field>
         <field>
             <a>filler_04</a>
-            <b>filler04</b>
+            <b>mailEeccVirtual</b>
         </field>
         <field>
             <a>filler_05</a>
@@ -356,7 +356,7 @@
         </field>
         <field>
             <a>flag11</a>
-            <b>flag11</b>
+            <b>flagLinea2Tarjeta</b>
         </field>
         <field>
             <a>flag12</a>
@@ -408,19 +408,19 @@
         </field>
         <field>
             <a>flag4</a>
-            <b>flag4</b>
+            <b>dvRutDeudorOTitular</b>
         </field>
         <field>
             <a>flag3</a>
-            <b>flag3</b>
+            <b>dvRutAval</b>
         </field>
         <field>
             <a>flag2</a>
-            <b>flag2</b>
+            <b>flagLinea2NivelCuenta</b>
         </field>
         <field>
             <a>flag1</a>
-            <b>flag1</b>
+            <b>indEeccVirtual</b>
         </field>
         <field>
             <a>flag_actv_tjta_anterior</a>
@@ -1613,6 +1613,14 @@
         <field>
             <a>tasa_int_avce_cta_larga</a>
             <b>tasaIntAvceCtaLarga</b>
+        </field>
+        <field>
+            <a>nro_bloq_por_excesos</a>
+            <b>nroBloqPorExcesos</b>
+        </field>
+        <field>
+            <a>linea_limites</a>
+            <b>lineaLimites</b>
         </field>
     </mapping>
 </mappings>

@@ -87,6 +87,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "nro_moras_periodo",
     "nro_excesos_periodo",
     "nro_bloq_por_moras",
+    "nro_bloq_por_excesos",
     "cdgo_aval",
     "cdgo_promocion",
     "ind_tjta_operador",
@@ -100,6 +101,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "por_pfijo",
     "mto_pfijo_9",
     "cdgo_embozado",
+    "linea_limites",
     "pct_pesos_9",
     "pct_dolar_9",
     "tres_cpc",
@@ -183,9 +185,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "numero1",
     "numero2",
     "numero3",
-    "flag1",
-    "flag2",
-    "flag3",
+    "ind_eecc_virtual",
+    "flag_linea2_nivel_cuenta",
+    "dv_rut_aval",
     "fecha_ult_fact_dolar",
     "fecha_venc_fact_dolar",
     "fecha_prox_fact_calend",
@@ -193,7 +195,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "fecha_vig_eecc_desde",
     "fecha_vig_eecc_hasta",
     "marca",
-    "filler_04",
+    "mail_eecc_virtual",
     "num_tarjeta_s",
     "secuencia_tarjeta_s",
     "nomb_tjta_habiente",
@@ -242,12 +244,12 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "numero11",
     "numero21",
     "numero31",
-    "flag11",
+    "flag_linea2_tarjeta",
     "flag21",
     "flag31",
     "string11",
     "string21",
-    "string31",
+    "marca_chip",
     "filler_05",
     "nro_relacion2",
     "status_relacion",
@@ -269,10 +271,10 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "monto4",
     "monto5",
     "monto6",
-    "numero4",
+    "rut_deudor_o_titular",
     "numero5",
     "numero6",
-    "flag4",
+    "dv_rut_deudor_o_titular",
     "flag5",
     "flag6",
     "string4",
@@ -570,6 +572,8 @@ public class MensajeRespuestaConsultaDeSaldos {
     private String nroExcesosPeriodo;
     @JsonProperty("nro_bloq_por_moras")
     private String nroBloqPorMoras;
+    @JsonProperty("nro_bloq_por_excesos")
+    private String nroBloqPorExcesos;
     @JsonProperty("cdgo_aval")
     private String cdgoAval;
     @JsonProperty("cdgo_promocion")
@@ -596,6 +600,8 @@ public class MensajeRespuestaConsultaDeSaldos {
     private String mtoPfijo9;
     @JsonProperty("cdgo_embozado")
     private String cdgoEmbozado;
+    @JsonProperty("linea_limites")
+    private String lineaLimites;
     @JsonProperty("pct_pesos_9")
     private String pctPesos9;
     @JsonProperty("pct_dolar_9")
@@ -762,12 +768,12 @@ public class MensajeRespuestaConsultaDeSaldos {
     private String numero2;
     @JsonProperty("numero3")
     private String numero3;
-    @JsonProperty("flag1")
-    private String flag1;
-    @JsonProperty("flag2")
-    private String flag2;
-    @JsonProperty("flag3")
-    private String flag3;
+    @JsonProperty("ind_eecc_virtual")
+    private String indEeccVirtual;
+    @JsonProperty("flag_linea2_nivel_cuenta")
+    private String flagLinea2NivelCuenta;
+    @JsonProperty("dv_rut_aval")
+    private String dvRutAval;
     @JsonProperty("fecha_ult_fact_dolar")
     private String fechaUltFactDolar;
     @JsonProperty("fecha_venc_fact_dolar")
@@ -782,8 +788,8 @@ public class MensajeRespuestaConsultaDeSaldos {
     private String fechaVigEeccHasta;
     @JsonProperty("marca")
     private String marca;
-    @JsonProperty("filler_04")
-    private String filler04;
+    @JsonProperty("mail_eecc_virtual")
+    private String mailEeccVirtual;
     @JsonProperty("num_tarjeta_s")
     private String numTarjetaS;
     @JsonProperty("secuencia_tarjeta_s")
@@ -880,8 +886,8 @@ public class MensajeRespuestaConsultaDeSaldos {
     private String numero21;
     @JsonProperty("numero31")
     private String numero31;
-    @JsonProperty("flag11")
-    private String flag11;
+    @JsonProperty("flag_linea2_tarjeta")
+    private String flagLinea2Tarjeta;
     @JsonProperty("flag21")
     private String flag21;
     @JsonProperty("flag31")
@@ -890,8 +896,8 @@ public class MensajeRespuestaConsultaDeSaldos {
     private String string11;
     @JsonProperty("string21")
     private String string21;
-    @JsonProperty("string31")
-    private String string31;
+    @JsonProperty("marca_chip")
+    private String marcaChip;
     @JsonProperty("filler_05")
     private String filler05;
     @JsonProperty("nro_relacion2")
@@ -934,14 +940,14 @@ public class MensajeRespuestaConsultaDeSaldos {
     private String monto5;
     @JsonProperty("monto6")
     private String monto6;
-    @JsonProperty("numero4")
-    private String numero4;
+    @JsonProperty("rut_deudor_o_titular")
+    private String rutDeudorOTitular;
     @JsonProperty("numero5")
     private String numero5;
     @JsonProperty("numero6")
     private String numero6;
-    @JsonProperty("flag4")
-    private String flag4;
+    @JsonProperty("dv_rut_deudor_o_titular")
+    private String dvRutDeudorOTitular;
     @JsonProperty("flag5")
     private String flag5;
     @JsonProperty("flag6")
@@ -2782,6 +2788,26 @@ public class MensajeRespuestaConsultaDeSaldos {
     /**
      * 
      * @return
+     *     The nroBloqPorExcesos
+     */
+    @JsonProperty("nro_bloq_por_excesos")
+    public String getNroBloqPorExcesos() {
+        return nroBloqPorExcesos;
+    }
+
+    /**
+     * 
+     * @param nroBloqPorExcesos
+     *     The nro_bloq_por_excesos
+     */
+    @JsonProperty("nro_bloq_por_excesos")
+    public void setNroBloqPorExcesos(String nroBloqPorExcesos) {
+        this.nroBloqPorExcesos = nroBloqPorExcesos;
+    }
+
+    /**
+     * 
+     * @return
      *     The cdgoAval
      */
     @JsonProperty("cdgo_aval")
@@ -3037,6 +3063,26 @@ public class MensajeRespuestaConsultaDeSaldos {
     @JsonProperty("cdgo_embozado")
     public void setCdgoEmbozado(String cdgoEmbozado) {
         this.cdgoEmbozado = cdgoEmbozado;
+    }
+
+     /**
+     * 
+     * @return
+     *     The lineaLimites
+     */
+    @JsonProperty("linea_limites")
+    public String getLineaLimites() {
+        return lineaLimites;
+    }
+
+    /**
+     * 
+     * @param lineaLimites
+     *     The linea_limites
+     */
+    @JsonProperty("linea_limites")
+    public void setLineaLimites(String lineaLimites) {
+        this.lineaLimites = lineaLimites;
     }
 
     /**
@@ -4702,61 +4748,61 @@ public class MensajeRespuestaConsultaDeSaldos {
     /**
      * 
      * @return
-     *     The flag1
+     *     The indEeccVirtual
      */
-    @JsonProperty("flag1")
-    public String getFlag1() {
-        return flag1;
+    @JsonProperty("ind_eecc_virtual")
+    public String getIndEeccVirtual() {
+        return indEeccVirtual;
     }
 
     /**
      * 
-     * @param flag1
-     *     The flag1
+     * @param indEeccVirtual
+     *     The ind_eecc_virtual
      */
-    @JsonProperty("flag1")
-    public void setFlag1(String flag1) {
-        this.flag1 = flag1;
-    }
-
-    /**
-     * 
-     * @return
-     *     The flag2
-     */
-    @JsonProperty("flag2")
-    public String getFlag2() {
-        return flag2;
-    }
-
-    /**
-     * 
-     * @param flag2
-     *     The flag2
-     */
-    @JsonProperty("flag2")
-    public void setFlag2(String flag2) {
-        this.flag2 = flag2;
+    @JsonProperty("ind_eecc_virtual")
+    public void setIndEeccVirtual(String indEeccVirtual) {
+        this.indEeccVirtual = indEeccVirtual;
     }
 
     /**
      * 
      * @return
-     *     The flag3
+     *     The flagLinea2NivelCuenta
      */
-    @JsonProperty("flag3")
-    public String getFlag3() {
-        return flag3;
+    @JsonProperty("flag_linea2_nivel_cuenta")
+    public String getFlagLinea2NivelCuenta() {
+        return flagLinea2NivelCuenta;
     }
 
     /**
      * 
-     * @param flag3
+     * @param flagLinea2NivelCuenta
+     *     The flag_linea2_nivel_cuenta
+     */
+    @JsonProperty("flag_linea2_nivel_cuenta")
+    public void setFlagLinea2NivelCuenta(String flagLinea2NivelCuenta) {
+        this.flagLinea2NivelCuenta = flagLinea2NivelCuenta;
+    }
+
+    /**
+     * 
+     * @return
+     *     The dvRutAval
+     */
+    @JsonProperty("dv_rut_aval")
+    public String getDvRutAval() {
+        return dvRutAval;
+    }
+
+    /**
+     * 
+     * @param dvRutAval
      *     The flag3
      */
-    @JsonProperty("flag3")
-    public void setFlag3(String flag3) {
-        this.flag3 = flag3;
+    @JsonProperty("dv_rut_aval")
+    public void setDvRutAval(String dvRutAval) {
+        this.dvRutAval = dvRutAval;
     }
 
     /**
@@ -4902,21 +4948,21 @@ public class MensajeRespuestaConsultaDeSaldos {
     /**
      * 
      * @return
-     *     The filler04
+     *     The mailEeccVirtual
      */
-    @JsonProperty("filler_04")
-    public String getFiller04() {
-        return filler04;
+    @JsonProperty("mail_eecc_virtual")
+    public String getMailEeccVirtual() {
+        return mailEeccVirtual;
     }
 
     /**
      * 
-     * @param filler04
-     *     The filler_04
+     * @param mailEeccVirtual
+     *     The mail_eecc_virtual
      */
-    @JsonProperty("filler_04")
-    public void setFiller04(String filler04) {
-        this.filler04 = filler04;
+    @JsonProperty("mail_eecc_virtual")
+    public void setMailEeccVirtual(String mailEeccVirtual) {
+        this.mailEeccVirtual = mailEeccVirtual;
     }
 
     /**
@@ -5882,21 +5928,21 @@ public class MensajeRespuestaConsultaDeSaldos {
     /**
      * 
      * @return
-     *     The flag11
+     *     The flagLinea2Tarjeta
      */
-    @JsonProperty("flag11")
-    public String getFlag11() {
-        return flag11;
+    @JsonProperty("flag_linea2_tarjeta")
+    public String getFlagLinea2Tarjeta() {
+        return flagLinea2Tarjeta;
     }
 
     /**
      * 
-     * @param flag11
-     *     The flag11
+     * @param flagLinea2Tarjeta
+     *     The flag_linea2_tarjeta
      */
-    @JsonProperty("flag11")
-    public void setFlag11(String flag11) {
-        this.flag11 = flag11;
+    @JsonProperty("flag_linea2_tarjeta")
+    public void setFlagLinea2Tarjeta(String flagLinea2Tarjeta) {
+        this.flagLinea2Tarjeta = flagLinea2Tarjeta;
     }
 
     /**
@@ -5982,21 +6028,21 @@ public class MensajeRespuestaConsultaDeSaldos {
     /**
      * 
      * @return
-     *     The string31
+     *     The marcaChip
      */
-    @JsonProperty("string31")
-    public String getString31() {
-        return string31;
+    @JsonProperty("marca_chip")
+    public String getMarcaChip() {
+        return marcaChip;
     }
 
     /**
      * 
-     * @param string31
-     *     The string31
+     * @param marcaChip
+     *     The marca_chip
      */
-    @JsonProperty("string31")
-    public void setString31(String string31) {
-        this.string31 = string31;
+    @JsonProperty("marca_chip")
+    public void setMarcaChip(String marcaChip) {
+        this.marcaChip = marcaChip;
     }
 
     /**
@@ -6422,21 +6468,21 @@ public class MensajeRespuestaConsultaDeSaldos {
     /**
      * 
      * @return
-     *     The numero4
+     *     The rutDeudorOTitular
      */
-    @JsonProperty("numero4")
-    public String getNumero4() {
-        return numero4;
+    @JsonProperty("rut_deudor_o_titular")
+    public String getRutDeudorOTitular() {
+        return rutDeudorOTitular;
     }
 
     /**
      * 
-     * @param numero4
-     *     The numero4
+     * @param rutDeudorOTitular
+     *     The rut_deudor_o_titular
      */
-    @JsonProperty("numero4")
-    public void setNumero4(String numero4) {
-        this.numero4 = numero4;
+    @JsonProperty("rut_deudor_o_titular")
+    public void setRutDeudorOTitular(String rutDeudorOTitular) {
+        this.rutDeudorOTitular = rutDeudorOTitular;
     }
 
     /**
@@ -6482,21 +6528,21 @@ public class MensajeRespuestaConsultaDeSaldos {
     /**
      * 
      * @return
-     *     The flag4
+     *     The dvRutDeudorOTitular
      */
-    @JsonProperty("flag4")
-    public String getFlag4() {
-        return flag4;
+    @JsonProperty("dv_rut_deudor_o_titular")
+    public String getDvRutDeudorOTitular() {
+        return dvRutDeudorOTitular;
     }
 
     /**
      * 
-     * @param flag4
-     *     The flag4
+     * @param dvRutDeudorOTitular
+     *     The dv_rut_deudor_o_titular
      */
-    @JsonProperty("flag4")
-    public void setFlag4(String flag4) {
-        this.flag4 = flag4;
+    @JsonProperty("dv_rut_deudor_o_titular")
+    public void setDvRutDeudorOTitular(String dvRutDeudorOTitular) {
+        this.dvRutDeudorOTitular = dvRutDeudorOTitular;
     }
 
     /**
