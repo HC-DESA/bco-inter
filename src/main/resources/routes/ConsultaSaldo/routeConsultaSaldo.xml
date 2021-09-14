@@ -56,7 +56,7 @@
             <to id="_SetDatosParaSOAP" uri="velocity:velocity/ConsultaSaldo/DataForSOAP.vm"/>
             <log id="_log-CONSULTA-SALDOS_DatosCallSOAP" message="*** XML PARA SOAP CONSULTA-SALDOS ***\n${body}"/>
             <to id="_to_callSOAP-CONSULTA-SALDO-RESP" uri="direct:generateResponseConsultaSaldo"/>
-<!--             <to id="_to_callSOAP-CONSULTA-SALDO" uri="direct:routeConsultaSaldosSOAP"/> -->
+            <!-- <to id="_to_callSOAP-CONSULTA-SALDO" uri="direct:routeConsultaSaldosSOAP"/> -->
         </route>
         <route id="_route_GenerarRespuestaCS">
             <from id="_fromGenerarRespuestaCS" uri="direct:generateResponseConsultaSaldo"/>
@@ -73,7 +73,7 @@
             </setProperty>
             <bean id="_beanSetDataINObject" method="loadDataXPATH" ref="loadDataConsultaServicio"/>            
             <to id="_toTransfomObjectInResponseJson" uri="ref:ObjectToJson"/>
-            <log id="_logResponseWS-CS" loggingLevel="DEBUG" message=">>>>> BODY RESPONSE Json WS-ConsultaSaldo:  ${body}"/>
+            <log id="_logResponseWS-CS" loggingLevel="INFO" message=">>>>> BODY RESPONSE Json WS-ConsultaSaldo:  ${body}"/>
         </route>
     </routeContext>
 </beans>
