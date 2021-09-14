@@ -7,35 +7,35 @@
         <class-a>cl.bcointer.consultasaldo.objetos.DataToReturn</class-a>
         <class-b>mensajerespuestaconsultadesaldos.MensajeRespuestaConsultaDeSaldos</class-b>
         <field>
-            <a>mora_91_120d</a>
+            <a>mora91120d</a>
             <b>mora91120d</b>
         </field>
         <field>
-            <a>mora_61_90d</a>
+            <a>mora6190d</a>
             <b>mora6190d</b>
         </field>
         <field>
-            <a>mora_1_30d</a>
+            <a>mora130d</a>
             <b>mora130d</b>
         </field>
         <field>
-            <a>mora_210_999d</a>
+            <a>mora210999d</a>
             <b>mora210999d</b>
         </field>
         <field>
-            <a>mora_181_210d</a>
+            <a>mora181210d</a>
             <b>mora181210d</b>
         </field>
         <field>
-            <a>mora_31_60d</a>
+            <a>mora3160d</a>
             <b>mora3160d</b>
         </field>
         <field>
-            <a>mora_151_180d</a>
+            <a>mora151180d</a>
             <b>mora151180d</b>
         </field>
         <field>
-            <a>mora_121_150d</a>
+            <a>mora121150d</a>
             <b>mora121150d</b>
         </field>
         <field>
@@ -79,15 +79,15 @@
             <b>numero21</b>
         </field>
         <field>
-            <a>num_tarjeta_s</a>
+            <a>numTarjetaS</a>
             <b>numTarjetaS</b>
         </field>
         <field>
-            <a>num_cuenta_s</a>
+            <a>numCuentaS</a>
             <b>numCuentaS</b>
         </field>
         <field>
-            <a>numero_cliente</a>
+            <a>numeroCliente</a>
             <b>numeroCliente</b>
         </field>
         <field>
@@ -147,35 +147,35 @@
             <b>monto5</b>
         </field>
         <field>
-            <a>monto_mora1</a>
+            <a>montoMora1</a>
             <b>montoMora1</b>
         </field>
         <field>
-            <a>monto_mora2</a>
+            <a>montoMora2</a>
             <b>montoMora2</b>
         </field>
         <field>
-            <a>monto_mora3</a>
+            <a>montoMora3</a>
             <b>montoMora3</b>
         </field>
         <field>
-            <a>monto_mora4</a>
+            <a>montoMora4</a>
             <b>montoMora4</b>
         </field>
         <field>
-            <a>monto_mora5</a>
+            <a>montoMora5</a>
             <b>montoMora5</b>
         </field>
         <field>
-            <a>monto_mora6</a>
+            <a>montoMora6</a>
             <b>montoMora6</b>
         </field>
         <field>
-            <a>monto_mora7</a>
+            <a>montoMora7</a>
             <b>montoMora7</b>
         </field>
         <field>
-            <a>monto_mora8</a>
+            <a>montoMora8</a>
             <b>montoMora8</b>
         </field>
         <field>
@@ -235,27 +235,27 @@
             <b>monto31</b>
         </field>
         <field>
-            <a>monto_castigo</a>
+            <a>montoCastigo</a>
             <b>montoCastigo</b>
         </field>
         <field>
-            <a>monto_ultimo_pago_dolar</a>
+            <a>montoUltimoPagoDolar</a>
             <b>montoUltimoPagoDolar</b>
         </field>
         <field>
-            <a>monto_compra_mes</a>
+            <a>montoCompraMes</a>
             <b>montoCompraMes</b>
         </field>
         <field>
-            <a>monto_ultimo_pago_peso</a>
+            <a>montoUltimoPagoPeso</a>
             <b>montoUltimoPagoPeso</b>
         </field>
         <field>
-            <a>monto_avance_mes</a>
+            <a>montoAvanceMes</a>
             <b>montoAvanceMes</b>
         </field>
         <field>
-            <a>monto_cobro_adm</a>
+            <a>montoCobroAdm</a>
             <b>montoCobroAdm</b>
         </field>
         <field>
@@ -323,27 +323,27 @@
             <b>string12</b>
         </field>
         <field>
-            <a>filler_07</a>
+            <a>filler07</a>
             <b>filler07</b>
         </field>
         <field>
-            <a>filler_06</a>
+            <a>filler06</a>
             <b>filler06</b>
         </field>
         <field>
-            <a>filler_08</a>
+            <a>filler08</a>
             <b>filler08</b>
         </field>
         <field>
-            <a>filler_09</a>
+            <a>filler09</a>
             <b>filler09</b>
         </field>
         <field>
-            <a>filler_04</a>
+            <a>filler04</a>
             <b>filler04</b>
         </field>
         <field>
-            <a>filler_05</a>
+            <a>filler05</a>
             <b>filler05</b>
         </field>
         <field>
@@ -423,59 +423,59 @@
             <b>flag1</b>
         </field>
         <field>
-            <a>flag_actv_tjta_anterior</a>
+            <a>flagActvTjtaAnterior</a>
             <b>flagActvTjtaAnterior</b>
         </field>
         <field>
-            <a>flag_3cpc_cta_aut</a>
+            <a>flag3cpcCtaAut</a>
             <b>flag3cpcCtaAut</b>
         </field>
         <field>
-            <a>flag_3cpc_tjta_aut</a>
+            <a>flag3cpcTjtaAut</a>
             <b>flag3cpcTjtaAut</b>
         </field>
         <field>
-            <a>flag_cuota_fija_cta_aut</a>
+            <a>flagCuotaFijaCtaAut</a>
             <b>flagCuotaFijaCtaAut</b>
         </field>
         <field>
-            <a>flag_ncuota_cta_aut</a>
+            <a>flagNcuotaCtaAut</a>
             <b>flagNcuotaCtaAut</b>
         </field>
         <field>
-            <a>flag_ncuotas_tjta_aut</a>
+            <a>flagNcuotasTjtaAut</a>
             <b>flagNcuotasTjtaAut</b>
         </field>
         <field>
-            <a>flag_avce_efecvo_tjta_aut</a>
+            <a>flagAvceEfecvoTjtaAut</a>
             <b>flagAvceEfecvoTjtaAut</b>
         </field>
         <field>
-            <a>flag_cuota_fija_tjta_aut</a>
+            <a>flagCuotaFijaTjtaAut</a>
             <b>flagCuotaFijaTjtaAut</b>
         </field>
         <field>
-            <a>flag_avce_cuota_cta_aut</a>
+            <a>flagAvceCuotaCtaAut</a>
             <b>flagAvceCuotaCtaAut</b>
         </field>
         <field>
-            <a>flag_comp_normal_cta_aut</a>
+            <a>flagCompNormalCtaAut</a>
             <b>flagCompNormalCtaAut</b>
         </field>
         <field>
-            <a>flag_compra_normal_tjta_aut</a>
+            <a>flagCompraNormalTjtaAut</a>
             <b>flagCompraNormalTjtaAut</b>
         </field>
         <field>
-            <a>flag_avce_cuotas_tjta_aut</a>
+            <a>flagAvceCuotasTjtaAut</a>
             <b>flagAvceCuotasTjtaAut</b>
         </field>
         <field>
-            <a>flag_actv_tjta_actual</a>
+            <a>flagActvTjtaActual</a>
             <b>flagActvTjtaActual</b>
         </field>
         <field>
-            <a>flag_avce_efectivo_cta_aut</a>
+            <a>flagAvceEfectivoCtaAut</a>
             <b>flagAvceEfectivoCtaAut</b>
         </field>
         <field>
@@ -495,703 +495,703 @@
             <b>marca</b>
         </field>
         <field>
-            <a>member_since</a>
+            <a>memberSince</a>
             <b>memberSince</b>
         </field>
         <field>
-            <a>nro_ctacte</a>
+            <a>nroCtacte</a>
             <b>nroCtacte</b>
         </field>
         <field>
-            <a>ciclo_fac</a>
+            <a>cicloFac</a>
             <b>cicloFac</b>
         </field>
         <field>
-            <a>cupo_linea_2</a>
+            <a>cupoLinea2</a>
             <b>cupoLinea2</b>
         </field>
         <field>
-            <a>cdgo_banco</a>
+            <a>cdgoBanco</a>
             <b>cdgoBanco</b>
         </field>
         <field>
-            <a>codigo_bloqueo_rel</a>
+            <a>codigoBloqueoRel</a>
             <b>codigoBloqueoRel</b>
         </field>
         <field>
-            <a>nro_tarjeta_aut</a>
+            <a>nroTarjetaAut</a>
             <b>nroTarjetaAut</b>
         </field>
         <field>
-            <a>nro_cliente</a>
+            <a>nroCliente</a>
             <b>nroCliente</b>
         </field>
         <field>
-            <a>nro_relacion2</a>
+            <a>nroRelacion2</a>
             <b>nroRelacion2</b>
         </field>
         <field>
-            <a>nro_bloq_por_moras</a>
+            <a>nroBloqPorMoras</a>
             <b>nroBloqPorMoras</b>
         </field>
         <field>
-            <a>nro_int2</a>
+            <a>nroInt2</a>
             <b>nroInt2</b>
         </field>
         <field>
-            <a>nro_relacion</a>
+            <a>nroRelacion</a>
             <b>nroRelacion</b>
         </field>
         <field>
-            <a>nro_excesos_periodo</a>
+            <a>nroExcesosPeriodo</a>
             <b>nroExcesosPeriodo</b>
         </field>
         <field>
-            <a>nro_moras_periodo</a>
+            <a>nroMorasPeriodo</a>
             <b>nroMorasPeriodo</b>
         </field>
         <field>
-            <a>nro_secuencia_aut</a>
+            <a>nroSecuenciaAut</a>
             <b>nroSecuenciaAut</b>
         </field>
         <field>
-            <a>nro_cuenta_aut</a>
+            <a>nroCuentaAut</a>
             <b>nroCuentaAut</b>
         </field>
         <field>
-            <a>nro_ctacte_pac</a>
+            <a>nroCtactePac</a>
             <b>nroCtactePac</b>
         </field>
         <field>
-            <a>nro_int</a>
+            <a>nroInt</a>
             <b>nroInt</b>
         </field>
         <field>
-            <a>fecha_modif_tjta</a>
+            <a>fechaModifTjta</a>
             <b>fechaModifTjta</b>
         </field>
         <field>
-            <a>fecha_datos</a>
+            <a>fechaDatos</a>
             <b>fechaDatos</b>
         </field>
         <field>
-            <a>fecha_modif</a>
+            <a>fechaModif</a>
             <b>fechaModif</b>
         </field>
         <field>
-            <a>fecha_apertura</a>
+            <a>fechaApertura</a>
             <b>fechaApertura</b>
         </field>
         <field>
-            <a>fecha_ult_pago_pesos</a>
+            <a>fechaUltPagoPesos</a>
             <b>fechaUltPagoPesos</b>
         </field>
         <field>
-            <a>fecha_ult_fact</a>
+            <a>fechaUltFact</a>
             <b>fechaUltFact</b>
         </field>
         <field>
-            <a>fecha_bloq1</a>
+            <a>fechaBloq1</a>
             <b>fechaBloq1</b>
         </field>
         <field>
-            <a>fecha_bloq2</a>
+            <a>fechaBloq2</a>
             <b>fechaBloq2</b>
         </field>
         <field>
-            <a>fecha_pac</a>
+            <a>fechaPac</a>
             <b>fechaPac</b>
         </field>
         <field>
-            <a>fecha_apert</a>
+            <a>fechaApert</a>
             <b>fechaApert</b>
         </field>
         <field>
-            <a>fecha_activ_pac</a>
+            <a>fechaActivPac</a>
             <b>fechaActivPac</b>
         </field>
         <field>
-            <a>fecha_actv_tjta</a>
+            <a>fechaActvTjta</a>
             <b>fechaActvTjta</b>
         </field>
         <field>
-            <a>fecha_vig_eecc_hasta</a>
+            <a>fechaVigEeccHasta</a>
             <b>fechaVigEeccHasta</b>
         </field>
         <field>
-            <a>fecha_modif_pac</a>
+            <a>fechaModifPac</a>
             <b>fechaModifPac</b>
         </field>
         <field>
-            <a>fecha_activacion</a>
+            <a>fechaActivacion</a>
             <b>fechaActivacion</b>
         </field>
         <field>
-            <a>fecha_ult_fact_dolar</a>
+            <a>fechaUltFactDolar</a>
             <b>fechaUltFactDolar</b>
         </field>
         <field>
-            <a>fecha_vcto_anterior</a>
+            <a>fechaVctoAnterior</a>
             <b>fechaVctoAnterior</b>
         </field>
         <field>
-            <a>fecha_inicio_mora</a>
+            <a>fechaInicioMora</a>
             <b>fechaInicioMora</b>
         </field>
         <field>
-            <a>fecha_ult_pago_dolar</a>
+            <a>fechaUltPagoDolar</a>
             <b>fechaUltPagoDolar</b>
         </field>
         <field>
-            <a>fecha_vcto_actual</a>
+            <a>fechaVctoActual</a>
             <b>fechaVctoActual</b>
         </field>
         <field>
-            <a>fecha_act_ren</a>
+            <a>fechaActRen</a>
             <b>fechaActRen</b>
         </field>
         <field>
-            <a>fecha_bloq_tjta</a>
+            <a>fechaBloqTjta</a>
             <b>fechaBloqTjta</b>
         </field>
         <field>
-            <a>fecha_nac_tit</a>
+            <a>fechaNacTit</a>
             <b>fechaNacTit</b>
         </field>
         <field>
-            <a>fecha_vcto_tjta</a>
+            <a>fechaVctoTjta</a>
             <b>fechaVctoTjta</b>
         </field>
         <field>
-            <a>fecha_venc_pago</a>
+            <a>fechaVencPago</a>
             <b>fechaVencPago</b>
         </field>
         <field>
-            <a>fecha_renuncia_pac</a>
+            <a>fechaRenunciaPac</a>
             <b>fechaRenunciaPac</b>
         </field>
         <field>
-            <a>fecha_venc_fact_dolar</a>
+            <a>fechaVencFactDolar</a>
             <b>fechaVencFactDolar</b>
         </field>
         <field>
-            <a>fecha_prox_venc_calend</a>
+            <a>fechaProxVencCalend</a>
             <b>fechaProxVencCalend</b>
         </field>
         <field>
-            <a>fecha_prox_fact_calend</a>
+            <a>fechaProxFactCalend</a>
             <b>fechaProxFactCalend</b>
         </field>
         <field>
-            <a>fecha_vig_eecc_desde</a>
+            <a>fechaVigEeccDesde</a>
             <b>fechaVigEeccDesde</b>
         </field>
         <field>
-            <a>fecha_vcto_tjta_aut</a>
+            <a>fechaVctoTjtaAut</a>
             <b>fechaVctoTjtaAut</b>
         </field>
         <field>
-            <a>codigo_comuna_relacion</a>
+            <a>codigoComunaRelacion</a>
             <b>codigoComunaRelacion</b>
         </field>
         <field>
-            <a>codigo_fv_relacion</a>
+            <a>codigoFvRelacion</a>
             <b>codigoFvRelacion</b>
         </field>
         <field>
-            <a>codigo_afinidad</a>
+            <a>codigoAfinidad</a>
             <b>codigoAfinidad</b>
         </field>
         <field>
-            <a>codigo_bloq_tjta</a>
+            <a>codigoBloqTjta</a>
             <b>codigoBloqTjta</b>
         </field>
         <field>
-            <a>codigo_mov</a>
+            <a>codigoMov</a>
             <b>codigoMov</b>
         </field>
         <field>
-            <a>pagos_x_aplicar_moneda_ext</a>
+            <a>pagosXAplicarMonedaExt</a>
             <b>pagosXAplicarMonedaExt</b>
         </field>
         <field>
-            <a>pagos_pesos_ciclo</a>
+            <a>pagosPesosCiclo</a>
             <b>pagosPesosCiclo</b>
         </field>
         <field>
-            <a>pagos_dolar_ciclo</a>
+            <a>pagosDolarCiclo</a>
             <b>pagosDolarCiclo</b>
         </field>
         <field>
-            <a>deuda_total</a>
+            <a>deudaTotal</a>
             <b>deudaTotal</b>
         </field>
         <field>
-            <a>deuda_l2_cta</a>
+            <a>deudaL2Cta</a>
             <b>deudaL2Cta</b>
         </field>
         <field>
-            <a>deuda_l2_cta_aut</a>
+            <a>deudaL2CtaAut</a>
             <b>deudaL2CtaAut</b>
         </field>
         <field>
-            <a>deuda_nac_cta</a>
+            <a>deudaNacCta</a>
             <b>deudaNacCta</b>
         </field>
         <field>
-            <a>deuda_l2_tjta</a>
+            <a>deudaL2Tjta</a>
             <b>deudaL2Tjta</b>
         </field>
         <field>
-            <a>deuda_int_cta</a>
+            <a>deudaIntCta</a>
             <b>deudaIntCta</b>
         </field>
         <field>
-            <a>deuda_l2_tjta_aut</a>
+            <a>deudaL2TjtaAut</a>
             <b>deudaL2TjtaAut</b>
         </field>
         <field>
-            <a>deuda_int_fact_cta</a>
+            <a>deudaIntFactCta</a>
             <b>deudaIntFactCta</b>
         </field>
         <field>
-            <a>deuda_avce_nac_cta_aut</a>
+            <a>deudaAvceNacCtaAut</a>
             <b>deudaAvceNacCtaAut</b>
         </field>
         <field>
-            <a>deuda_compras_nac_tjta</a>
+            <a>deudaComprasNacTjta</a>
             <b>deudaComprasNacTjta</b>
         </field>
         <field>
-            <a>deuda_comp_int_cta_aut</a>
+            <a>deudaCompIntCtaAut</a>
             <b>deudaCompIntCtaAut</b>
         </field>
         <field>
-            <a>deuda_comp_nac_tjta_aut</a>
+            <a>deudaCompNacTjtaAut</a>
             <b>deudaCompNacTjtaAut</b>
         </field>
         <field>
-            <a>deuda_comp_nac_cta_aut</a>
+            <a>deudaCompNacCtaAut</a>
             <b>deudaCompNacCtaAut</b>
         </field>
         <field>
-            <a>deuda_mora_nac_cta</a>
+            <a>deudaMoraNacCta</a>
             <b>deudaMoraNacCta</b>
         </field>
         <field>
-            <a>deuda_tot_peso_cta_aut</a>
+            <a>deudaTotPesoCtaAut</a>
             <b>deudaTotPesoCtaAut</b>
         </field>
         <field>
-            <a>deuda_mora_int_cta</a>
+            <a>deudaMoraIntCta</a>
             <b>deudaMoraIntCta</b>
         </field>
         <field>
-            <a>deuda_tot_dolar_cta_aut</a>
+            <a>deudaTotDolarCtaAut</a>
             <b>deudaTotDolarCtaAut</b>
         </field>
         <field>
-            <a>deuda_avces_int_tjta</a>
+            <a>deudaAvcesIntTjta</a>
             <b>deudaAvcesIntTjta</b>
         </field>
         <field>
-            <a>deuda_nac_fact_cta</a>
+            <a>deudaNacFactCta</a>
             <b>deudaNacFactCta</b>
         </field>
         <field>
-            <a>deuda_avce_nac_tjta_aut</a>
+            <a>deudaAvceNacTjtaAut</a>
             <b>deudaAvceNacTjtaAut</b>
         </field>
         <field>
-            <a>deuda_comp_int_tjta_aut</a>
+            <a>deudaCompIntTjtaAut</a>
             <b>deudaCompIntTjtaAut</b>
         </field>
         <field>
-            <a>deuda_avce_int_cta_aut</a>
+            <a>deudaAvceIntCtaAut</a>
             <b>deudaAvceIntCtaAut</b>
         </field>
         <field>
-            <a>deuda_avce_int_tjta_aut</a>
+            <a>deudaAvceIntTjtaAut</a>
             <b>deudaAvceIntTjtaAut</b>
         </field>
         <field>
-            <a>deuda_avces_nac_tjta</a>
+            <a>deudaAvcesNacTjta</a>
             <b>deudaAvcesNacTjta</b>
         </field>
         <field>
-            <a>deuda_compras_int_tjta</a>
+            <a>deudaComprasIntTjta</a>
             <b>deudaComprasIntTjta</b>
         </field>
         <field>
-            <a>estado_canales1</a>
+            <a>estadoCanales1</a>
             <b>estadoCanales1</b>
         </field>
         <field>
-            <a>estado_tjta</a>
+            <a>estadoTjta</a>
             <b>estadoTjta</b>
         </field>
         <field>
-            <a>estado_civil</a>
+            <a>estadoCivil</a>
             <b>estadoCivil</b>
         </field>
         <field>
-            <a>disp_nac_cta</a>
+            <a>dispNacCta</a>
             <b>dispNacCta</b>
         </field>
         <field>
-            <a>disp_l2_cta</a>
+            <a>dispL2Cta</a>
             <b>dispL2Cta</b>
         </field>
         <field>
-            <a>disp_int_cta</a>
+            <a>dispIntCta</a>
             <b>dispIntCta</b>
         </field>
         <field>
-            <a>disp_l2_tjta</a>
+            <a>dispL2Tjta</a>
             <b>dispL2Tjta</b>
         </field>
         <field>
-            <a>disp_avances_cta</a>
+            <a>dispAvancesCta</a>
             <b>dispAvancesCta</b>
         </field>
         <field>
-            <a>disp_l2_cta_aut</a>
+            <a>dispL2CtaAut</a>
             <b>dispL2CtaAut</b>
         </field>
         <field>
-            <a>disp_avances_dolar_cta</a>
+            <a>dispAvancesDolarCta</a>
             <b>dispAvancesDolarCta</b>
         </field>
         <field>
-            <a>disp_comp_nac_tjta</a>
+            <a>dispCompNacTjta</a>
             <b>dispCompNacTjta</b>
         </field>
         <field>
-            <a>disp_l2_tjta_aut</a>
+            <a>dispL2TjtaAut</a>
             <b>dispL2TjtaAut</b>
         </field>
         <field>
-            <a>disp_avces_nac_tjta</a>
+            <a>dispAvcesNacTjta</a>
             <b>dispAvcesNacTjta</b>
         </field>
         <field>
-            <a>disp_avces_int_tjta</a>
+            <a>dispAvcesIntTjta</a>
             <b>dispAvcesIntTjta</b>
         </field>
         <field>
-            <a>disp_comp_int_tjta</a>
+            <a>dispCompIntTjta</a>
             <b>dispCompIntTjta</b>
         </field>
         <field>
-            <a>disp_comp_int_cta_aut</a>
+            <a>dispCompIntCtaAut</a>
             <b>dispCompIntCtaAut</b>
         </field>
         <field>
-            <a>disp_comp_nacional_tjta_aut</a>
+            <a>dispCompNacionalTjtaAut</a>
             <b>dispCompNacionalTjtaAut</b>
         </field>
         <field>
-            <a>disp_avce_int_cta_aut</a>
+            <a>dispAvceIntCtaAut</a>
             <b>dispAvceIntCtaAut</b>
         </field>
         <field>
-            <a>disp_flot_avce_cuota_l1_l2_cta</a>
+            <a>dispFlotAvceCuotaL1L2Cta</a>
             <b>dispFlotAvceCuotaL1L2Cta</b>
         </field>
         <field>
-            <a>disp_flot_avce_cuota_l1_l2_tjta</a>
+            <a>dispFlotAvceCuotaL1L2Tjta</a>
             <b>dispFlotAvceCuotaL1L2Tjta</b>
         </field>
         <field>
-            <a>disp_flot_avce_l2_tjta_aut</a>
+            <a>dispFlotAvceL2TjtaAut</a>
             <b>dispFlotAvceL2TjtaAut</b>
         </field>
         <field>
-            <a>disp_flot_avce_l2_cta_aut</a>
+            <a>dispFlotAvceL2CtaAut</a>
             <b>dispFlotAvceL2CtaAut</b>
         </field>
         <field>
-            <a>disp_flot_cuotas_l2_tjta_aut</a>
+            <a>dispFlotCuotasL2TjtaAut</a>
             <b>dispFlotCuotasL2TjtaAut</b>
         </field>
         <field>
-            <a>disp_comp_nac_cta_aut</a>
+            <a>dispCompNacCtaAut</a>
             <b>dispCompNacCtaAut</b>
         </field>
         <field>
-            <a>disp_flot_cuotas_l2_cta_aut</a>
+            <a>dispFlotCuotasL2CtaAut</a>
             <b>dispFlotCuotasL2CtaAut</b>
         </field>
         <field>
-            <a>disp_comp_internacional_tjta_aut</a>
+            <a>dispCompInternacionalTjtaAut</a>
             <b>dispCompInternacionalTjtaAut</b>
         </field>
         <field>
-            <a>disp_avce_nac_cta_aut</a>
+            <a>dispAvceNacCtaAut</a>
             <b>dispAvceNacCtaAut</b>
         </field>
         <field>
-            <a>disp_avce_nacional_tjta_aut</a>
+            <a>dispAvceNacionalTjtaAut</a>
             <b>dispAvceNacionalTjtaAut</b>
         </field>
         <field>
-            <a>disp_avce_internacional_tjta_aut</a>
+            <a>dispAvceInternacionalTjtaAut</a>
             <b>dispAvceInternacionalTjtaAut</b>
         </field>
         <field>
-            <a>nombre_empresa</a>
+            <a>nombreEmpresa</a>
             <b>nombreEmpresa</b>
         </field>
         <field>
-            <a>nombre_clte</a>
+            <a>nombreClte</a>
             <b>nombreClte</b>
         </field>
         <field>
-            <a>nombre_rel</a>
+            <a>nombreRel</a>
             <b>nombreRel</b>
         </field>
         <field>
-            <a>nombre_banda_tjta_aut</a>
+            <a>nombreBandaTjtaAut</a>
             <b>nombreBandaTjtaAut</b>
         </field>
         <field>
-            <a>ind_pin</a>
+            <a>indPin</a>
             <b>indPin</b>
         </field>
         <field>
-            <a>ind_cobro_comision</a>
+            <a>indCobroComision</a>
             <b>indCobroComision</b>
         </field>
         <field>
-            <a>ind_tjta_operador</a>
+            <a>indTjtaOperador</a>
             <b>indTjtaOperador</b>
         </field>
         <field>
-            <a>cuenta_castigo</a>
+            <a>cuentaCastigo</a>
             <b>cuentaCastigo</b>
         </field>
         <field>
-            <a>cuenta_primaria</a>
+            <a>cuentaPrimaria</a>
             <b>cuentaPrimaria</b>
         </field>
         <field>
-            <a>cdgo_socio</a>
+            <a>cdgoSocio</a>
             <b>cdgoSocio</b>
         </field>
         <field>
-            <a>cdgo_fv</a>
+            <a>cdgoFv</a>
             <b>cdgoFv</b>
         </field>
         <field>
-            <a>cdgo_autcc</a>
+            <a>cdgoAutcc</a>
             <b>cdgoAutcc</b>
         </field>
         <field>
-            <a>cdgo_embozado</a>
+            <a>cdgoEmbozado</a>
             <b>cdgoEmbozado</b>
         </field>
         <field>
-            <a>cdgo_empresa</a>
+            <a>cdgoEmpresa</a>
             <b>cdgoEmpresa</b>
         </field>
         <field>
-            <a>cdgo_aval</a>
+            <a>cdgoAval</a>
             <b>cdgoAval</b>
         </field>
         <field>
-            <a>cdgo_vip</a>
+            <a>cdgoVip</a>
             <b>cdgoVip</b>
         </field>
         <field>
-            <a>cdgo_postal</a>
+            <a>cdgoPostal</a>
             <b>cdgoPostal</b>
         </field>
         <field>
-            <a>cdgo_bloq1</a>
+            <a>cdgoBloq1</a>
             <b>cdgoBloq1</b>
         </field>
         <field>
-            <a>cdgo_bloq2</a>
+            <a>cdgoBloq2</a>
             <b>cdgoBloq2</b>
         </field>
         <field>
-            <a>cdgo_cob</a>
+            <a>cdgoCob</a>
             <b>cdgoCob</b>
         </field>
         <field>
-            <a>cdgo_mora</a>
+            <a>cdgoMora</a>
             <b>cdgoMora</b>
         </field>
         <field>
-            <a>cdgo_cartera_vencida</a>
+            <a>cdgoCarteraVencida</a>
             <b>cdgoCarteraVencida</b>
         </field>
         <field>
-            <a>cdgo_bloq_numerico</a>
+            <a>cdgoBloqNumerico</a>
             <b>cdgoBloqNumerico</b>
         </field>
         <field>
-            <a>cdgo_mje_mora_pgomin</a>
+            <a>cdgoMjeMoraPgomin</a>
             <b>cdgoMjeMoraPgomin</b>
         </field>
         <field>
-            <a>cdgo_envio_eecc</a>
+            <a>cdgoEnvioEecc</a>
             <b>cdgoEnvioEecc</b>
         </field>
         <field>
-            <a>cdgo_promocion</a>
+            <a>cdgoPromocion</a>
             <b>cdgoPromocion</b>
         </field>
         <field>
-            <a>interes_dev_penales</a>
+            <a>interesDevPenales</a>
             <b>interesDevPenales</b>
         </field>
         <field>
-            <a>interes_x_cobrar_penales</a>
+            <a>interesXCobrarPenales</a>
             <b>interesXCobrarPenales</b>
         </field>
         <field>
-            <a>interes_perc_oper</a>
+            <a>interesPercOper</a>
             <b>interesPercOper</b>
         </field>
         <field>
-            <a>interes_perc_corr</a>
+            <a>interesPercCorr</a>
             <b>interesPercCorr</b>
         </field>
         <field>
-            <a>interes_dev_corr</a>
+            <a>interesDevCorr</a>
             <b>interesDevCorr</b>
         </field>
         <field>
-            <a>interes_dev_oper</a>
+            <a>interesDevOper</a>
             <b>interesDevOper</b>
         </field>
         <field>
-            <a>interes_x_cobrar_corr</a>
+            <a>interesXCobrarCorr</a>
             <b>interesXCobrarCorr</b>
         </field>
         <field>
-            <a>interes_x_cobrar_oper</a>
+            <a>interesXCobrarOper</a>
             <b>interesXCobrarOper</b>
         </field>
         <field>
-            <a>interes_perc_penales</a>
+            <a>interesPercPenales</a>
             <b>interesPercPenales</b>
         </field>
         <field>
-            <a>cupo_compras_int_tjta</a>
+            <a>cupoComprasIntTjta</a>
             <b>cupoComprasIntTjta</b>
         </field>
         <field>
-            <a>cupo_l2_cta_aut</a>
+            <a>cupoL2CtaAut</a>
             <b>cupoL2CtaAut</b>
         </field>
         <field>
-            <a>cupo_int</a>
+            <a>cupoInt</a>
             <b>cupoInt</b>
         </field>
         <field>
-            <a>cupo_nac_relacion</a>
+            <a>cupoNacRelacion</a>
             <b>cupoNacRelacion</b>
         </field>
         <field>
-            <a>cupo_virtual</a>
+            <a>cupoVirtual</a>
             <b>cupoVirtual</b>
         </field>
         <field>
-            <a>cupo_int_relacion</a>
+            <a>cupoIntRelacion</a>
             <b>cupoIntRelacion</b>
         </field>
         <field>
-            <a>cupo_virtual_int</a>
+            <a>cupoVirtualInt</a>
             <b>cupoVirtualInt</b>
         </field>
         <field>
-            <a>cupo_avces_int_tjta</a>
+            <a>cupoAvcesIntTjta</a>
             <b>cupoAvcesIntTjta</b>
         </field>
         <field>
-            <a>cupo_l2_tjta_aut</a>
+            <a>cupoL2TjtaAut</a>
             <b>cupoL2TjtaAut</b>
         </field>
         <field>
-            <a>cupo_nacional</a>
+            <a>cupoNacional</a>
             <b>cupoNacional</b>
         </field>
         <field>
-            <a>cupo_linea2_tjta</a>
+            <a>cupoLinea2Tjta</a>
             <b>cupoLinea2Tjta</b>
         </field>
         <field>
-            <a>cupo_avce_int_cta_aut</a>
+            <a>cupoAvceIntCtaAut</a>
             <b>cupoAvceIntCtaAut</b>
         </field>
         <field>
-            <a>cupo_avces_nac_tjta</a>
+            <a>cupoAvcesNacTjta</a>
             <b>cupoAvcesNacTjta</b>
         </field>
         <field>
-            <a>cupo_comp_int_tjta_aut</a>
+            <a>cupoCompIntTjtaAut</a>
             <b>cupoCompIntTjtaAut</b>
         </field>
         <field>
-            <a>cupo_avce_nac_tjta_aut</a>
+            <a>cupoAvceNacTjtaAut</a>
             <b>cupoAvceNacTjtaAut</b>
         </field>
         <field>
-            <a>cupo_compras_nac_tjta</a>
+            <a>cupoComprasNacTjta</a>
             <b>cupoComprasNacTjta</b>
         </field>
         <field>
-            <a>cupo_comp_nac_tjta_aut</a>
+            <a>cupoCompNacTjtaAut</a>
             <b>cupoCompNacTjtaAut</b>
         </field>
         <field>
-            <a>cupo_avce_int_tjta_aut</a>
+            <a>cupoAvceIntTjtaAut</a>
             <b>cupoAvceIntTjtaAut</b>
         </field>
         <field>
-            <a>cupo_avce_nac_cta_aut</a>
+            <a>cupoAvceNacCtaAut</a>
             <b>cupoAvceNacCtaAut</b>
         </field>
         <field>
-            <a>cupo_comp_int_cta_aut</a>
+            <a>cupoCompIntCtaAut</a>
             <b>cupoCompIntCtaAut</b>
         </field>
         <field>
-            <a>cupo_comp_nac_cta_aut</a>
+            <a>cupoCompNacCtaAut</a>
             <b>cupoCompNacCtaAut</b>
         </field>
         <field>
-            <a>creditos_memo_dolar_ciclo</a>
+            <a>creditosMemoDolarCiclo</a>
             <b>creditosMemoDolarCiclo</b>
         </field>
         <field>
-            <a>creditos_memo_pesos_ciclo</a>
+            <a>creditosMemoPesosCiclo</a>
             <b>creditosMemoPesosCiclo</b>
         </field>
         <field>
-            <a>creditos_dolar_ciclo</a>
+            <a>creditosDolarCiclo</a>
             <b>creditosDolarCiclo</b>
         </field>
         <field>
-            <a>creditos_pesos_ciclo</a>
+            <a>creditosPesosCiclo</a>
             <b>creditosPesosCiclo</b>
         </field>
         <field>
-            <a>tipo_pac</a>
+            <a>tipoPac</a>
             <b>tipoPac</b>
         </field>
         <field>
-            <a>tipo_tjta</a>
+            <a>tipoTjta</a>
             <b>tipoTjta</b>
         </field>
         <field>
-            <a>tipo_pago</a>
+            <a>tipoPago</a>
             <b>tipoPago</b>
         </field>
         <field>
-            <a>tipo_dir_fisica</a>
+            <a>tipoDirFisica</a>
             <b>tipoDirFisica</b>
         </field>
         <field>
@@ -1207,23 +1207,23 @@
             <b>amaterno</b>
         </field>
         <field>
-            <a>aut_pend_l2_cta_aut</a>
+            <a>autPendL2CtaAut</a>
             <b>autPendL2CtaAut</b>
         </field>
         <field>
-            <a>aut_pend_l1_tjta_aut</a>
+            <a>autPendL1TjtaAut</a>
             <b>autPendL1TjtaAut</b>
         </field>
         <field>
-            <a>aut_pend_l2_tjta_aut</a>
+            <a>autPendL2TjtaAut</a>
             <b>autPendL2TjtaAut</b>
         </field>
         <field>
-            <a>aut_pend_pesos_l1_cta_aut</a>
+            <a>autPendPesosL1CtaAut</a>
             <b>autPendPesosL1CtaAut</b>
         </field>
         <field>
-            <a>aut_pend_dolar_l1_cta_aut</a>
+            <a>autPendDolarL1CtaAut</a>
             <b>autPendDolarL1CtaAut</b>
         </field>
         <field>
@@ -1231,19 +1231,19 @@
             <b>canal</b>
         </field>
         <field>
-            <a>consumo_pesos</a>
+            <a>consumoPesos</a>
             <b>consumoPesos</b>
         </field>
         <field>
-            <a>comuna_lab</a>
+            <a>comunaLab</a>
             <b>comunaLab</b>
         </field>
         <field>
-            <a>consumo_dolar</a>
+            <a>consumoDolar</a>
             <b>consumoDolar</b>
         </field>
         <field>
-            <a>comuna_part</a>
+            <a>comunaPart</a>
             <b>comunaPart</b>
         </field>
         <field>
@@ -1251,139 +1251,139 @@
             <b>campana</b>
         </field>
         <field>
-            <a>colocacion_mes</a>
+            <a>colocacionMes</a>
             <b>colocacionMes</b>
         </field>
         <field>
-            <a>ciudad_part</a>
+            <a>ciudadPart</a>
             <b>ciudadPart</b>
         </field>
         <field>
-            <a>cantidad_sub_cuentas</a>
+            <a>cantidadSubCuentas</a>
             <b>cantidadSubCuentas</b>
         </field>
         <field>
-            <a>ciclo_fact_relacion</a>
+            <a>cicloFactRelacion</a>
             <b>cicloFactRelacion</b>
         </field>
         <field>
-            <a>ciudad_relacion</a>
+            <a>ciudadRelacion</a>
             <b>ciudadRelacion</b>
         </field>
         <field>
-            <a>comision_exceso</a>
+            <a>comisionExceso</a>
             <b>comisionExceso</b>
         </field>
         <field>
-            <a>cobertura_cuenta</a>
+            <a>coberturaCuenta</a>
             <b>coberturaCuenta</b>
         </field>
         <field>
-            <a>comuna_relacion</a>
+            <a>comunaRelacion</a>
             <b>comunaRelacion</b>
         </field>
         <field>
-            <a>comuna_envio_eecc</a>
+            <a>ciudadEnvioEecc</a>
             <b>ciudadEnvioEecc</b>
         </field>
         <field>
-            <a>ciudad_laboral</a>
+            <a>ciudadLaboral</a>
             <b>ciudadLaboral</b>
         </field>
         <field>
-            <a>cantidad_adic</a>
+            <a>cantidadAdic</a>
             <b>cantidadAdic</b>
         </field>
         <field>
-            <a>cvv2_tjta_aut</a>
+            <a>cvv2TjtaAut</a>
             <b>cvv2TjtaAut</b>
         </field>
         <field>
-            <a>cta_trassaldo</a>
+            <a>ctaTrassaldo</a>
             <b>ctaTrassaldo</b>
         </field>
         <field>
-            <a>ciudad_envio_eecc</a>
+            <a>comunaEnvioEecc</a>
             <b>comunaEnvioEecc</b>
         </field>
         <field>
-            <a>direccion_relacion</a>
+            <a>direccionRelacion</a>
             <b>direccionRelacion</b>
         </field>
         <field>
-            <a>desc_afinidad</a>
+            <a>descAfinidad</a>
             <b>descAfinidad</b>
         </field>
         <field>
-            <a>dir_lab</a>
+            <a>dirLab</a>
             <b>dirLab</b>
         </field>
         <field>
-            <a>dir_part</a>
+            <a>dirPart</a>
             <b>dirPart</b>
         </field>
         <field>
-            <a>dv_rut_clte</a>
+            <a>dvRutClte</a>
             <b>dvRutClte</b>
         </field>
         <field>
-            <a>dv_tarjeta</a>
+            <a>dvTarjeta</a>
             <b>dvTarjeta</b>
         </field>
         <field>
-            <a>dias_mora</a>
+            <a>diasMora</a>
             <b>diasMora</b>
         </field>
         <field>
-            <a>desc_logo</a>
+            <a>descLogo</a>
             <b>descLogo</b>
         </field>
         <field>
-            <a>dir_email1</a>
+            <a>dirEmail1</a>
             <b>dirEmail1</b>
         </field>
         <field>
-            <a>debitos_pesos_ciclo</a>
+            <a>debitosPesosCiclo</a>
             <b>debitosPesosCiclo</b>
         </field>
         <field>
-            <a>debitos_memo_dolar_ciclo</a>
+            <a>debitosMemoDolarCiclo</a>
             <b>debitosMemoDolarCiclo</b>
         </field>
         <field>
-            <a>debitos_memo_pesos_ciclo</a>
+            <a>debitosMemoPesosCiclo</a>
             <b>debitosMemoPesosCiclo</b>
         </field>
         <field>
-            <a>debitos_dolar_ciclo</a>
+            <a>debitosDolarCiclo</a>
             <b>debitosDolarCiclo</b>
         </field>
         <field>
-            <a>desc_banco</a>
+            <a>descBanco</a>
             <b>descBanco</b>
         </field>
         <field>
-            <a>direc_envio_eecc</a>
+            <a>direcEnvioEecc</a>
             <b>direcEnvioEecc</b>
         </field>
         <field>
-            <a>fono_laboral</a>
+            <a>fonoLaboral</a>
             <b>fonoLaboral</b>
         </field>
         <field>
-            <a>fono_envio_eecc</a>
+            <a>fonoEnvioEecc</a>
             <b>fonoEnvioEecc</b>
         </field>
         <field>
-            <a>fono_relacion</a>
+            <a>fonoRelacion</a>
             <b>fonoRelacion</b>
         </field>
         <field>
-            <a>fono_part</a>
+            <a>fonoPart</a>
             <b>fonoPart</b>
         </field>
         <field>
-            <a>forma_pago</a>
+            <a>formaPago</a>
             <b>formaPago</b>
         </field>
         <field>
@@ -1391,7 +1391,7 @@
             <b>idwsst247</b>
         </field>
         <field>
-            <a>id_emisor_servicio</a>
+            <a>idEmisorServicio</a>
             <b>idEmisorServicio</b>
         </field>
         <field>
@@ -1399,7 +1399,7 @@
             <b>logo</b>
         </field>
         <field>
-            <a>mto_pfijo_9</a>
+            <a>mtoPfijo9</a>
             <b>mtoPfijo9</b>
         </field>
         <field>
@@ -1411,11 +1411,11 @@
             <b>msgerror</b>
         </field>
         <field>
-            <a>medio_envio_fisico_eecc</a>
+            <a>medioEnvioFisicoEecc</a>
             <b>medioEnvioFisicoEecc</b>
         </field>
         <field>
-            <a>nomb_tjta_habiente</a>
+            <a>nombTjtaHabiente</a>
             <b>nombTjtaHabiente</b>
         </field>
         <field>
@@ -1423,43 +1423,43 @@
             <b>organizacion</b>
         </field>
         <field>
-            <a>offset_tjta_aut</a>
+            <a>offsetTjtaAut</a>
             <b>offsetTjtaAut</b>
         </field>
         <field>
-            <a>porcje_exceso_compras_nac</a>
+            <a>porcjeExcesoComprasNac</a>
             <b>porcjeExcesoComprasNac</b>
         </field>
         <field>
-            <a>pago_min_cta_aut</a>
+            <a>pagoMinCtaAut</a>
             <b>pagoMinCtaAut</b>
         </field>
         <field>
-            <a>por_pminimo</a>
+            <a>porPminimo</a>
             <b>porPminimo</b>
         </field>
         <field>
-            <a>pago_minimo</a>
+            <a>pagoMinimo</a>
             <b>pagoMinimo</b>
         </field>
         <field>
-            <a>por_pfijo</a>
+            <a>porPfijo</a>
             <b>porPfijo</b>
         </field>
         <field>
-            <a>pct_pesos_9</a>
+            <a>pctPesos9</a>
             <b>pctPesos9</b>
         </field>
         <field>
-            <a>pct_dolar_9</a>
+            <a>pctDolar9</a>
             <b>pctDolar9</b>
         </field>
         <field>
-            <a>porcje_exceso_compras_int</a>
+            <a>porcjeExcesoComprasInt</a>
             <b>porcjeExcesoComprasInt</b>
         </field>
         <field>
-            <a>recargo_cob_61_90d</a>
+            <a>recargoCob6190d</a>
             <b>recargoCob6190d</b>
         </field>
         <field>
@@ -1467,59 +1467,59 @@
             <b>rut</b>
         </field>
         <field>
-            <a>rut_tarjeta</a>
+            <a>rutTarjeta</a>
             <b>rutTarjeta</b>
         </field>
         <field>
-            <a>rebaja_cobadm</a>
+            <a>rebajaCobadm</a>
             <b>rebajaCobadm</b>
         </field>
         <field>
-            <a>region_relacion</a>
+            <a>regionRelacion</a>
             <b>regionRelacion</b>
         </field>
         <field>
-            <a>relacion_cuenta</a>
+            <a>relacionCuenta</a>
             <b>relacionCuenta</b>
         </field>
         <field>
-            <a>recargo_cob_31_60d</a>
+            <a>recargoCob3160d</a>
             <b>recargoCob3160d</b>
         </field>
         <field>
-            <a>region_envio_eecc</a>
+            <a>regionEnvioEecc</a>
             <b>regionEnvioEecc</b>
         </field>
         <field>
-            <a>reg_laboral</a>
+            <a>regLaboral</a>
             <b>regLaboral</b>
         </field>
         <field>
-            <a>region_part</a>
+            <a>regionPart</a>
             <b>regionPart</b>
         </field>
         <field>
-            <a>recargo_cob_91_120d</a>
+            <a>recargoCob91120d</a>
             <b>recargoCob91120d</b>
         </field>
         <field>
-            <a>recargo_cob_1_30d</a>
+            <a>recargoCob130d</a>
             <b>recargoCob130d</b>
         </field>
         <field>
-            <a>recargo_cob_151_180d</a>
+            <a>recargoCob151180d</a>
             <b>recargoCob151180d</b>
         </field>
         <field>
-            <a>recargo_cob_181_210d</a>
+            <a>recargoCob181210d</a>
             <b>recargoCob181210d</b>
         </field>
         <field>
-            <a>recargo_cob_210_999d</a>
+            <a>recargoCob210999d</a>
             <b>recargoCob210999d</b>
         </field>
         <field>
-            <a>recargo_cob_121_150d</a>
+            <a>recargoCob121150d</a>
             <b>recargoCob121150d</b>
         </field>
         <field>
@@ -1531,95 +1531,95 @@
             <b>sexo</b>
         </field>
         <field>
-            <a>status_tjta_aut</a>
+            <a>statusTjtaAut</a>
             <b>statusTjtaAut</b>
         </field>
         <field>
-            <a>sldo_col_int</a>
+            <a>sldoColInt</a>
             <b>sldoColInt</b>
         </field>
         <field>
-            <a>status_relacion</a>
+            <a>statusRelacion</a>
             <b>statusRelacion</b>
         </field>
         <field>
-            <a>sldo_col_nac</a>
+            <a>sldoColNac</a>
             <b>sldoColNac</b>
         </field>
         <field>
-            <a>saldo_credito_cuota_capital</a>
+            <a>saldoCreditoCuotaCapital</a>
             <b>saldoCreditoCuotaCapital</b>
         </field>
         <field>
-            <a>status_cta_aut</a>
+            <a>statusCtaAut</a>
             <b>statusCtaAut</b>
         </field>
         <field>
-            <a>status2_tjta_aut</a>
+            <a>status2TjtaAut</a>
             <b>status2TjtaAut</b>
         </field>
         <field>
-            <a>status2_cta_aut</a>
+            <a>status2CtaAut</a>
             <b>status2CtaAut</b>
         </field>
         <field>
-            <a>secuencia_tarjeta_s</a>
+            <a>secuenciaTarjetaS</a>
             <b>secuenciaTarjetaS</b>
         </field>
         <field>
-            <a>tipo_cta</a>
+            <a>tipoCta</a>
             <b>tipoCta</b>
         </field>
         <field>
-            <a>tres_cpc</a>
+            <a>tresCpc</a>
             <b>tresCpc</b>
         </field>
         <field>
-            <a>tjtas_requeridas</a>
+            <a>tjtasRequeridas</a>
             <b>tjtasRequeridas</b>
         </field>
         <field>
-            <a>tasa_interes_cuotas_2_4</a>
+            <a>tasaInteresCuotas24</a>
             <b>tasaInteresCuotas24</b>
         </field>
         <field>
-            <a>tasa_interes_cuotas_5_24</a>
+            <a>tasaInteresCuotas524</a>
             <b>tasaInteresCuotas524</b>
         </field>
         <field>
-            <a>tasa_1_cta_aut</a>
+            <a>tasa1CtaAut</a>
             <b>tasa1CtaAut</b>
         </field>
         <field>
-            <a>tasa_2_cta_aut</a>
+            <a>tasa2CtaAut</a>
             <b>tasa2CtaAut</b>
         </field>
         <field>
-            <a>tasa_interes_rotativo</a>
+            <a>tasaInteresRotativo</a>
             <b>tasaInteresRotativo</b>
         </field>
         <field>
-            <a>tasa_int_avce_cta_corta</a>
+            <a>tasaIntAvceCtaCorta</a>
             <b>tasaIntAvceCtaCorta</b>
         </field>
         <field>
-            <a>utili_x_cobrar_moneda_nac</a>
+            <a>utiliXCobrarMonedaNac</a>
             <b>utiliXCobrarMonedaNac</b>
         </field>
         <field>
-            <a>utili_x_cobrar_moneda_ext</a>
+            <a>utiliXCobrarMonedaExt</a>
             <b>utiliXCobrarMonedaExt</b>
         </field>
         <field>
-            <a>tasa_int_avce_cta_larga</a>
+            <a>tasaIntAvceCtaLarga</a>
             <b>tasaIntAvceCtaLarga</b>
         </field>
         <field>
-            <a>nro_bloq_por_excesos</a>
+            <a>nroBloqPorExcesos</a>
             <b>nroBloqPorExcesos</b>
         </field>
         <field>
-            <a>linea_limites</a>
+            <a>lineaLimites</a>
             <b>lineaLimites</b>
         </field>
     </mapping>

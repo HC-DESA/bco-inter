@@ -11,10 +11,8 @@ public class DataConsultaServicio {
     private static final Logger logger = Logger.getLogger("LoadData");
 
 	public void loadDataCM(Exchange exchange) {
-		// DATA CONFIG-MAP
 		exchange.setProperty("CODIGO_SERVICIO", System.getenv().getOrDefault("COD-SERVICIO", "No existe en CONFIG-MAP"));
 		exchange.setProperty("ID_EMISOR", System.getenv().getOrDefault("ID-EMISOR", "No existe en CONFIG-MAP"));
-		// DATA SECRET
 		exchange.setProperty("USER_CALL_SOAP", System.getenv().getOrDefault("USER-CALL-SOAP", "No existe en SECRET"));
 		exchange.setProperty("PASSWORD_CALL_SOAP", System.getenv().getOrDefault("PASSWORD-CALL-SOAP", "No existe en SECRET"));
 		exchange.setProperty("CODIGO_USUARIO", System.getenv().getOrDefault("COD-USUARIO", "No existe en SECRET"));
@@ -34,30 +32,23 @@ public class DataConsultaServicio {
 		String bodyXML  = exchange.getProperty("XML_RESPONSE_NEXUS", String.class);
 		DataToReturn object = exchange.getIn().getBody(DataToReturn.class);
 
-		// Get TAG <string1>
 		String string1 = XPathBuilder.xpath("/DATA/string1").evaluate(exchange.getContext(), bodyXML);
-		object.setFecha_ult_fact_dolar(string1.split(";")[0]);
-		object.setFecha_venc_fact_dolar(string1.split(";")[1]);
+		object.setFechaUltFactDolar(string1.split(";")[0]);
+		object.setFechaVencFactDolar(string1.split(";")[1]);
 		
-		// Get TAG <string2>
 		String string2 = XPathBuilder.xpath("/DATA/string2").evaluate(exchange.getContext(), bodyXML);
-		object.setFecha_prox_fact_calend(string2.split(";")[0]);
-		object.setFecha_prox_venc_calend(string2.split(";")[1]);
+		object.setFechaProxFactCalend(string2.split(";")[0]);
+		object.setFechaProxVencCalend(string2.split(";")[1]);
 		
-		// Get TAG <string3>
 		String string3 = XPathBuilder.xpath("/DATA/string3").evaluate(exchange.getContext(), bodyXML);
-		object.setFecha_vig_eecc_desde(string3.substring(0, 8));
-		object.setFecha_vig_eecc_hasta(string3.substring(8, 16));
+		object.setFechaVigEeccDesde(string3.substring(0, 8));
+		object.setFechaVigEeccHasta(string3.substring(8, 16));
 		object.setMarca(string3.substring(16, 17));
 		
-		// Set TIMESTAMP
 		object.setTimestamp(exchange.getProperty("TIMESTAMP_RESPONSE",String.class));
 
-		// Set CANAL
 		object.setCanal(exchange.getProperty("OBJECT_REQUEST", DataInput.class).getCanal());
 		
-
-		// Set ID_EMISOR
-		object.setId_emisor_servicio(exchange.getProperty("ID_EMISOR", String.class));		
+		object.setIdEmisorServicio(exchange.getProperty("ID_EMISOR", String.class));		
 	}
 }
