@@ -35,7 +35,6 @@ public class DataConsultaServicio {
 		Date date = new Date();
 		Random r = new Random( System.currentTimeMillis() );
 		exchange.setProperty("ID_REQ", dateFormat.format(date) + "" + String.format("%03d", r.nextInt(1000)) + String.format("%03d", r.nextInt(1000)));
-
 	}
 	
 	public void loadDataXPATH(Exchange exchange) {
@@ -240,7 +239,7 @@ public class DataConsultaServicio {
 				object.setFechaVigEeccHasta(string3.substring(8, 16));
 				object.setMarca(string3.substring(16, 17));
 			}else {
-				object.setFechaVigEeccHasta(string3.substring(9, string3.length()));
+				object.setFechaVigEeccHasta(string3.substring(8, string3.length()));
 			}		
 		}else {
 			object.setFechaVigEeccDesde(string3.substring(0, string3.trim().length()));

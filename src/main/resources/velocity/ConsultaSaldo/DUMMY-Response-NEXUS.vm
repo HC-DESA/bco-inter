@@ -97,9 +97,9 @@
   <cupo_int>000000001507400</cupo_int>
   <cupo_linea_2>0000000000000</cupo_linea_2>
   <cupo_virtual>0000000000000</cupo_virtual>
-  <cupo_virtual_int>000000000000000</cupo_virtual_int>
-  <deuda_nac_cta>+0000001513274</deuda_nac_cta>
-  <deuda_int_cta>+000000000072730</deuda_int_cta>
+  <cupo_virtual_int>-500000000000000</cupo_virtual_int>
+  <deuda_nac_cta>+1000001513274</deuda_nac_cta>
+  <deuda_int_cta>-000000000072730</deuda_int_cta>
   <deuda_l2_cta>+0000000000000</deuda_l2_cta>
   <deuda_mora_nac_cta>+0000000000000</deuda_mora_nac_cta>
   <deuda_mora_int_cta>+000000000000000</deuda_mora_int_cta>
