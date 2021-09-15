@@ -6,8 +6,12 @@
     <routeContext id="routeConsultaSaldo" xmlns="http://camel.apache.org/schema/spring">
         <route id="_route_ReceptionData" streamCache="true">
             <from id="_fromIR1" uri="direct:routeConsultaSaldos"/>
-            <log id="_log1" message="-- CONSULTA-SALDOS - DATA IN JSON  -- => \n${body}"/>
+            <log id="_log1" message="-- CONSULTA-SALDOS - DATA IN JSON  -- => \n${body}"/>            
+           
             <bean id="_bean1" method="loadDataCM" ref="loadDataConsultaServicio"/>
+            <convertBodyTo type="String"/>
+            <log id="_Log_TRAZA1" loggingLevel="INFO" message=">>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] [INGRESO-DATOS] [${headers.CamelHttpMethod} ${headers.CamelServletContextPath}] [${body}]"/>
+													<!--             [AAAA-MM-DDTHH:MM:SS.mmmmmm{+|-}TT:ZZ] [INFO]  [AAAAMMDDHHMMSSmmm{DIGITOS ALEATORIOS}] [TIPO_LOG] "METODO ENDPOINT" "ID_APP_CLIENTE"  "CODIGO_EJECUCION"  [{"DATA":"INPUT"}/<DATA>INPUT</DATA>] -->
             <doTry id="_doTry_ReceptionAndValdiateData">
                 <unmarshal id="_transObjectConsultaSaldo" ref="jsonToObjectConsultaSaldo"/>
                 <setProperty propertyName="OBJECT_REQUEST">
@@ -17,12 +21,14 @@
                 <doCatch id="_doCatchErrorNoData">
                     <exception>org.apache.camel.InvalidPayloadException</exception>
                     <exception>com.fasterxml.jackson.core.JsonParseException</exception>
-                    <log id="_log_Error_Unmarshal" message="Error -> Faltan datos entrantes"/>
+                    <exception>com.fasterxml.jackson.databind.JsonMappingException</exception>
+                    
+                    <log id="_log_Error_Unmarshal" message="Error -> Problema en parametros entrantes"/>
                     <setProperty propertyName="CODE_ERROR">
                     	<simple>001</simple>
                     </setProperty>
                     <setProperty propertyName="MSG_ERROR">
-                    	<simple>FALTA DE DATOS</simple>
+                    	<simple>PROBLEMA EN DATOS</simple>
                     </setProperty>
                     <setProperty propertyName="TIMESTAMP_RESPONSE_ERROR">
 		               <simple>${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}</simple>
@@ -30,6 +36,9 @@
 		            <setProperty propertyName="CANAL">
 		               <simple>-</simple>
 		            </setProperty>
+                    <setHeader headerName="Exchange.HTTP_RESPONSE_CODE" id="_setHeaderEx7">
+                        <constant>500</constant>
+                    </setHeader>
 		            <to id="_toVelocityResponseJsonERROR" uri="velocity:velocity/JsonErrorCase.vm"/>
 		            <stop id="_stop1"/>
                 </doCatch>
@@ -73,7 +82,7 @@
             </setProperty>
             <bean id="_beanSetDataINObject" method="loadDataXPATH" ref="loadDataConsultaServicio"/>            
             <to id="_toTransfomObjectInResponseJson" uri="ref:ObjectToJson"/>
-            <log id="_logResponseWS-CS" loggingLevel="INFO" message=">>>>> BODY RESPONSE Json WS-ConsultaSaldo:  ${body}"/>
+            <log id="_logResponseWS-CS" loggingLevel="DEBUG" message=">>>>> BODY RESPONSE Json WS-ConsultaSaldo:  \n${body}"/>
         </route>
     </routeContext>
 </beans>

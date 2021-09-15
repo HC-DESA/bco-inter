@@ -407,7 +407,8 @@ public class DataToReturn {
 	private String filler09;
 		
 	public String getCoderror() {
-		return coderror;
+		
+		return (coderror == null)? "" : coderror;
 	}
 
 	public void setCoderror(String coderror) {
@@ -415,7 +416,8 @@ public class DataToReturn {
 	}
 
 	public String getMsgerror() {
-		return msgerror;
+		
+		return (msgerror == null)? "" : msgerror;
 	}
 
 	public void setMsgerror(String msgerror) {
@@ -423,7 +425,8 @@ public class DataToReturn {
 	}
 
 	public String getTimestamp() {
-		return timestamp;
+		
+		return (timestamp == null)? "" : timestamp;
 	}
 
 	public void setTimestamp(String timestamp) {
@@ -431,7 +434,8 @@ public class DataToReturn {
 	}
 
 	public String getCanal() {
-		return canal;
+		
+		return (canal == null)? "" : canal;
 	}
 
 	public void setCanal(String canal) {
@@ -439,7 +443,8 @@ public class DataToReturn {
 	}
 
 	public String getIdEmisorServicio() {
-		return idEmisorServicio;
+		
+		return (idEmisorServicio == null)? "" : idEmisorServicio;
 	}
 
 	public void setIdEmisorServicio(String idEmisorServicio) {
@@ -447,7 +452,8 @@ public class DataToReturn {
 	}
 
 	public String getIdwsst247() {
-		return idwsst247;
+		
+		return (idwsst247 == null)? "" : idwsst247;
 	}
 
 	public void setIdwsst247(String idwsst247) {
@@ -455,7 +461,8 @@ public class DataToReturn {
 	}
 
 	public String getOrganizacion() {
-		return organizacion;
+		
+		return (organizacion == null)? "" : organizacion;
 	}
 
 	public void setOrganizacion(String organizacion) {
@@ -463,7 +470,8 @@ public class DataToReturn {
 	}
 
 	public String getNumCuentaS() {
-		return numCuentaS;
+		
+		return (numCuentaS == null)? "" : numCuentaS;
 	}
 
 	public void setNumCuentaS(String numCuentaS) {
@@ -471,7 +479,8 @@ public class DataToReturn {
 	}
 
 	public String getLogo() {
-		return logo;
+		
+		return (logo == null)? "" : logo;
 	}
 
 	public void setLogo(String logo) {
@@ -479,7 +488,8 @@ public class DataToReturn {
 	}
 
 	public String getDescLogo() {
-		return descLogo;
+		
+		return (descLogo == null)? "" : descLogo;
 	}
 
 	public void setDescLogo(String descLogo) {
@@ -487,7 +497,8 @@ public class DataToReturn {
 	}
 
 	public String getModelo() {
-		return modelo;
+		
+		return (modelo == null)? "" : modelo;
 	}
 
 	public void setModelo(String modelo) {
@@ -495,7 +506,8 @@ public class DataToReturn {
 	}
 
 	public String getTipoCta() {
-		return tipoCta;
+		
+		return (tipoCta == null)? "" : tipoCta;
 	}
 
 	public void setTipoCta(String tipoCta) {
@@ -503,7 +515,8 @@ public class DataToReturn {
 	}
 
 	public String getRelacionCuenta() {
-		return relacionCuenta;
+		
+		return (relacionCuenta == null)? "" : relacionCuenta;
 	}
 
 	public void setRelacionCuenta(String relacionCuenta) {
@@ -511,7 +524,8 @@ public class DataToReturn {
 	}
 
 	public String getCoberturaCuenta() {
-		return coberturaCuenta;
+		
+		return (coberturaCuenta == null)? "" : coberturaCuenta;
 	}
 
 	public void setCoberturaCuenta(String coberturaCuenta) {
@@ -519,7 +533,8 @@ public class DataToReturn {
 	}
 
 	public String getApaterno() {
-		return apaterno;
+		
+		return (apaterno == null)? "" : apaterno;
 	}
 
 	public void setApaterno(String apaterno) {
@@ -527,7 +542,8 @@ public class DataToReturn {
 	}
 
 	public String getAmaterno() {
-		return amaterno;
+		
+		return (amaterno == null)? "" : amaterno;
 	}
 
 	public void setAmaterno(String amaterno) {
@@ -535,7 +551,8 @@ public class DataToReturn {
 	}
 
 	public String getNombreClte() {
-		return nombreClte;
+		
+		return (nombreClte == null)? "" : nombreClte;
 	}
 
 	public void setNombreClte(String nombreClte) {
@@ -543,7 +560,8 @@ public class DataToReturn {
 	}
 
 	public String getDirPart() {
-		return dirPart;
+		
+		return (dirPart == null)? "" : dirPart;
 	}
 
 	public void setDirPart(String dirPart) {
@@ -551,7 +569,8 @@ public class DataToReturn {
 	}
 
 	public String getCiudadPart() {
-		return ciudadPart;
+		
+		return (ciudadPart == null)? "" : ciudadPart;
 	}
 
 	public void setCiudadPart(String ciudadPart) {
@@ -559,7 +578,8 @@ public class DataToReturn {
 	}
 
 	public String getComunaPart() {
-		return comunaPart;
+		
+		return (comunaPart == null)? "" : comunaPart;
 	}
 
 	public void setComunaPart(String comunaPart) {
@@ -567,7 +587,8 @@ public class DataToReturn {
 	}
 
 	public String getRegionPart() {
-		return regionPart;
+		
+		return (regionPart == null)? "" : regionPart;
 	}
 
 	public void setRegionPart(String regionPart) {
@@ -575,7 +596,8 @@ public class DataToReturn {
 	}
 
 	public String getFonoPart() {
-		return fonoPart;
+		
+		return (fonoPart == null)? "" : fonoPart;
 	}
 
 	public void setFonoPart(String fonoPart) {
@@ -583,7 +605,8 @@ public class DataToReturn {
 	}
 
 	public String getDirecEnvioEecc() {
-		return direcEnvioEecc;
+		
+		return (direcEnvioEecc == null)? "" : direcEnvioEecc;
 	}
 
 	public void setDirecEnvioEecc(String direcEnvioEecc) {
@@ -591,7 +614,8 @@ public class DataToReturn {
 	}
 
 	public String getCiudadEnvioEecc() {
-		return ciudadEnvioEecc;
+		
+		return (ciudadEnvioEecc == null)? "" : ciudadEnvioEecc;
 	}
 
 	public void setCiudadEnvioEecc(String ciudadEnvioEecc) {
@@ -599,7 +623,8 @@ public class DataToReturn {
 	}
 
 	public String getComunaEnvioEecc() {
-		return comunaEnvioEecc;
+		
+		return (comunaEnvioEecc == null)? "" : comunaEnvioEecc;
 	}
 
 	public void setComunaEnvioEecc(String comunaEnvioEecc) {
@@ -607,7 +632,8 @@ public class DataToReturn {
 	}
 
 	public String getRegionEnvioEecc() {
-		return regionEnvioEecc;
+		
+		return (regionEnvioEecc == null)? "" : regionEnvioEecc;
 	}
 
 	public void setRegionEnvioEecc(String regionEnvioEecc) {
@@ -615,7 +641,8 @@ public class DataToReturn {
 	}
 
 	public String getFonoEnvioEecc() {
-		return fonoEnvioEecc;
+		
+		return (fonoEnvioEecc == null)? "" : fonoEnvioEecc;
 	}
 
 	public void setFonoEnvioEecc(String fonoEnvioEecc) {
@@ -623,7 +650,8 @@ public class DataToReturn {
 	}
 
 	public String getCdgoPostal() {
-		return cdgoPostal;
+		
+		return (cdgoPostal == null)? "" : cdgoPostal;
 	}
 
 	public void setCdgoPostal(String cdgoPostal) {
@@ -631,7 +659,8 @@ public class DataToReturn {
 	}
 
 	public String getDirLab() {
-		return dirLab;
+		
+		return (dirLab == null)? "" : dirLab;
 	}
 
 	public void setDirLab(String dirLab) {
@@ -639,7 +668,8 @@ public class DataToReturn {
 	}
 
 	public String getCiudadLaboral() {
-		return ciudadLaboral;
+		
+		return (ciudadLaboral == null)? "" : ciudadLaboral;
 	}
 
 	public void setCiudadLaboral(String ciudadLaboral) {
@@ -647,7 +677,8 @@ public class DataToReturn {
 	}
 
 	public String getComunaLab() {
-		return comunaLab;
+		
+		return (comunaLab == null)? "" : comunaLab;
 	}
 
 	public void setComunaLab(String comunaLab) {
@@ -655,7 +686,8 @@ public class DataToReturn {
 	}
 
 	public String getRegLaboral() {
-		return regLaboral;
+		
+		return (regLaboral == null)? "" : regLaboral;
 	}
 
 	public void setRegLaboral(String regLaboral) {
@@ -663,7 +695,8 @@ public class DataToReturn {
 	}
 
 	public String getFonoLaboral() {
-		return fonoLaboral;
+		
+		return (fonoLaboral == null)? "" : fonoLaboral;
 	}
 
 	public void setFonoLaboral(String fonoLaboral) {
@@ -671,7 +704,8 @@ public class DataToReturn {
 	}
 
 	public String getDirEmail1() {
-		return dirEmail1;
+		
+		return (dirEmail1 == null)? "" : dirEmail1;
 	}
 
 	public void setDirEmail1(String dirEmail1) {
@@ -679,7 +713,8 @@ public class DataToReturn {
 	}
 
 	public String getRut() {
-		return rut;
+		
+		return (rut == null)? "" : rut;
 	}
 
 	public void setRut(String rut) {
@@ -687,7 +722,8 @@ public class DataToReturn {
 	}
 
 	public String getDvRutClte() {
-		return dvRutClte;
+		
+		return (dvRutClte == null)? "" : dvRutClte;
 	}
 
 	public void setDvRutClte(String dvRutClte) {
@@ -695,7 +731,8 @@ public class DataToReturn {
 	}
 
 	public String getNroCliente() {
-		return nroCliente;
+		
+		return (nroCliente == null)? "" : nroCliente;
 	}
 
 	public void setNroCliente(String nroCliente) {
@@ -703,7 +740,8 @@ public class DataToReturn {
 	}
 
 	public String getNroRelacion() {
-		return nroRelacion;
+		
+		return (nroRelacion == null)? "" : nroRelacion;
 	}
 
 	public void setNroRelacion(String nroRelacion) {
@@ -711,7 +749,8 @@ public class DataToReturn {
 	}
 
 	public String getNroInt() {
-		return nroInt;
+		
+		return (nroInt == null)? "" : nroInt;
 	}
 
 	public void setNroInt(String nroInt) {
@@ -719,7 +758,8 @@ public class DataToReturn {
 	}
 
 	public String getNroCtacte() {
-		return nroCtacte;
+		
+		return (nroCtacte == null)? "" : nroCtacte;
 	}
 
 	public void setNroCtacte(String nroCtacte) {
@@ -727,7 +767,8 @@ public class DataToReturn {
 	}
 
 	public String getCampana() {
-		return campana;
+		
+		return (campana == null)? "" : campana;
 	}
 
 	public void setCampana(String campana) {
@@ -735,7 +776,8 @@ public class DataToReturn {
 	}
 
 	public String getNroInt2() {
-		return nroInt2;
+		
+		return (nroInt2 == null)? "" : nroInt2;
 	}
 
 	public void setNroInt2(String nroInt2) {
@@ -743,7 +785,8 @@ public class DataToReturn {
 	}
 
 	public String getSucursal() {
-		return sucursal;
+		
+		return (sucursal == null)? "" : sucursal;
 	}
 
 	public void setSucursal(String sucursal) {
@@ -751,7 +794,8 @@ public class DataToReturn {
 	}
 
 	public String getCtaTrassaldo() {
-		return ctaTrassaldo;
+		
+		return (ctaTrassaldo == null)? "" : ctaTrassaldo;
 	}
 
 	public void setCtaTrassaldo(String ctaTrassaldo) {
@@ -759,7 +803,8 @@ public class DataToReturn {
 	}
 
 	public String getCantidadAdic() {
-		return cantidadAdic;
+		
+		return (cantidadAdic == null)? "" : cantidadAdic;
 	}
 
 	public void setCantidadAdic(String cantidadAdic) {
@@ -767,7 +812,8 @@ public class DataToReturn {
 	}
 
 	public String getCdgoAutcc() {
-		return cdgoAutcc;
+		
+		return (cdgoAutcc == null)? "" : cdgoAutcc;
 	}
 
 	public void setCdgoAutcc(String cdgoAutcc) {
@@ -775,7 +821,8 @@ public class DataToReturn {
 	}
 
 	public String getCdgoVip() {
-		return cdgoVip;
+		
+		return (cdgoVip == null)? "" : cdgoVip;
 	}
 
 	public void setCdgoVip(String cdgoVip) {
@@ -783,7 +830,8 @@ public class DataToReturn {
 	}
 
 	public String getCdgoMjeMoraPgomin() {
-		return cdgoMjeMoraPgomin;
+		
+		return (cdgoMjeMoraPgomin == null)? "" : cdgoMjeMoraPgomin;
 	}
 
 	public void setCdgoMjeMoraPgomin(String cdgoMjeMoraPgomin) {
@@ -791,7 +839,8 @@ public class DataToReturn {
 	}
 
 	public String getCodigoMov() {
-		return codigoMov;
+		
+		return (codigoMov == null)? "" : codigoMov;
 	}
 
 	public void setCodigoMov(String codigoMov) {
@@ -799,7 +848,8 @@ public class DataToReturn {
 	}
 
 	public String getPorPminimo() {
-		return porPminimo;
+		
+		return (porPminimo == null)? "" : porPminimo;
 	}
 
 	public void setPorPminimo(String porPminimo) {
@@ -807,7 +857,8 @@ public class DataToReturn {
 	}
 
 	public String getEstadoCanales1() {
-		return estadoCanales1;
+		
+		return (estadoCanales1 == null)? "" : estadoCanales1;
 	}
 
 	public void setEstadoCanales1(String estadoCanales1) {
@@ -815,7 +866,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaDatos() {
-		return fechaDatos;
+		
+		return (fechaDatos == null)? "" : fechaDatos;
 	}
 
 	public void setFechaDatos(String fechaDatos) {
@@ -823,7 +875,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaApert() {
-		return fechaApert;
+		
+		return (fechaApert == null)? "" : fechaApert;
 	}
 
 	public void setFechaApert(String fechaApert) {
@@ -831,7 +884,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaModif() {
-		return fechaModif;
+		
+		return (fechaModif == null)? "" : fechaModif;
 	}
 
 	public void setFechaModif(String fechaModif) {
@@ -839,7 +893,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaActvTjta() {
-		return fechaActvTjta;
+		
+		return (fechaActvTjta == null)? "" : fechaActvTjta;
 	}
 
 	public void setFechaActvTjta(String fechaActvTjta) {
@@ -847,7 +902,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaActRen() {
-		return fechaActRen;
+		
+		return (fechaActRen == null)? "" : fechaActRen;
 	}
 
 	public void setFechaActRen(String fechaActRen) {
@@ -855,7 +911,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaBloq1() {
-		return fechaBloq1;
+		
+		return (fechaBloq1 == null)? "" : fechaBloq1;
 	}
 
 	public void setFechaBloq1(String fechaBloq1) {
@@ -863,7 +920,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaBloq2() {
-		return fechaBloq2;
+		
+		return (fechaBloq2 == null)? "" : fechaBloq2;
 	}
 
 	public void setFechaBloq2(String fechaBloq2) {
@@ -871,7 +929,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaUltPagoPesos() {
-		return fechaUltPagoPesos;
+		
+		return (fechaUltPagoPesos == null)? "" : fechaUltPagoPesos;
 	}
 
 	public void setFechaUltPagoPesos(String fechaUltPagoPesos) {
@@ -879,7 +938,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaUltPagoDolar() {
-		return fechaUltPagoDolar;
+		
+		return (fechaUltPagoDolar == null)? "" : fechaUltPagoDolar;
 	}
 
 	public void setFechaUltPagoDolar(String fechaUltPagoDolar) {
@@ -887,7 +947,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaUltFact() {
-		return fechaUltFact;
+		
+		return (fechaUltFact == null)? "" : fechaUltFact;
 	}
 
 	public void setFechaUltFact(String fechaUltFact) {
@@ -895,7 +956,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaVencPago() {
-		return fechaVencPago;
+		
+		return (fechaVencPago == null)? "" : fechaVencPago;
 	}
 
 	public void setFechaVencPago(String fechaVencPago) {
@@ -903,7 +965,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaNacTit() {
-		return fechaNacTit;
+		
+		return (fechaNacTit == null)? "" : fechaNacTit;
 	}
 
 	public void setFechaNacTit(String fechaNacTit) {
@@ -911,7 +974,8 @@ public class DataToReturn {
 	}
 
 	public String getCdgoBloq1() {
-		return cdgoBloq1;
+		
+		return (cdgoBloq1 == null)? "" : cdgoBloq1;
 	}
 
 	public void setCdgoBloq1(String cdgoBloq1) {
@@ -919,7 +983,8 @@ public class DataToReturn {
 	}
 
 	public String getCdgoBloq2() {
-		return cdgoBloq2;
+		
+		return (cdgoBloq2 == null)? "" : cdgoBloq2;
 	}
 
 	public void setCdgoBloq2(String cdgoBloq2) {
@@ -927,7 +992,8 @@ public class DataToReturn {
 	}
 
 	public String getCdgoBloqNumerico() {
-		return cdgoBloqNumerico;
+		
+		return (cdgoBloqNumerico == null)? "" : cdgoBloqNumerico;
 	}
 
 	public void setCdgoBloqNumerico(String cdgoBloqNumerico) {
@@ -935,7 +1001,8 @@ public class DataToReturn {
 	}
 
 	public String getCdgoMora() {
-		return cdgoMora;
+		
+		return (cdgoMora == null)? "" : cdgoMora;
 	}
 
 	public void setCdgoMora(String cdgoMora) {
@@ -943,7 +1010,8 @@ public class DataToReturn {
 	}
 
 	public String getCdgoCarteraVencida() {
-		return cdgoCarteraVencida;
+		
+		return (cdgoCarteraVencida == null)? "" : cdgoCarteraVencida;
 	}
 
 	public void setCdgoCarteraVencida(String cdgoCarteraVencida) {
@@ -951,7 +1019,8 @@ public class DataToReturn {
 	}
 
 	public String getCdgoCob() {
-		return cdgoCob;
+		
+		return (cdgoCob == null)? "" : cdgoCob;
 	}
 
 	public void setCdgoCob(String cdgoCob) {
@@ -959,7 +1028,8 @@ public class DataToReturn {
 	}
 
 	public String getFormaPago() {
-		return formaPago;
+		
+		return (formaPago == null)? "" : formaPago;
 	}
 
 	public void setFormaPago(String formaPago) {
@@ -967,7 +1037,8 @@ public class DataToReturn {
 	}
 
 	public String getCicloFac() {
-		return cicloFac;
+		
+		return (cicloFac == null)? "" : cicloFac;
 	}
 
 	public void setCicloFac(String cicloFac) {
@@ -975,7 +1046,8 @@ public class DataToReturn {
 	}
 
 	public String getCdgoFv() {
-		return cdgoFv;
+		
+		return (cdgoFv == null)? "" : cdgoFv;
 	}
 
 	public void setCdgoFv(String cdgoFv) {
@@ -983,7 +1055,8 @@ public class DataToReturn {
 	}
 
 	public String getCdgoEmpresa() {
-		return cdgoEmpresa;
+		
+		return (cdgoEmpresa == null)? "" : cdgoEmpresa;
 	}
 
 	public void setCdgoEmpresa(String cdgoEmpresa) {
@@ -991,7 +1064,8 @@ public class DataToReturn {
 	}
 
 	public String getCdgoEnvioEecc() {
-		return cdgoEnvioEecc;
+		
+		return (cdgoEnvioEecc == null)? "" : cdgoEnvioEecc;
 	}
 
 	public void setCdgoEnvioEecc(String cdgoEnvioEecc) {
@@ -999,7 +1073,8 @@ public class DataToReturn {
 	}
 
 	public String getRebajaCobadm() {
-		return rebajaCobadm;
+		
+		return (rebajaCobadm == null)? "" : rebajaCobadm;
 	}
 
 	public void setRebajaCobadm(String rebajaCobadm) {
@@ -1007,7 +1082,8 @@ public class DataToReturn {
 	}
 
 	public String getNroMorasPeriodo() {
-		return nroMorasPeriodo;
+		
+		return (nroMorasPeriodo == null)? "" : nroMorasPeriodo;
 	}
 
 	public void setNroMorasPeriodo(String nroMorasPeriodo) {
@@ -1015,7 +1091,8 @@ public class DataToReturn {
 	}
 
 	public String getNroBloqPorExcesos() {
-		return nroBloqPorExcesos;
+		
+		return (nroBloqPorExcesos == null)? "" : nroBloqPorExcesos;
 	}
 
 	public void setNroBloqPorExcesos(String nroBloqPorExcesos) {
@@ -1023,7 +1100,8 @@ public class DataToReturn {
 	}
 
 	public String getNroExcesosPeriodo() {
-		return nroExcesosPeriodo;
+		
+		return (nroExcesosPeriodo == null)? "" : nroExcesosPeriodo;
 	}
 
 	public void setNroExcesosPeriodo(String nroExcesosPeriodo) {
@@ -1031,7 +1109,8 @@ public class DataToReturn {
 	}
 
 	public String getNroBloqPorMoras() {
-		return nroBloqPorMoras;
+		
+		return (nroBloqPorMoras == null)? "" : nroBloqPorMoras;
 	}
 
 	public void setNroBloqPorMoras(String nroBloqPorMoras) {
@@ -1039,7 +1118,8 @@ public class DataToReturn {
 	}
 
 	public String getCdgoAval() {
-		return cdgoAval;
+		
+		return (cdgoAval == null)? "" : cdgoAval;
 	}
 
 	public void setCdgoAval(String cdgoAval) {
@@ -1047,7 +1127,8 @@ public class DataToReturn {
 	}
 
 	public String getCdgoPromocion() {
-		return cdgoPromocion;
+		
+		return (cdgoPromocion == null)? "" : cdgoPromocion;
 	}
 
 	public void setCdgoPromocion(String cdgoPromocion) {
@@ -1055,7 +1136,8 @@ public class DataToReturn {
 	}
 
 	public String getIndTjtaOperador() {
-		return indTjtaOperador;
+		
+		return (indTjtaOperador == null)? "" : indTjtaOperador;
 	}
 
 	public void setIndTjtaOperador(String indTjtaOperador) {
@@ -1063,7 +1145,8 @@ public class DataToReturn {
 	}
 
 	public String getIndPin() {
-		return indPin;
+		
+		return (indPin == null)? "" : indPin;
 	}
 
 	public void setIndPin(String indPin) {
@@ -1071,7 +1154,8 @@ public class DataToReturn {
 	}
 
 	public String getIndCobroComision() {
-		return indCobroComision;
+		
+		return (indCobroComision == null)? "" : indCobroComision;
 	}
 
 	public void setIndCobroComision(String indCobroComision) {
@@ -1079,7 +1163,8 @@ public class DataToReturn {
 	}
 
 	public String getPorcjeExcesoComprasNac() {
-		return porcjeExcesoComprasNac;
+		
+		return (porcjeExcesoComprasNac == null)? "" : porcjeExcesoComprasNac;
 	}
 
 	public void setPorcjeExcesoComprasNac(String porcjeExcesoComprasNac) {
@@ -1087,7 +1172,8 @@ public class DataToReturn {
 	}
 
 	public String getPorcjeExcesoComprasInt() {
-		return porcjeExcesoComprasInt;
+		
+		return (porcjeExcesoComprasInt == null)? "" : porcjeExcesoComprasInt;
 	}
 
 	public void setPorcjeExcesoComprasInt(String porcjeExcesoComprasInt) {
@@ -1095,7 +1181,8 @@ public class DataToReturn {
 	}
 
 	public String getMedioEnvioFisicoEecc() {
-		return medioEnvioFisicoEecc;
+		
+		return (medioEnvioFisicoEecc == null)? "" : medioEnvioFisicoEecc;
 	}
 
 	public void setMedioEnvioFisicoEecc(String medioEnvioFisicoEecc) {
@@ -1103,7 +1190,8 @@ public class DataToReturn {
 	}
 
 	public String getTipoDirFisica() {
-		return tipoDirFisica;
+		
+		return (tipoDirFisica == null)? "" : tipoDirFisica;
 	}
 
 	public void setTipoDirFisica(String tipoDirFisica) {
@@ -1111,7 +1199,8 @@ public class DataToReturn {
 	}
 
 	public String getTipoPago() {
-		return tipoPago;
+		
+		return (tipoPago == null)? "" : tipoPago;
 	}
 
 	public void setTipoPago(String tipoPago) {
@@ -1119,7 +1208,8 @@ public class DataToReturn {
 	}
 
 	public String getPorPfijo() {
-		return porPfijo;
+		
+		return (porPfijo == null)? "" : porPfijo;
 	}
 
 	public void setPorPfijo(String porPfijo) {
@@ -1127,7 +1217,8 @@ public class DataToReturn {
 	}
 
 	public String getMtoPfijo9() {
-		return mtoPfijo9;
+		
+		return (mtoPfijo9 == null)? "" : mtoPfijo9;
 	}
 
 	public void setMtoPfijo9(String mtoPfijo9) {
@@ -1135,7 +1226,8 @@ public class DataToReturn {
 	}
 
 	public String getCdgoEmbozado() {
-		return cdgoEmbozado;
+		
+		return (cdgoEmbozado == null)? "" : cdgoEmbozado;
 	}
 
 	public void setCdgoEmbozado(String cdgoEmbozado) {
@@ -1143,7 +1235,8 @@ public class DataToReturn {
 	}
 
 	public String getLineaLimites() {
-		return lineaLimites;
+		
+		return (lineaLimites == null)? "" : lineaLimites;
 	}
 
 	public void setLineaLimites(String lineaLimites) {
@@ -1151,7 +1244,8 @@ public class DataToReturn {
 	}
 
 	public String getPctPesos9() {
-		return pctPesos9;
+		
+		return (pctPesos9 == null)? "" : pctPesos9;
 	}
 
 	public void setPctPesos9(String pctPesos9) {
@@ -1159,7 +1253,8 @@ public class DataToReturn {
 	}
 
 	public String getPctDolar9() {
-		return pctDolar9;
+		
+		return (pctDolar9 == null)? "" : pctDolar9;
 	}
 
 	public void setPctDolar9(String pctDolar9) {
@@ -1167,7 +1262,8 @@ public class DataToReturn {
 	}
 
 	public String getTresCpc() {
-		return tresCpc;
+		
+		return (tresCpc == null)? "" : tresCpc;
 	}
 
 	public void setTresCpc(String tresCpc) {
@@ -1175,7 +1271,8 @@ public class DataToReturn {
 	}
 
 	public String getComisionExceso() {
-		return comisionExceso;
+		
+		return (comisionExceso == null)? "" : comisionExceso;
 	}
 
 	public void setComisionExceso(String comisionExceso) {
@@ -1183,7 +1280,8 @@ public class DataToReturn {
 	}
 
 	public String getCupoNacional() {
-		return cupoNacional;
+		
+		return (cupoNacional == null)? "" : cupoNacional;
 	}
 
 	public void setCupoNacional(String cupoNacional) {
@@ -1191,7 +1289,8 @@ public class DataToReturn {
 	}
 
 	public String getCupoInt() {
-		return cupoInt;
+		
+		return (cupoInt == null)? "" : cupoInt;
 	}
 
 	public void setCupoInt(String cupoInt) {
@@ -1199,7 +1298,8 @@ public class DataToReturn {
 	}
 
 	public String getCupoLinea2() {
-		return cupoLinea2;
+		
+		return (cupoLinea2 == null)? "" : cupoLinea2;
 	}
 
 	public void setCupoLinea2(String cupoLinea2) {
@@ -1207,7 +1307,8 @@ public class DataToReturn {
 	}
 
 	public String getCupoVirtual() {
-		return cupoVirtual;
+		
+		return (cupoVirtual == null)? "" : cupoVirtual;
 	}
 
 	public void setCupoVirtual(String cupoVirtual) {
@@ -1215,7 +1316,8 @@ public class DataToReturn {
 	}
 
 	public String getCupoVirtualInt() {
-		return cupoVirtualInt;
+		
+		return (cupoVirtualInt == null)? "" : cupoVirtualInt;
 	}
 
 	public void setCupoVirtualInt(String cupoVirtualInt) {
@@ -1223,7 +1325,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaNacCta() {
-		return deudaNacCta;
+		
+		return (deudaNacCta == null)? "" : deudaNacCta;
 	}
 
 	public void setDeudaNacCta(String deudaNacCta) {
@@ -1231,7 +1334,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaIntCta() {
-		return deudaIntCta;
+		
+		return (deudaIntCta == null)? "" : deudaIntCta;
 	}
 
 	public void setDeudaIntCta(String deudaIntCta) {
@@ -1239,7 +1343,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaL2Cta() {
-		return deudaL2Cta;
+		
+		return (deudaL2Cta == null)? "" : deudaL2Cta;
 	}
 
 	public void setDeudaL2Cta(String deudaL2Cta) {
@@ -1247,7 +1352,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaMoraNacCta() {
-		return deudaMoraNacCta;
+		
+		return (deudaMoraNacCta == null)? "" : deudaMoraNacCta;
 	}
 
 	public void setDeudaMoraNacCta(String deudaMoraNacCta) {
@@ -1255,7 +1361,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaMoraIntCta() {
-		return deudaMoraIntCta;
+		
+		return (deudaMoraIntCta == null)? "" : deudaMoraIntCta;
 	}
 
 	public void setDeudaMoraIntCta(String deudaMoraIntCta) {
@@ -1263,7 +1370,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaNacFactCta() {
-		return deudaNacFactCta;
+		
+		return (deudaNacFactCta == null)? "" : deudaNacFactCta;
 	}
 
 	public void setDeudaNacFactCta(String deudaNacFactCta) {
@@ -1271,7 +1379,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaIntFactCta() {
-		return deudaIntFactCta;
+		
+		return (deudaIntFactCta == null)? "" : deudaIntFactCta;
 	}
 
 	public void setDeudaIntFactCta(String deudaIntFactCta) {
@@ -1279,7 +1388,8 @@ public class DataToReturn {
 	}
 
 	public String getDispNacCta() {
-		return dispNacCta;
+		
+		return (dispNacCta == null)? "" : dispNacCta;
 	}
 
 	public void setDispNacCta(String dispNacCta) {
@@ -1287,7 +1397,8 @@ public class DataToReturn {
 	}
 
 	public String getDispIntCta() {
-		return dispIntCta;
+		
+		return (dispIntCta == null)? "" : dispIntCta;
 	}
 
 	public void setDispIntCta(String dispIntCta) {
@@ -1295,7 +1406,8 @@ public class DataToReturn {
 	}
 
 	public String getDispL2Cta() {
-		return dispL2Cta;
+		
+		return (dispL2Cta == null)? "" : dispL2Cta;
 	}
 
 	public void setDispL2Cta(String dispL2Cta) {
@@ -1303,7 +1415,8 @@ public class DataToReturn {
 	}
 
 	public String getSaldoCreditoCuotaCapital() {
-		return saldoCreditoCuotaCapital;
+		
+		return (saldoCreditoCuotaCapital == null)? "" : saldoCreditoCuotaCapital;
 	}
 
 	public void setSaldoCreditoCuotaCapital(String saldoCreditoCuotaCapital) {
@@ -1311,7 +1424,8 @@ public class DataToReturn {
 	}
 
 	public String getDispAvancesCta() {
-		return dispAvancesCta;
+		
+		return (dispAvancesCta == null)? "" : dispAvancesCta;
 	}
 
 	public void setDispAvancesCta(String dispAvancesCta) {
@@ -1319,7 +1433,8 @@ public class DataToReturn {
 	}
 
 	public String getDispAvancesDolarCta() {
-		return dispAvancesDolarCta;
+		
+		return (dispAvancesDolarCta == null)? "" : dispAvancesDolarCta;
 	}
 
 	public void setDispAvancesDolarCta(String dispAvancesDolarCta) {
@@ -1327,7 +1442,8 @@ public class DataToReturn {
 	}
 
 	public String getMora130d() {
-		return mora130d;
+		
+		return (mora130d == null)? "" : mora130d;
 	}
 
 	public void setMora130d(String mora130d) {
@@ -1335,7 +1451,8 @@ public class DataToReturn {
 	}
 
 	public String getMora3160d() {
-		return mora3160d;
+		
+		return (mora3160d == null)? "" : mora3160d;
 	}
 
 	public void setMora3160d(String mora3160d) {
@@ -1343,7 +1460,8 @@ public class DataToReturn {
 	}
 
 	public String getMora6190d() {
-		return mora6190d;
+		
+		return (mora6190d == null)? "" : mora6190d;
 	}
 
 	public void setMora6190d(String mora6190d) {
@@ -1351,7 +1469,8 @@ public class DataToReturn {
 	}
 
 	public String getMora91120d() {
-		return mora91120d;
+		
+		return (mora91120d == null)? "" : mora91120d;
 	}
 
 	public void setMora91120d(String mora91120d) {
@@ -1359,7 +1478,8 @@ public class DataToReturn {
 	}
 
 	public String getMora121150d() {
-		return mora121150d;
+		
+		return (mora121150d == null)? "" : mora121150d;
 	}
 
 	public void setMora121150d(String mora121150d) {
@@ -1367,7 +1487,8 @@ public class DataToReturn {
 	}
 
 	public String getMora151180d() {
-		return mora151180d;
+		
+		return (mora151180d == null)? "" : mora151180d;
 	}
 
 	public void setMora151180d(String mora151180d) {
@@ -1375,7 +1496,8 @@ public class DataToReturn {
 	}
 
 	public String getMora181210d() {
-		return mora181210d;
+		
+		return (mora181210d == null)? "" : mora181210d;
 	}
 
 	public void setMora181210d(String mora181210d) {
@@ -1383,7 +1505,8 @@ public class DataToReturn {
 	}
 
 	public String getMora210999d() {
-		return mora210999d;
+		
+		return (mora210999d == null)? "" : mora210999d;
 	}
 
 	public void setMora210999d(String mora210999d) {
@@ -1391,7 +1514,8 @@ public class DataToReturn {
 	}
 
 	public String getRecargoCob130d() {
-		return recargoCob130d;
+		
+		return (recargoCob130d == null)? "" : recargoCob130d;
 	}
 
 	public void setRecargoCob130d(String recargoCob130d) {
@@ -1399,7 +1523,8 @@ public class DataToReturn {
 	}
 
 	public String getRecargoCob3160d() {
-		return recargoCob3160d;
+		
+		return (recargoCob3160d == null)? "" : recargoCob3160d;
 	}
 
 	public void setRecargoCob3160d(String recargoCob3160d) {
@@ -1407,7 +1532,8 @@ public class DataToReturn {
 	}
 
 	public String getRecargoCob6190d() {
-		return recargoCob6190d;
+		
+		return (recargoCob6190d == null)? "" : recargoCob6190d;
 	}
 
 	public void setRecargoCob6190d(String recargoCob6190d) {
@@ -1415,7 +1541,8 @@ public class DataToReturn {
 	}
 
 	public String getRecargoCob91120d() {
-		return recargoCob91120d;
+		
+		return (recargoCob91120d == null)? "" : recargoCob91120d;
 	}
 
 	public void setRecargoCob91120d(String recargoCob91120d) {
@@ -1423,7 +1550,8 @@ public class DataToReturn {
 	}
 
 	public String getRecargoCob121150d() {
-		return recargoCob121150d;
+		
+		return (recargoCob121150d == null)? "" : recargoCob121150d;
 	}
 
 	public void setRecargoCob121150d(String recargoCob121150d) {
@@ -1431,7 +1559,8 @@ public class DataToReturn {
 	}
 
 	public String getRecargoCob151180d() {
-		return recargoCob151180d;
+		
+		return (recargoCob151180d == null)? "" : recargoCob151180d;
 	}
 
 	public void setRecargoCob151180d(String recargoCob151180d) {
@@ -1439,7 +1568,8 @@ public class DataToReturn {
 	}
 
 	public String getRecargoCob181210d() {
-		return recargoCob181210d;
+		
+		return (recargoCob181210d == null)? "" : recargoCob181210d;
 	}
 
 	public void setRecargoCob181210d(String recargoCob181210d) {
@@ -1447,7 +1577,8 @@ public class DataToReturn {
 	}
 
 	public String getRecargoCob210999d() {
-		return recargoCob210999d;
+		
+		return (recargoCob210999d == null)? "" : recargoCob210999d;
 	}
 
 	public void setRecargoCob210999d(String recargoCob210999d) {
@@ -1455,7 +1586,8 @@ public class DataToReturn {
 	}
 
 	public String getPagoMinimo() {
-		return pagoMinimo;
+		
+		return (pagoMinimo == null)? "" : pagoMinimo;
 	}
 
 	public void setPagoMinimo(String pagoMinimo) {
@@ -1463,7 +1595,8 @@ public class DataToReturn {
 	}
 
 	public String getSldoColNac() {
-		return sldoColNac;
+		
+		return (sldoColNac == null)? "" : sldoColNac;
 	}
 
 	public void setSldoColNac(String sldoColNac) {
@@ -1471,7 +1604,8 @@ public class DataToReturn {
 	}
 
 	public String getSldoColInt() {
-		return sldoColInt;
+		
+		return (sldoColInt == null)? "" : sldoColInt;
 	}
 
 	public void setSldoColInt(String sldoColInt) {
@@ -1479,7 +1613,8 @@ public class DataToReturn {
 	}
 
 	public String getTasaInteresRotativo() {
-		return tasaInteresRotativo;
+		
+		return (tasaInteresRotativo == null)? "" : tasaInteresRotativo;
 	}
 
 	public void setTasaInteresRotativo(String tasaInteresRotativo) {
@@ -1487,7 +1622,8 @@ public class DataToReturn {
 	}
 
 	public String getTasaInteresCuotas24() {
-		return tasaInteresCuotas24;
+		
+		return (tasaInteresCuotas24 == null)? "" : tasaInteresCuotas24;
 	}
 
 	public void setTasaInteresCuotas24(String tasaInteresCuotas24) {
@@ -1495,7 +1631,8 @@ public class DataToReturn {
 	}
 
 	public String getTasaInteresCuotas524() {
-		return tasaInteresCuotas524;
+		
+		return (tasaInteresCuotas524 == null)? "" : tasaInteresCuotas524;
 	}
 
 	public void setTasaInteresCuotas524(String tasaInteresCuotas524) {
@@ -1503,7 +1640,8 @@ public class DataToReturn {
 	}
 
 	public String getInteresXCobrarOper() {
-		return interesXCobrarOper;
+		
+		return (interesXCobrarOper == null)? "" : interesXCobrarOper;
 	}
 
 	public void setInteresXCobrarOper(String interesXCobrarOper) {
@@ -1511,7 +1649,8 @@ public class DataToReturn {
 	}
 
 	public String getInteresXCobrarCorr() {
-		return interesXCobrarCorr;
+		
+		return (interesXCobrarCorr == null)? "" : interesXCobrarCorr;
 	}
 
 	public void setInteresXCobrarCorr(String interesXCobrarCorr) {
@@ -1519,7 +1658,8 @@ public class DataToReturn {
 	}
 
 	public String getInteresXCobrarPenales() {
-		return interesXCobrarPenales;
+		
+		return (interesXCobrarPenales == null)? "" : interesXCobrarPenales;
 	}
 
 	public void setInteresXCobrarPenales(String interesXCobrarPenales) {
@@ -1527,7 +1667,8 @@ public class DataToReturn {
 	}
 
 	public String getInteresDevOper() {
-		return interesDevOper;
+		
+		return (interesDevOper == null)? "" : interesDevOper;
 	}
 
 	public void setInteresDevOper(String interesDevOper) {
@@ -1535,7 +1676,8 @@ public class DataToReturn {
 	}
 
 	public String getInteresDevCorr() {
-		return interesDevCorr;
+		
+		return (interesDevCorr == null)? "" : interesDevCorr;
 	}
 
 	public void setInteresDevCorr(String interesDevCorr) {
@@ -1543,7 +1685,8 @@ public class DataToReturn {
 	}
 
 	public String getInteresDevPenales() {
-		return interesDevPenales;
+		
+		return (interesDevPenales == null)? "" : interesDevPenales;
 	}
 
 	public void setInteresDevPenales(String interesDevPenales) {
@@ -1551,7 +1694,8 @@ public class DataToReturn {
 	}
 
 	public String getInteresPercOper() {
-		return interesPercOper;
+		
+		return (interesPercOper == null)? "" : interesPercOper;
 	}
 
 	public void setInteresPercOper(String interesPercOper) {
@@ -1559,7 +1703,8 @@ public class DataToReturn {
 	}
 
 	public String getInteresPercCorr() {
-		return interesPercCorr;
+		
+		return (interesPercCorr == null)? "" : interesPercCorr;
 	}
 
 	public void setInteresPercCorr(String interesPercCorr) {
@@ -1567,7 +1712,8 @@ public class DataToReturn {
 	}
 
 	public String getInteresPercPenales() {
-		return interesPercPenales;
+		
+		return (interesPercPenales == null)? "" : interesPercPenales;
 	}
 
 	public void setInteresPercPenales(String interesPercPenales) {
@@ -1575,7 +1721,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaTotal() {
-		return deudaTotal;
+		
+		return (deudaTotal == null)? "" : deudaTotal;
 	}
 
 	public void setDeudaTotal(String deudaTotal) {
@@ -1583,7 +1730,8 @@ public class DataToReturn {
 	}
 
 	public String getColocacionMes() {
-		return colocacionMes;
+		
+		return (colocacionMes == null)? "" : colocacionMes;
 	}
 
 	public void setColocacionMes(String colocacionMes) {
@@ -1591,7 +1739,8 @@ public class DataToReturn {
 	}
 
 	public String getMontoCompraMes() {
-		return montoCompraMes;
+		
+		return (montoCompraMes == null)? "" : montoCompraMes;
 	}
 
 	public void setMontoCompraMes(String montoCompraMes) {
@@ -1599,7 +1748,8 @@ public class DataToReturn {
 	}
 
 	public String getMontoAvanceMes() {
-		return montoAvanceMes;
+		
+		return (montoAvanceMes == null)? "" : montoAvanceMes;
 	}
 
 	public void setMontoAvanceMes(String montoAvanceMes) {
@@ -1607,7 +1757,8 @@ public class DataToReturn {
 	}
 
 	public String getMontoUltimoPagoPeso() {
-		return montoUltimoPagoPeso;
+		
+		return (montoUltimoPagoPeso == null)? "" : montoUltimoPagoPeso;
 	}
 
 	public void setMontoUltimoPagoPeso(String montoUltimoPagoPeso) {
@@ -1615,7 +1766,8 @@ public class DataToReturn {
 	}
 
 	public String getMontoUltimoPagoDolar() {
-		return montoUltimoPagoDolar;
+		
+		return (montoUltimoPagoDolar == null)? "" : montoUltimoPagoDolar;
 	}
 
 	public void setMontoUltimoPagoDolar(String montoUltimoPagoDolar) {
@@ -1623,7 +1775,8 @@ public class DataToReturn {
 	}
 
 	public String getMontoCobroAdm() {
-		return montoCobroAdm;
+		
+		return (montoCobroAdm == null)? "" : montoCobroAdm;
 	}
 
 	public void setMontoCobroAdm(String montoCobroAdm) {
@@ -1631,7 +1784,8 @@ public class DataToReturn {
 	}
 
 	public String getConsumoPesos() {
-		return consumoPesos;
+		
+		return (consumoPesos == null)? "" : consumoPesos;
 	}
 
 	public void setConsumoPesos(String consumoPesos) {
@@ -1639,7 +1793,8 @@ public class DataToReturn {
 	}
 
 	public String getConsumoDolar() {
-		return consumoDolar;
+		
+		return (consumoDolar == null)? "" : consumoDolar;
 	}
 
 	public void setConsumoDolar(String consumoDolar) {
@@ -1647,7 +1802,8 @@ public class DataToReturn {
 	}
 
 	public String getPagosPesosCiclo() {
-		return pagosPesosCiclo;
+		
+		return (pagosPesosCiclo == null)? "" : pagosPesosCiclo;
 	}
 
 	public void setPagosPesosCiclo(String pagosPesosCiclo) {
@@ -1655,7 +1811,8 @@ public class DataToReturn {
 	}
 
 	public String getPagosDolarCiclo() {
-		return pagosDolarCiclo;
+		
+		return (pagosDolarCiclo == null)? "" : pagosDolarCiclo;
 	}
 
 	public void setPagosDolarCiclo(String pagosDolarCiclo) {
@@ -1663,7 +1820,8 @@ public class DataToReturn {
 	}
 
 	public String getCreditosPesosCiclo() {
-		return creditosPesosCiclo;
+		
+		return (creditosPesosCiclo == null)? "" : creditosPesosCiclo;
 	}
 
 	public void setCreditosPesosCiclo(String creditosPesosCiclo) {
@@ -1671,7 +1829,8 @@ public class DataToReturn {
 	}
 
 	public String getCreditosDolarCiclo() {
-		return creditosDolarCiclo;
+		
+		return (creditosDolarCiclo == null)? "" : creditosDolarCiclo;
 	}
 
 	public void setCreditosDolarCiclo(String creditosDolarCiclo) {
@@ -1679,7 +1838,8 @@ public class DataToReturn {
 	}
 
 	public String getDebitosPesosCiclo() {
-		return debitosPesosCiclo;
+		
+		return (debitosPesosCiclo == null)? "" : debitosPesosCiclo;
 	}
 
 	public void setDebitosPesosCiclo(String debitosPesosCiclo) {
@@ -1687,7 +1847,8 @@ public class DataToReturn {
 	}
 
 	public String getDebitosDolarCiclo() {
-		return debitosDolarCiclo;
+		
+		return (debitosDolarCiclo == null)? "" : debitosDolarCiclo;
 	}
 
 	public void setDebitosDolarCiclo(String debitosDolarCiclo) {
@@ -1695,7 +1856,8 @@ public class DataToReturn {
 	}
 
 	public String getCreditosMemoPesosCiclo() {
-		return creditosMemoPesosCiclo;
+		
+		return (creditosMemoPesosCiclo == null)? "" : creditosMemoPesosCiclo;
 	}
 
 	public void setCreditosMemoPesosCiclo(String creditosMemoPesosCiclo) {
@@ -1703,7 +1865,8 @@ public class DataToReturn {
 	}
 
 	public String getCreditosMemoDolarCiclo() {
-		return creditosMemoDolarCiclo;
+		
+		return (creditosMemoDolarCiclo == null)? "" : creditosMemoDolarCiclo;
 	}
 
 	public void setCreditosMemoDolarCiclo(String creditosMemoDolarCiclo) {
@@ -1711,7 +1874,8 @@ public class DataToReturn {
 	}
 
 	public String getDebitosMemoPesosCiclo() {
-		return debitosMemoPesosCiclo;
+		
+		return (debitosMemoPesosCiclo == null)? "" : debitosMemoPesosCiclo;
 	}
 
 	public void setDebitosMemoPesosCiclo(String debitosMemoPesosCiclo) {
@@ -1719,7 +1883,8 @@ public class DataToReturn {
 	}
 
 	public String getDebitosMemoDolarCiclo() {
-		return debitosMemoDolarCiclo;
+		
+		return (debitosMemoDolarCiclo == null)? "" : debitosMemoDolarCiclo;
 	}
 
 	public void setDebitosMemoDolarCiclo(String debitosMemoDolarCiclo) {
@@ -1727,7 +1892,8 @@ public class DataToReturn {
 	}
 
 	public String getUtiliXCobrarMonedaExt() {
-		return utiliXCobrarMonedaExt;
+		
+		return (utiliXCobrarMonedaExt == null)? "" : utiliXCobrarMonedaExt;
 	}
 
 	public void setUtiliXCobrarMonedaExt(String utiliXCobrarMonedaExt) {
@@ -1735,7 +1901,8 @@ public class DataToReturn {
 	}
 
 	public String getPagosXAplicarMonedaExt() {
-		return pagosXAplicarMonedaExt;
+		
+		return (pagosXAplicarMonedaExt == null)? "" : pagosXAplicarMonedaExt;
 	}
 
 	public void setPagosXAplicarMonedaExt(String pagosXAplicarMonedaExt) {
@@ -1743,7 +1910,8 @@ public class DataToReturn {
 	}
 
 	public String getUtiliXCobrarMonedaNac() {
-		return utiliXCobrarMonedaNac;
+		
+		return (utiliXCobrarMonedaNac == null)? "" : utiliXCobrarMonedaNac;
 	}
 
 	public void setUtiliXCobrarMonedaNac(String utiliXCobrarMonedaNac) {
@@ -1751,7 +1919,8 @@ public class DataToReturn {
 	}
 
 	public String getTasaIntAvceCtaCorta() {
-		return tasaIntAvceCtaCorta;
+		
+		return (tasaIntAvceCtaCorta == null)? "" : tasaIntAvceCtaCorta;
 	}
 
 	public void setTasaIntAvceCtaCorta(String tasaIntAvceCtaCorta) {
@@ -1759,7 +1928,8 @@ public class DataToReturn {
 	}
 
 	public String getTasaIntAvceCtaLarga() {
-		return tasaIntAvceCtaLarga;
+		
+		return (tasaIntAvceCtaLarga == null)? "" : tasaIntAvceCtaLarga;
 	}
 
 	public void setTasaIntAvceCtaLarga(String tasaIntAvceCtaLarga) {
@@ -1767,7 +1937,8 @@ public class DataToReturn {
 	}
 
 	public String getMonto1() {
-		return monto1;
+		
+		return (monto1 == null)? "" : monto1;
 	}
 
 	public void setMonto1(String monto1) {
@@ -1775,7 +1946,8 @@ public class DataToReturn {
 	}
 
 	public String getMonto2() {
-		return monto2;
+		
+		return (monto2 == null)? "" : monto2;
 	}
 
 	public void setMonto2(String monto2) {
@@ -1783,7 +1955,8 @@ public class DataToReturn {
 	}
 
 	public String getMonto3() {
-		return monto3;
+		
+		return (monto3 == null)? "" : monto3;
 	}
 
 	public void setMonto3(String monto3) {
@@ -1791,7 +1964,8 @@ public class DataToReturn {
 	}
 
 	public String getNumero1() {
-		return numero1;
+		
+		return (numero1 == null)? "" : numero1;
 	}
 
 	public void setNumero1(String numero1) {
@@ -1799,7 +1973,8 @@ public class DataToReturn {
 	}
 
 	public String getNumero2() {
-		return numero2;
+		
+		return (numero2 == null)? "" : numero2;
 	}
 
 	public void setNumero2(String numero2) {
@@ -1807,7 +1982,8 @@ public class DataToReturn {
 	}
 
 	public String getNumero3() {
-		return numero3;
+		
+		return (numero3 == null)? "" : numero3;
 	}
 
 	public void setNumero3(String numero3) {
@@ -1815,7 +1991,8 @@ public class DataToReturn {
 	}
 
 	public String getFlag1() {
-		return flag1;
+		
+		return (flag1 == null)? "" : flag1;
 	}
 
 	public void setFlag1(String flag1) {
@@ -1823,7 +2000,8 @@ public class DataToReturn {
 	}
 
 	public String getFlag2() {
-		return flag2;
+		
+		return (flag2 == null)? "" : flag2;
 	}
 
 	public void setFlag2(String flag2) {
@@ -1831,7 +2009,8 @@ public class DataToReturn {
 	}
 
 	public String getFlag3() {
-		return flag3;
+		
+		return (flag3 == null)? "" : flag3;
 	}
 
 	public void setFlag3(String flag3) {
@@ -1839,7 +2018,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaUltFactDolar() {
-		return fechaUltFactDolar;
+		
+		return (fechaUltFactDolar == null)? "" : fechaUltFactDolar;
 	}
 
 	public void setFechaUltFactDolar(String fechaUltFactDolar) {
@@ -1847,7 +2027,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaVencFactDolar() {
-		return fechaVencFactDolar;
+		
+		return (fechaVencFactDolar == null)? "" : fechaVencFactDolar;
 	}
 
 	public void setFechaVencFactDolar(String fechaVencFactDolar) {
@@ -1855,7 +2036,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaProxFactCalend() {
-		return fechaProxFactCalend;
+		
+		return (fechaProxFactCalend == null)? "" : fechaProxFactCalend;
 	}
 
 	public void setFechaProxFactCalend(String fechaProxFactCalend) {
@@ -1863,7 +2045,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaProxVencCalend() {
-		return fechaProxVencCalend;
+		
+		return (fechaProxVencCalend == null)? "" : fechaProxVencCalend;
 	}
 
 	public void setFechaProxVencCalend(String fechaProxVencCalend) {
@@ -1871,7 +2054,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaVigEeccDesde() {
-		return fechaVigEeccDesde;
+		
+		return (fechaVigEeccDesde == null)? "" : fechaVigEeccDesde;
 	}
 
 	public void setFechaVigEeccDesde(String fechaVigEeccDesde) {
@@ -1879,7 +2063,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaVigEeccHasta() {
-		return fechaVigEeccHasta;
+		
+		return (fechaVigEeccHasta == null)? "" : fechaVigEeccHasta;
 	}
 
 	public void setFechaVigEeccHasta(String fechaVigEeccHasta) {
@@ -1887,7 +2072,8 @@ public class DataToReturn {
 	}
 
 	public String getMarca() {
-		return marca;
+		
+		return (marca == null)? "" : marca;
 	}
 
 	public void setMarca(String marca) {
@@ -1895,7 +2081,8 @@ public class DataToReturn {
 	}
 
 	public String getFiller04() {
-		return filler04;
+		
+		return (filler04 == null)? "" : filler04;
 	}
 
 	public void setFiller04(String filler04) {
@@ -1903,7 +2090,8 @@ public class DataToReturn {
 	}
 
 	public String getNumTarjetaS() {
-		return numTarjetaS;
+		
+		return (numTarjetaS == null)? "" : numTarjetaS;
 	}
 
 	public void setNumTarjetaS(String numTarjetaS) {
@@ -1911,7 +2099,8 @@ public class DataToReturn {
 	}
 
 	public String getSecuenciaTarjetaS() {
-		return secuenciaTarjetaS;
+		
+		return (secuenciaTarjetaS == null)? "" : secuenciaTarjetaS;
 	}
 
 	public void setSecuenciaTarjetaS(String secuenciaTarjetaS) {
@@ -1919,7 +2108,8 @@ public class DataToReturn {
 	}
 
 	public String getNombTjtaHabiente() {
-		return nombTjtaHabiente;
+		
+		return (nombTjtaHabiente == null)? "" : nombTjtaHabiente;
 	}
 
 	public void setNombTjtaHabiente(String nombTjtaHabiente) {
@@ -1927,7 +2117,8 @@ public class DataToReturn {
 	}
 
 	public String getNombreEmpresa() {
-		return nombreEmpresa;
+		
+		return (nombreEmpresa == null)? "" : nombreEmpresa;
 	}
 
 	public void setNombreEmpresa(String nombreEmpresa) {
@@ -1935,7 +2126,8 @@ public class DataToReturn {
 	}
 
 	public String getRutTarjeta() {
-		return rutTarjeta;
+		
+		return (rutTarjeta == null)? "" : rutTarjeta;
 	}
 
 	public void setRutTarjeta(String rutTarjeta) {
@@ -1943,7 +2135,8 @@ public class DataToReturn {
 	}
 
 	public String getDvTarjeta() {
-		return dvTarjeta;
+		
+		return (dvTarjeta == null)? "" : dvTarjeta;
 	}
 
 	public void setDvTarjeta(String dvTarjeta) {
@@ -1951,7 +2144,8 @@ public class DataToReturn {
 	}
 
 	public String getSexo() {
-		return sexo;
+		
+		return (sexo == null)? "" : sexo;
 	}
 
 	public void setSexo(String sexo) {
@@ -1959,7 +2153,8 @@ public class DataToReturn {
 	}
 
 	public String getEstadoCivil() {
-		return estadoCivil;
+		
+		return (estadoCivil == null)? "" : estadoCivil;
 	}
 
 	public void setEstadoCivil(String estadoCivil) {
@@ -1967,7 +2162,8 @@ public class DataToReturn {
 	}
 
 	public String getTipoTjta() {
-		return tipoTjta;
+		
+		return (tipoTjta == null)? "" : tipoTjta;
 	}
 
 	public void setTipoTjta(String tipoTjta) {
@@ -1975,7 +2171,8 @@ public class DataToReturn {
 	}
 
 	public String getEstadoTjta() {
-		return estadoTjta;
+		
+		return (estadoTjta == null)? "" : estadoTjta;
 	}
 
 	public void setEstadoTjta(String estadoTjta) {
@@ -1983,7 +2180,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaVctoTjta() {
-		return fechaVctoTjta;
+		
+		return (fechaVctoTjta == null)? "" : fechaVctoTjta;
 	}
 
 	public void setFechaVctoTjta(String fechaVctoTjta) {
@@ -1991,7 +2189,8 @@ public class DataToReturn {
 	}
 
 	public String getCodigoBloqTjta() {
-		return codigoBloqTjta;
+		
+		return (codigoBloqTjta == null)? "" : codigoBloqTjta;
 	}
 
 	public void setCodigoBloqTjta(String codigoBloqTjta) {
@@ -1999,7 +2198,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaBloqTjta() {
-		return fechaBloqTjta;
+		
+		return (fechaBloqTjta == null)? "" : fechaBloqTjta;
 	}
 
 	public void setFechaBloqTjta(String fechaBloqTjta) {
@@ -2007,7 +2207,8 @@ public class DataToReturn {
 	}
 
 	public String getCodigoAfinidad() {
-		return codigoAfinidad;
+		
+		return (codigoAfinidad == null)? "" : codigoAfinidad;
 	}
 
 	public void setCodigoAfinidad(String codigoAfinidad) {
@@ -2015,7 +2216,8 @@ public class DataToReturn {
 	}
 
 	public String getDescAfinidad() {
-		return descAfinidad;
+		
+		return (descAfinidad == null)? "" : descAfinidad;
 	}
 
 	public void setDescAfinidad(String descAfinidad) {
@@ -2023,7 +2225,8 @@ public class DataToReturn {
 	}
 
 	public String getCdgoSocio() {
-		return cdgoSocio;
+		
+		return (cdgoSocio == null)? "" : cdgoSocio;
 	}
 
 	public void setCdgoSocio(String cdgoSocio) {
@@ -2031,7 +2234,8 @@ public class DataToReturn {
 	}
 
 	public String getOffset() {
-		return offset;
+		
+		return (offset == null)? "" : offset;
 	}
 
 	public void setOffset(String offset) {
@@ -2039,7 +2243,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaVctoActual() {
-		return fechaVctoActual;
+		
+		return (fechaVctoActual == null)? "" : fechaVctoActual;
 	}
 
 	public void setFechaVctoActual(String fechaVctoActual) {
@@ -2047,7 +2252,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaVctoAnterior() {
-		return fechaVctoAnterior;
+		
+		return (fechaVctoAnterior == null)? "" : fechaVctoAnterior;
 	}
 
 	public void setFechaVctoAnterior(String fechaVctoAnterior) {
@@ -2055,7 +2261,8 @@ public class DataToReturn {
 	}
 
 	public String getFlagActvTjtaActual() {
-		return flagActvTjtaActual;
+		
+		return (flagActvTjtaActual == null)? "" : flagActvTjtaActual;
 	}
 
 	public void setFlagActvTjtaActual(String flagActvTjtaActual) {
@@ -2063,7 +2270,8 @@ public class DataToReturn {
 	}
 
 	public String getFlagActvTjtaAnterior() {
-		return flagActvTjtaAnterior;
+		
+		return (flagActvTjtaAnterior == null)? "" : flagActvTjtaAnterior;
 	}
 
 	public void setFlagActvTjtaAnterior(String flagActvTjtaAnterior) {
@@ -2071,7 +2279,8 @@ public class DataToReturn {
 	}
 
 	public String getAccion() {
-		return accion;
+		
+		return (accion == null)? "" : accion;
 	}
 
 	public void setAccion(String accion) {
@@ -2079,7 +2288,8 @@ public class DataToReturn {
 	}
 
 	public String getTjtasRequeridas() {
-		return tjtasRequeridas;
+		
+		return (tjtasRequeridas == null)? "" : tjtasRequeridas;
 	}
 
 	public void setTjtasRequeridas(String tjtasRequeridas) {
@@ -2087,7 +2297,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaActivacion() {
-		return fechaActivacion;
+		
+		return (fechaActivacion == null)? "" : fechaActivacion;
 	}
 
 	public void setFechaActivacion(String fechaActivacion) {
@@ -2095,7 +2306,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaApertura() {
-		return fechaApertura;
+		
+		return (fechaApertura == null)? "" : fechaApertura;
 	}
 
 	public void setFechaApertura(String fechaApertura) {
@@ -2103,7 +2315,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaModifTjta() {
-		return fechaModifTjta;
+		
+		return (fechaModifTjta == null)? "" : fechaModifTjta;
 	}
 
 	public void setFechaModifTjta(String fechaModifTjta) {
@@ -2111,7 +2324,8 @@ public class DataToReturn {
 	}
 
 	public String getMemberSince() {
-		return memberSince;
+		
+		return (memberSince == null)? "" : memberSince;
 	}
 
 	public void setMemberSince(String memberSince) {
@@ -2119,7 +2333,8 @@ public class DataToReturn {
 	}
 
 	public String getCupoComprasNacTjta() {
-		return cupoComprasNacTjta;
+		
+		return (cupoComprasNacTjta == null)? "" : cupoComprasNacTjta;
 	}
 
 	public void setCupoComprasNacTjta(String cupoComprasNacTjta) {
@@ -2127,7 +2342,8 @@ public class DataToReturn {
 	}
 
 	public String getCupoComprasIntTjta() {
-		return cupoComprasIntTjta;
+		
+		return (cupoComprasIntTjta == null)? "" : cupoComprasIntTjta;
 	}
 
 	public void setCupoComprasIntTjta(String cupoComprasIntTjta) {
@@ -2135,7 +2351,8 @@ public class DataToReturn {
 	}
 
 	public String getCupoAvcesNacTjta() {
-		return cupoAvcesNacTjta;
+		
+		return (cupoAvcesNacTjta == null)? "" : cupoAvcesNacTjta;
 	}
 
 	public void setCupoAvcesNacTjta(String cupoAvcesNacTjta) {
@@ -2143,7 +2360,8 @@ public class DataToReturn {
 	}
 
 	public String getCupoAvcesIntTjta() {
-		return cupoAvcesIntTjta;
+		
+		return (cupoAvcesIntTjta == null)? "" : cupoAvcesIntTjta;
 	}
 
 	public void setCupoAvcesIntTjta(String cupoAvcesIntTjta) {
@@ -2151,7 +2369,8 @@ public class DataToReturn {
 	}
 
 	public String getCupoLinea2Tjta() {
-		return cupoLinea2Tjta;
+		
+		return (cupoLinea2Tjta == null)? "" : cupoLinea2Tjta;
 	}
 
 	public void setCupoLinea2Tjta(String cupoLinea2Tjta) {
@@ -2159,7 +2378,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaComprasNacTjta() {
-		return deudaComprasNacTjta;
+		
+		return (deudaComprasNacTjta == null)? "" : deudaComprasNacTjta;
 	}
 
 	public void setDeudaComprasNacTjta(String deudaComprasNacTjta) {
@@ -2167,7 +2387,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaComprasIntTjta() {
-		return deudaComprasIntTjta;
+		
+		return (deudaComprasIntTjta == null)? "" : deudaComprasIntTjta;
 	}
 
 	public void setDeudaComprasIntTjta(String deudaComprasIntTjta) {
@@ -2175,7 +2396,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaAvcesNacTjta() {
-		return deudaAvcesNacTjta;
+		
+		return (deudaAvcesNacTjta == null)? "" : deudaAvcesNacTjta;
 	}
 
 	public void setDeudaAvcesNacTjta(String deudaAvcesNacTjta) {
@@ -2183,7 +2405,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaAvcesIntTjta() {
-		return deudaAvcesIntTjta;
+		
+		return (deudaAvcesIntTjta == null)? "" : deudaAvcesIntTjta;
 	}
 
 	public void setDeudaAvcesIntTjta(String deudaAvcesIntTjta) {
@@ -2191,7 +2414,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaL2Tjta() {
-		return deudaL2Tjta;
+		
+		return (deudaL2Tjta == null)? "" : deudaL2Tjta;
 	}
 
 	public void setDeudaL2Tjta(String deudaL2Tjta) {
@@ -2199,7 +2423,8 @@ public class DataToReturn {
 	}
 
 	public String getDispCompNacTjta() {
-		return dispCompNacTjta;
+		
+		return (dispCompNacTjta == null)? "" : dispCompNacTjta;
 	}
 
 	public void setDispCompNacTjta(String dispCompNacTjta) {
@@ -2207,7 +2432,8 @@ public class DataToReturn {
 	}
 
 	public String getDispCompIntTjta() {
-		return dispCompIntTjta;
+		
+		return (dispCompIntTjta == null)? "" : dispCompIntTjta;
 	}
 
 	public void setDispCompIntTjta(String dispCompIntTjta) {
@@ -2215,7 +2441,8 @@ public class DataToReturn {
 	}
 
 	public String getDispAvcesNacTjta() {
-		return dispAvcesNacTjta;
+		
+		return (dispAvcesNacTjta == null)? "" : dispAvcesNacTjta;
 	}
 
 	public void setDispAvcesNacTjta(String dispAvcesNacTjta) {
@@ -2223,7 +2450,8 @@ public class DataToReturn {
 	}
 
 	public String getDispAvcesIntTjta() {
-		return dispAvcesIntTjta;
+		
+		return (dispAvcesIntTjta == null)? "" : dispAvcesIntTjta;
 	}
 
 	public void setDispAvcesIntTjta(String dispAvcesIntTjta) {
@@ -2231,7 +2459,8 @@ public class DataToReturn {
 	}
 
 	public String getDispL2Tjta() {
-		return dispL2Tjta;
+		
+		return (dispL2Tjta == null)? "" : dispL2Tjta;
 	}
 
 	public void setDispL2Tjta(String dispL2Tjta) {
@@ -2239,7 +2468,8 @@ public class DataToReturn {
 	}
 
 	public String getMonto11() {
-		return monto11;
+		
+		return (monto11 == null)? "" : monto11;
 	}
 
 	public void setMonto11(String monto11) {
@@ -2247,7 +2477,8 @@ public class DataToReturn {
 	}
 
 	public String getMonto21() {
-		return monto21;
+		
+		return (monto21 == null)? "" : monto21;
 	}
 
 	public void setMonto21(String monto21) {
@@ -2255,7 +2486,8 @@ public class DataToReturn {
 	}
 
 	public String getMonto31() {
-		return monto31;
+		
+		return (monto31 == null)? "" : monto31;
 	}
 
 	public void setMonto31(String monto31) {
@@ -2263,7 +2495,8 @@ public class DataToReturn {
 	}
 
 	public String getNumero11() {
-		return numero11;
+		
+		return (numero11 == null)? "" : numero11;
 	}
 
 	public void setNumero11(String numero11) {
@@ -2271,7 +2504,8 @@ public class DataToReturn {
 	}
 
 	public String getNumero21() {
-		return numero21;
+		
+		return (numero21 == null)? "" : numero21;
 	}
 
 	public void setNumero21(String numero21) {
@@ -2279,7 +2513,8 @@ public class DataToReturn {
 	}
 
 	public String getNumero31() {
-		return numero31;
+		
+		return (numero31 == null)? "" : numero31;
 	}
 
 	public void setNumero31(String numero31) {
@@ -2287,7 +2522,8 @@ public class DataToReturn {
 	}
 
 	public String getFlag11() {
-		return flag11;
+		
+		return (flag11 == null)? "" : flag11;
 	}
 
 	public void setFlag11(String flag11) {
@@ -2295,7 +2531,8 @@ public class DataToReturn {
 	}
 
 	public String getFlag21() {
-		return flag21;
+		
+		return (flag21 == null)? "" : flag21;
 	}
 
 	public void setFlag21(String flag21) {
@@ -2303,7 +2540,8 @@ public class DataToReturn {
 	}
 
 	public String getFlag31() {
-		return flag31;
+		
+		return (flag31 == null)? "" : flag31;
 	}
 
 	public void setFlag31(String flag31) {
@@ -2311,7 +2549,8 @@ public class DataToReturn {
 	}
 
 	public String getString11() {
-		return string11;
+		
+		return (string11 == null)? "" : string11;
 	}
 
 	public void setString11(String string11) {
@@ -2319,7 +2558,8 @@ public class DataToReturn {
 	}
 
 	public String getString21() {
-		return string21;
+		
+		return (string21 == null)? "" : string21;
 	}
 
 	public void setString21(String string21) {
@@ -2327,7 +2567,8 @@ public class DataToReturn {
 	}
 
 	public String getString31() {
-		return string31;
+		
+		return (string31 == null)? "" : string31;
 	}
 
 	public void setString31(String string31) {
@@ -2335,7 +2576,8 @@ public class DataToReturn {
 	}
 
 	public String getFiller05() {
-		return filler05;
+		
+		return (filler05 == null)? "" : filler05;
 	}
 
 	public void setFiller05(String filler05) {
@@ -2343,7 +2585,8 @@ public class DataToReturn {
 	}
 
 	public String getNroRelacion2() {
-		return nroRelacion2;
+		
+		return (nroRelacion2 == null)? "" : nroRelacion2;
 	}
 
 	public void setNroRelacion2(String nroRelacion2) {
@@ -2351,7 +2594,8 @@ public class DataToReturn {
 	}
 
 	public String getStatusRelacion() {
-		return statusRelacion;
+		
+		return (statusRelacion == null)? "" : statusRelacion;
 	}
 
 	public void setStatusRelacion(String statusRelacion) {
@@ -2359,7 +2603,8 @@ public class DataToReturn {
 	}
 
 	public String getNumeroCliente() {
-		return numeroCliente;
+		
+		return (numeroCliente == null)? "" : numeroCliente;
 	}
 
 	public void setNumeroCliente(String numeroCliente) {
@@ -2367,7 +2612,8 @@ public class DataToReturn {
 	}
 
 	public String getCantidadSubCuentas() {
-		return cantidadSubCuentas;
+		
+		return (cantidadSubCuentas == null)? "" : cantidadSubCuentas;
 	}
 
 	public void setCantidadSubCuentas(String cantidadSubCuentas) {
@@ -2375,7 +2621,8 @@ public class DataToReturn {
 	}
 
 	public String getCodigoBloqueoRel() {
-		return codigoBloqueoRel;
+		
+		return (codigoBloqueoRel == null)? "" : codigoBloqueoRel;
 	}
 
 	public void setCodigoBloqueoRel(String codigoBloqueoRel) {
@@ -2383,7 +2630,8 @@ public class DataToReturn {
 	}
 
 	public String getNombreRel() {
-		return nombreRel;
+		
+		return (nombreRel == null)? "" : nombreRel;
 	}
 
 	public void setNombreRel(String nombreRel) {
@@ -2391,7 +2639,8 @@ public class DataToReturn {
 	}
 
 	public String getDireccionRelacion() {
-		return direccionRelacion;
+		
+		return (direccionRelacion == null)? "" : direccionRelacion;
 	}
 
 	public void setDireccionRelacion(String direccionRelacion) {
@@ -2399,7 +2648,8 @@ public class DataToReturn {
 	}
 
 	public String getComunaRelacion() {
-		return comunaRelacion;
+		
+		return (comunaRelacion == null)? "" : comunaRelacion;
 	}
 
 	public void setComunaRelacion(String comunaRelacion) {
@@ -2407,7 +2657,8 @@ public class DataToReturn {
 	}
 
 	public String getCodigoComunaRelacion() {
-		return codigoComunaRelacion;
+		
+		return (codigoComunaRelacion == null)? "" : codigoComunaRelacion;
 	}
 
 	public void setCodigoComunaRelacion(String codigoComunaRelacion) {
@@ -2415,7 +2666,8 @@ public class DataToReturn {
 	}
 
 	public String getCiudadRelacion() {
-		return ciudadRelacion;
+		
+		return (ciudadRelacion == null)? "" : ciudadRelacion;
 	}
 
 	public void setCiudadRelacion(String ciudadRelacion) {
@@ -2423,7 +2675,8 @@ public class DataToReturn {
 	}
 
 	public String getRegionRelacion() {
-		return regionRelacion;
+		
+		return (regionRelacion == null)? "" : regionRelacion;
 	}
 
 	public void setRegionRelacion(String regionRelacion) {
@@ -2431,7 +2684,8 @@ public class DataToReturn {
 	}
 
 	public String getFonoRelacion() {
-		return fonoRelacion;
+		
+		return (fonoRelacion == null)? "" : fonoRelacion;
 	}
 
 	public void setFonoRelacion(String fonoRelacion) {
@@ -2439,7 +2693,8 @@ public class DataToReturn {
 	}
 
 	public String getCupoNacRelacion() {
-		return cupoNacRelacion;
+		
+		return (cupoNacRelacion == null)? "" : cupoNacRelacion;
 	}
 
 	public void setCupoNacRelacion(String cupoNacRelacion) {
@@ -2447,7 +2702,8 @@ public class DataToReturn {
 	}
 
 	public String getCupoIntRelacion() {
-		return cupoIntRelacion;
+		
+		return (cupoIntRelacion == null)? "" : cupoIntRelacion;
 	}
 
 	public void setCupoIntRelacion(String cupoIntRelacion) {
@@ -2455,7 +2711,8 @@ public class DataToReturn {
 	}
 
 	public String getCicloFactRelacion() {
-		return cicloFactRelacion;
+		
+		return (cicloFactRelacion == null)? "" : cicloFactRelacion;
 	}
 
 	public void setCicloFactRelacion(String cicloFactRelacion) {
@@ -2463,7 +2720,8 @@ public class DataToReturn {
 	}
 
 	public String getCodigoFvRelacion() {
-		return codigoFvRelacion;
+		
+		return (codigoFvRelacion == null)? "" : codigoFvRelacion;
 	}
 
 	public void setCodigoFvRelacion(String codigoFvRelacion) {
@@ -2471,7 +2729,8 @@ public class DataToReturn {
 	}
 
 	public String getCuentaPrimaria() {
-		return cuentaPrimaria;
+		
+		return (cuentaPrimaria == null)? "" : cuentaPrimaria;
 	}
 
 	public void setCuentaPrimaria(String cuentaPrimaria) {
@@ -2479,7 +2738,8 @@ public class DataToReturn {
 	}
 
 	public String getMonto4() {
-		return monto4;
+		
+		return (monto4 == null)? "" : monto4;
 	}
 
 	public void setMonto4(String monto4) {
@@ -2487,7 +2747,8 @@ public class DataToReturn {
 	}
 
 	public String getMonto5() {
-		return monto5;
+		
+		return (monto5 == null)? "" : monto5;
 	}
 
 	public void setMonto5(String monto5) {
@@ -2495,7 +2756,8 @@ public class DataToReturn {
 	}
 
 	public String getMonto6() {
-		return monto6;
+		
+		return (monto6 == null)? "" : monto6;
 	}
 
 	public void setMonto6(String monto6) {
@@ -2503,7 +2765,8 @@ public class DataToReturn {
 	}
 
 	public String getNumero4() {
-		return numero4;
+		
+		return (numero4 == null)? "" : numero4;
 	}
 
 	public void setNumero4(String numero4) {
@@ -2511,7 +2774,8 @@ public class DataToReturn {
 	}
 
 	public String getNumero5() {
-		return numero5;
+		
+		return (numero5 == null)? "" : numero5;
 	}
 
 	public void setNumero5(String numero5) {
@@ -2519,7 +2783,8 @@ public class DataToReturn {
 	}
 
 	public String getNumero6() {
-		return numero6;
+		
+		return (numero6 == null)? "" : numero6;
 	}
 
 	public void setNumero6(String numero6) {
@@ -2527,7 +2792,8 @@ public class DataToReturn {
 	}
 
 	public String getFlag4() {
-		return flag4;
+		
+		return (flag4 == null)? "" : flag4;
 	}
 
 	public void setFlag4(String flag4) {
@@ -2535,7 +2801,8 @@ public class DataToReturn {
 	}
 
 	public String getFlag5() {
-		return flag5;
+		
+		return (flag5 == null)? "" : flag5;
 	}
 
 	public void setFlag5(String flag5) {
@@ -2543,7 +2810,8 @@ public class DataToReturn {
 	}
 
 	public String getFlag6() {
-		return flag6;
+		
+		return (flag6 == null)? "" : flag6;
 	}
 
 	public void setFlag6(String flag6) {
@@ -2551,7 +2819,8 @@ public class DataToReturn {
 	}
 
 	public String getString4() {
-		return string4;
+		
+		return (string4 == null)? "" : string4;
 	}
 
 	public void setString4(String string4) {
@@ -2559,7 +2828,8 @@ public class DataToReturn {
 	}
 
 	public String getString5() {
-		return string5;
+		
+		return (string5 == null)? "" : string5;
 	}
 
 	public void setString5(String string5) {
@@ -2567,7 +2837,8 @@ public class DataToReturn {
 	}
 
 	public String getString6() {
-		return string6;
+		
+		return (string6 == null)? "" : string6;
 	}
 
 	public void setString6(String string6) {
@@ -2575,7 +2846,8 @@ public class DataToReturn {
 	}
 
 	public String getFiller06() {
-		return filler06;
+		
+		return (filler06 == null)? "" : filler06;
 	}
 
 	public void setFiller06(String filler06) {
@@ -2583,7 +2855,8 @@ public class DataToReturn {
 	}
 
 	public String getNroCuentaAut() {
-		return nroCuentaAut;
+		
+		return (nroCuentaAut == null)? "" : nroCuentaAut;
 	}
 
 	public void setNroCuentaAut(String nroCuentaAut) {
@@ -2591,7 +2864,8 @@ public class DataToReturn {
 	}
 
 	public String getStatusCtaAut() {
-		return statusCtaAut;
+		
+		return (statusCtaAut == null)? "" : statusCtaAut;
 	}
 
 	public void setStatusCtaAut(String statusCtaAut) {
@@ -2599,7 +2873,8 @@ public class DataToReturn {
 	}
 
 	public String getStatus2CtaAut() {
-		return status2CtaAut;
+		
+		return (status2CtaAut == null)? "" : status2CtaAut;
 	}
 
 	public void setStatus2CtaAut(String status2CtaAut) {
@@ -2607,7 +2882,8 @@ public class DataToReturn {
 	}
 
 	public String getCupoCompNacCtaAut() {
-		return cupoCompNacCtaAut;
+		
+		return (cupoCompNacCtaAut == null)? "" : cupoCompNacCtaAut;
 	}
 
 	public void setCupoCompNacCtaAut(String cupoCompNacCtaAut) {
@@ -2615,7 +2891,8 @@ public class DataToReturn {
 	}
 
 	public String getCupoCompIntCtaAut() {
-		return cupoCompIntCtaAut;
+		
+		return (cupoCompIntCtaAut == null)? "" : cupoCompIntCtaAut;
 	}
 
 	public void setCupoCompIntCtaAut(String cupoCompIntCtaAut) {
@@ -2623,7 +2900,8 @@ public class DataToReturn {
 	}
 
 	public String getCupoAvceNacCtaAut() {
-		return cupoAvceNacCtaAut;
+		
+		return (cupoAvceNacCtaAut == null)? "" : cupoAvceNacCtaAut;
 	}
 
 	public void setCupoAvceNacCtaAut(String cupoAvceNacCtaAut) {
@@ -2631,7 +2909,8 @@ public class DataToReturn {
 	}
 
 	public String getCupoAvceIntCtaAut() {
-		return cupoAvceIntCtaAut;
+		
+		return (cupoAvceIntCtaAut == null)? "" : cupoAvceIntCtaAut;
 	}
 
 	public void setCupoAvceIntCtaAut(String cupoAvceIntCtaAut) {
@@ -2639,7 +2918,8 @@ public class DataToReturn {
 	}
 
 	public String getCupoL2CtaAut() {
-		return cupoL2CtaAut;
+		
+		return (cupoL2CtaAut == null)? "" : cupoL2CtaAut;
 	}
 
 	public void setCupoL2CtaAut(String cupoL2CtaAut) {
@@ -2647,7 +2927,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaCompNacCtaAut() {
-		return deudaCompNacCtaAut;
+		
+		return (deudaCompNacCtaAut == null)? "" : deudaCompNacCtaAut;
 	}
 
 	public void setDeudaCompNacCtaAut(String deudaCompNacCtaAut) {
@@ -2655,7 +2936,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaCompIntCtaAut() {
-		return deudaCompIntCtaAut;
+		
+		return (deudaCompIntCtaAut == null)? "" : deudaCompIntCtaAut;
 	}
 
 	public void setDeudaCompIntCtaAut(String deudaCompIntCtaAut) {
@@ -2663,7 +2945,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaAvceNacCtaAut() {
-		return deudaAvceNacCtaAut;
+		
+		return (deudaAvceNacCtaAut == null)? "" : deudaAvceNacCtaAut;
 	}
 
 	public void setDeudaAvceNacCtaAut(String deudaAvceNacCtaAut) {
@@ -2671,7 +2954,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaAvceIntCtaAut() {
-		return deudaAvceIntCtaAut;
+		
+		return (deudaAvceIntCtaAut == null)? "" : deudaAvceIntCtaAut;
 	}
 
 	public void setDeudaAvceIntCtaAut(String deudaAvceIntCtaAut) {
@@ -2679,7 +2963,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaL2CtaAut() {
-		return deudaL2CtaAut;
+		
+		return (deudaL2CtaAut == null)? "" : deudaL2CtaAut;
 	}
 
 	public void setDeudaL2CtaAut(String deudaL2CtaAut) {
@@ -2687,7 +2972,8 @@ public class DataToReturn {
 	}
 
 	public String getDispCompNacCtaAut() {
-		return dispCompNacCtaAut;
+		
+		return (dispCompNacCtaAut == null)? "" : dispCompNacCtaAut;
 	}
 
 	public void setDispCompNacCtaAut(String dispCompNacCtaAut) {
@@ -2695,7 +2981,8 @@ public class DataToReturn {
 	}
 
 	public String getDispCompIntCtaAut() {
-		return dispCompIntCtaAut;
+		
+		return (dispCompIntCtaAut == null)? "" : dispCompIntCtaAut;
 	}
 
 	public void setDispCompIntCtaAut(String dispCompIntCtaAut) {
@@ -2703,7 +2990,8 @@ public class DataToReturn {
 	}
 
 	public String getDispAvceNacCtaAut() {
-		return dispAvceNacCtaAut;
+		
+		return (dispAvceNacCtaAut == null)? "" : dispAvceNacCtaAut;
 	}
 
 	public void setDispAvceNacCtaAut(String dispAvceNacCtaAut) {
@@ -2711,7 +2999,8 @@ public class DataToReturn {
 	}
 
 	public String getDispAvceIntCtaAut() {
-		return dispAvceIntCtaAut;
+		
+		return (dispAvceIntCtaAut == null)? "" : dispAvceIntCtaAut;
 	}
 
 	public void setDispAvceIntCtaAut(String dispAvceIntCtaAut) {
@@ -2719,7 +3008,8 @@ public class DataToReturn {
 	}
 
 	public String getDispL2CtaAut() {
-		return dispL2CtaAut;
+		
+		return (dispL2CtaAut == null)? "" : dispL2CtaAut;
 	}
 
 	public void setDispL2CtaAut(String dispL2CtaAut) {
@@ -2727,7 +3017,8 @@ public class DataToReturn {
 	}
 
 	public String getDispFlotCuotasL2CtaAut() {
-		return dispFlotCuotasL2CtaAut;
+		
+		return (dispFlotCuotasL2CtaAut == null)? "" : dispFlotCuotasL2CtaAut;
 	}
 
 	public void setDispFlotCuotasL2CtaAut(String dispFlotCuotasL2CtaAut) {
@@ -2735,7 +3026,8 @@ public class DataToReturn {
 	}
 
 	public String getDispFlotAvceL2CtaAut() {
-		return dispFlotAvceL2CtaAut;
+		
+		return (dispFlotAvceL2CtaAut == null)? "" : dispFlotAvceL2CtaAut;
 	}
 
 	public void setDispFlotAvceL2CtaAut(String dispFlotAvceL2CtaAut) {
@@ -2743,7 +3035,8 @@ public class DataToReturn {
 	}
 
 	public String getDispFlotAvceCuotaL1L2Cta() {
-		return dispFlotAvceCuotaL1L2Cta;
+		
+		return (dispFlotAvceCuotaL1L2Cta == null)? "" : dispFlotAvceCuotaL1L2Cta;
 	}
 
 	public void setDispFlotAvceCuotaL1L2Cta(String dispFlotAvceCuotaL1L2Cta) {
@@ -2751,7 +3044,8 @@ public class DataToReturn {
 	}
 
 	public String getAutPendPesosL1CtaAut() {
-		return autPendPesosL1CtaAut;
+		
+		return (autPendPesosL1CtaAut == null)? "" : autPendPesosL1CtaAut;
 	}
 
 	public void setAutPendPesosL1CtaAut(String autPendPesosL1CtaAut) {
@@ -2759,7 +3053,8 @@ public class DataToReturn {
 	}
 
 	public String getAutPendDolarL1CtaAut() {
-		return autPendDolarL1CtaAut;
+		
+		return (autPendDolarL1CtaAut == null)? "" : autPendDolarL1CtaAut;
 	}
 
 	public void setAutPendDolarL1CtaAut(String autPendDolarL1CtaAut) {
@@ -2767,7 +3062,8 @@ public class DataToReturn {
 	}
 
 	public String getAutPendL2CtaAut() {
-		return autPendL2CtaAut;
+		
+		return (autPendL2CtaAut == null)? "" : autPendL2CtaAut;
 	}
 
 	public void setAutPendL2CtaAut(String autPendL2CtaAut) {
@@ -2775,7 +3071,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaTotPesoCtaAut() {
-		return deudaTotPesoCtaAut;
+		
+		return (deudaTotPesoCtaAut == null)? "" : deudaTotPesoCtaAut;
 	}
 
 	public void setDeudaTotPesoCtaAut(String deudaTotPesoCtaAut) {
@@ -2783,7 +3080,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaTotDolarCtaAut() {
-		return deudaTotDolarCtaAut;
+		
+		return (deudaTotDolarCtaAut == null)? "" : deudaTotDolarCtaAut;
 	}
 
 	public void setDeudaTotDolarCtaAut(String deudaTotDolarCtaAut) {
@@ -2791,7 +3089,8 @@ public class DataToReturn {
 	}
 
 	public String getPagoMinCtaAut() {
-		return pagoMinCtaAut;
+		
+		return (pagoMinCtaAut == null)? "" : pagoMinCtaAut;
 	}
 
 	public void setPagoMinCtaAut(String pagoMinCtaAut) {
@@ -2799,7 +3098,8 @@ public class DataToReturn {
 	}
 
 	public String getTasa1CtaAut() {
-		return tasa1CtaAut;
+		
+		return (tasa1CtaAut == null)? "" : tasa1CtaAut;
 	}
 
 	public void setTasa1CtaAut(String tasa1CtaAut) {
@@ -2807,7 +3107,8 @@ public class DataToReturn {
 	}
 
 	public String getTasa2CtaAut() {
-		return tasa2CtaAut;
+		
+		return (tasa2CtaAut == null)? "" : tasa2CtaAut;
 	}
 
 	public void setTasa2CtaAut(String tasa2CtaAut) {
@@ -2815,7 +3116,8 @@ public class DataToReturn {
 	}
 
 	public String getFlagCuotaFijaCtaAut() {
-		return flagCuotaFijaCtaAut;
+		
+		return (flagCuotaFijaCtaAut == null)? "" : flagCuotaFijaCtaAut;
 	}
 
 	public void setFlagCuotaFijaCtaAut(String flagCuotaFijaCtaAut) {
@@ -2823,7 +3125,8 @@ public class DataToReturn {
 	}
 
 	public String getFlagAvceCuotaCtaAut() {
-		return flagAvceCuotaCtaAut;
+		
+		return (flagAvceCuotaCtaAut == null)? "" : flagAvceCuotaCtaAut;
 	}
 
 	public void setFlagAvceCuotaCtaAut(String flagAvceCuotaCtaAut) {
@@ -2831,7 +3134,8 @@ public class DataToReturn {
 	}
 
 	public String getFlagNcuotaCtaAut() {
-		return flagNcuotaCtaAut;
+		
+		return (flagNcuotaCtaAut == null)? "" : flagNcuotaCtaAut;
 	}
 
 	public void setFlagNcuotaCtaAut(String flagNcuotaCtaAut) {
@@ -2839,7 +3143,8 @@ public class DataToReturn {
 	}
 
 	public String getFlag3cpcCtaAut() {
-		return flag3cpcCtaAut;
+		
+		return (flag3cpcCtaAut == null)? "" : flag3cpcCtaAut;
 	}
 
 	public void setFlag3cpcCtaAut(String flag3cpcCtaAut) {
@@ -2847,7 +3152,8 @@ public class DataToReturn {
 	}
 
 	public String getFlagCompNormalCtaAut() {
-		return flagCompNormalCtaAut;
+		
+		return (flagCompNormalCtaAut == null)? "" : flagCompNormalCtaAut;
 	}
 
 	public void setFlagCompNormalCtaAut(String flagCompNormalCtaAut) {
@@ -2855,7 +3161,8 @@ public class DataToReturn {
 	}
 
 	public String getFlagAvceEfectivoCtaAut() {
-		return flagAvceEfectivoCtaAut;
+		
+		return (flagAvceEfectivoCtaAut == null)? "" : flagAvceEfectivoCtaAut;
 	}
 
 	public void setFlagAvceEfectivoCtaAut(String flagAvceEfectivoCtaAut) {
@@ -2863,7 +3170,8 @@ public class DataToReturn {
 	}
 
 	public String getMonto7() {
-		return monto7;
+		
+		return (monto7 == null)? "" : monto7;
 	}
 
 	public void setMonto7(String monto7) {
@@ -2871,7 +3179,8 @@ public class DataToReturn {
 	}
 
 	public String getMonto8() {
-		return monto8;
+		
+		return (monto8 == null)? "" : monto8;
 	}
 
 	public void setMonto8(String monto8) {
@@ -2879,7 +3188,8 @@ public class DataToReturn {
 	}
 
 	public String getMonto9() {
-		return monto9;
+		
+		return (monto9 == null)? "" : monto9;
 	}
 
 	public void setMonto9(String monto9) {
@@ -2887,7 +3197,8 @@ public class DataToReturn {
 	}
 
 	public String getNumero7() {
-		return numero7;
+		
+		return (numero7 == null)? "" : numero7;
 	}
 
 	public void setNumero7(String numero7) {
@@ -2895,7 +3206,8 @@ public class DataToReturn {
 	}
 
 	public String getNumero8() {
-		return numero8;
+		
+		return (numero8 == null)? "" : numero8;
 	}
 
 	public void setNumero8(String numero8) {
@@ -2903,7 +3215,8 @@ public class DataToReturn {
 	}
 
 	public String getNumero9() {
-		return numero9;
+		
+		return (numero9 == null)? "" : numero9;
 	}
 
 	public void setNumero9(String numero9) {
@@ -2911,7 +3224,8 @@ public class DataToReturn {
 	}
 
 	public String getFlag7() {
-		return flag7;
+		
+		return (flag7 == null)? "" : flag7;
 	}
 
 	public void setFlag7(String flag7) {
@@ -2919,7 +3233,8 @@ public class DataToReturn {
 	}
 
 	public String getFlag8() {
-		return flag8;
+		
+		return (flag8 == null)? "" : flag8;
 	}
 
 	public void setFlag8(String flag8) {
@@ -2927,7 +3242,8 @@ public class DataToReturn {
 	}
 
 	public String getFlag9() {
-		return flag9;
+		
+		return (flag9 == null)? "" : flag9;
 	}
 
 	public void setFlag9(String flag9) {
@@ -2935,7 +3251,8 @@ public class DataToReturn {
 	}
 
 	public String getString7() {
-		return string7;
+		
+		return (string7 == null)? "" : string7;
 	}
 
 	public void setString7(String string7) {
@@ -2943,7 +3260,8 @@ public class DataToReturn {
 	}
 
 	public String getString8() {
-		return string8;
+		
+		return (string8 == null)? "" : string8;
 	}
 
 	public void setString8(String string8) {
@@ -2951,7 +3269,8 @@ public class DataToReturn {
 	}
 
 	public String getString9() {
-		return string9;
+		
+		return (string9 == null)? "" : string9;
 	}
 
 	public void setString9(String string9) {
@@ -2959,7 +3278,8 @@ public class DataToReturn {
 	}
 
 	public String getFiller07() {
-		return filler07;
+		
+		return (filler07 == null)? "" : filler07;
 	}
 
 	public void setFiller07(String filler07) {
@@ -2967,7 +3287,8 @@ public class DataToReturn {
 	}
 
 	public String getNroTarjetaAut() {
-		return nroTarjetaAut;
+		
+		return (nroTarjetaAut == null)? "" : nroTarjetaAut;
 	}
 
 	public void setNroTarjetaAut(String nroTarjetaAut) {
@@ -2975,7 +3296,8 @@ public class DataToReturn {
 	}
 
 	public String getNroSecuenciaAut() {
-		return nroSecuenciaAut;
+		
+		return (nroSecuenciaAut == null)? "" : nroSecuenciaAut;
 	}
 
 	public void setNroSecuenciaAut(String nroSecuenciaAut) {
@@ -2983,7 +3305,8 @@ public class DataToReturn {
 	}
 
 	public String getStatusTjtaAut() {
-		return statusTjtaAut;
+		
+		return (statusTjtaAut == null)? "" : statusTjtaAut;
 	}
 
 	public void setStatusTjtaAut(String statusTjtaAut) {
@@ -2991,7 +3314,8 @@ public class DataToReturn {
 	}
 
 	public String getStatus2TjtaAut() {
-		return status2TjtaAut;
+		
+		return (status2TjtaAut == null)? "" : status2TjtaAut;
 	}
 
 	public void setStatus2TjtaAut(String status2TjtaAut) {
@@ -2999,7 +3323,8 @@ public class DataToReturn {
 	}
 
 	public String getCupoCompNacTjtaAut() {
-		return cupoCompNacTjtaAut;
+		
+		return (cupoCompNacTjtaAut == null)? "" : cupoCompNacTjtaAut;
 	}
 
 	public void setCupoCompNacTjtaAut(String cupoCompNacTjtaAut) {
@@ -3007,7 +3332,8 @@ public class DataToReturn {
 	}
 
 	public String getCupoCompIntTjtaAut() {
-		return cupoCompIntTjtaAut;
+		
+		return (cupoCompIntTjtaAut == null)? "" : cupoCompIntTjtaAut;
 	}
 
 	public void setCupoCompIntTjtaAut(String cupoCompIntTjtaAut) {
@@ -3015,7 +3341,8 @@ public class DataToReturn {
 	}
 
 	public String getCupoAvceNacTjtaAut() {
-		return cupoAvceNacTjtaAut;
+		
+		return (cupoAvceNacTjtaAut == null)? "" : cupoAvceNacTjtaAut;
 	}
 
 	public void setCupoAvceNacTjtaAut(String cupoAvceNacTjtaAut) {
@@ -3023,7 +3350,8 @@ public class DataToReturn {
 	}
 
 	public String getCupoAvceIntTjtaAut() {
-		return cupoAvceIntTjtaAut;
+		
+		return (cupoAvceIntTjtaAut == null)? "" : cupoAvceIntTjtaAut;
 	}
 
 	public void setCupoAvceIntTjtaAut(String cupoAvceIntTjtaAut) {
@@ -3031,7 +3359,8 @@ public class DataToReturn {
 	}
 
 	public String getCupoL2TjtaAut() {
-		return cupoL2TjtaAut;
+		
+		return (cupoL2TjtaAut == null)? "" : cupoL2TjtaAut;
 	}
 
 	public void setCupoL2TjtaAut(String cupoL2TjtaAut) {
@@ -3039,7 +3368,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaCompNacTjtaAut() {
-		return deudaCompNacTjtaAut;
+		
+		return (deudaCompNacTjtaAut == null)? "" : deudaCompNacTjtaAut;
 	}
 
 	public void setDeudaCompNacTjtaAut(String deudaCompNacTjtaAut) {
@@ -3047,7 +3377,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaCompIntTjtaAut() {
-		return deudaCompIntTjtaAut;
+		
+		return (deudaCompIntTjtaAut == null)? "" : deudaCompIntTjtaAut;
 	}
 
 	public void setDeudaCompIntTjtaAut(String deudaCompIntTjtaAut) {
@@ -3055,7 +3386,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaAvceNacTjtaAut() {
-		return deudaAvceNacTjtaAut;
+		
+		return (deudaAvceNacTjtaAut == null)? "" : deudaAvceNacTjtaAut;
 	}
 
 	public void setDeudaAvceNacTjtaAut(String deudaAvceNacTjtaAut) {
@@ -3063,7 +3395,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaAvceIntTjtaAut() {
-		return deudaAvceIntTjtaAut;
+		
+		return (deudaAvceIntTjtaAut == null)? "" : deudaAvceIntTjtaAut;
 	}
 
 	public void setDeudaAvceIntTjtaAut(String deudaAvceIntTjtaAut) {
@@ -3071,7 +3404,8 @@ public class DataToReturn {
 	}
 
 	public String getDeudaL2TjtaAut() {
-		return deudaL2TjtaAut;
+		
+		return (deudaL2TjtaAut == null)? "" : deudaL2TjtaAut;
 	}
 
 	public void setDeudaL2TjtaAut(String deudaL2TjtaAut) {
@@ -3079,7 +3413,8 @@ public class DataToReturn {
 	}
 
 	public String getDispCompNacionalTjtaAut() {
-		return dispCompNacionalTjtaAut;
+		
+		return (dispCompNacionalTjtaAut == null)? "" : dispCompNacionalTjtaAut;
 	}
 
 	public void setDispCompNacionalTjtaAut(String dispCompNacionalTjtaAut) {
@@ -3087,7 +3422,8 @@ public class DataToReturn {
 	}
 
 	public String getDispCompInternacionalTjtaAut() {
-		return dispCompInternacionalTjtaAut;
+		
+		return (dispCompInternacionalTjtaAut == null)? "" : dispCompInternacionalTjtaAut;
 	}
 
 	public void setDispCompInternacionalTjtaAut(String dispCompInternacionalTjtaAut) {
@@ -3095,7 +3431,8 @@ public class DataToReturn {
 	}
 
 	public String getDispAvceNacionalTjtaAut() {
-		return dispAvceNacionalTjtaAut;
+		
+		return (dispAvceNacionalTjtaAut == null)? "" : dispAvceNacionalTjtaAut;
 	}
 
 	public void setDispAvceNacionalTjtaAut(String dispAvceNacionalTjtaAut) {
@@ -3103,7 +3440,8 @@ public class DataToReturn {
 	}
 
 	public String getDispAvceInternacionalTjtaAut() {
-		return dispAvceInternacionalTjtaAut;
+		
+		return (dispAvceInternacionalTjtaAut == null)? "" : dispAvceInternacionalTjtaAut;
 	}
 
 	public void setDispAvceInternacionalTjtaAut(String dispAvceInternacionalTjtaAut) {
@@ -3111,7 +3449,8 @@ public class DataToReturn {
 	}
 
 	public String getDispL2TjtaAut() {
-		return dispL2TjtaAut;
+		
+		return (dispL2TjtaAut == null)? "" : dispL2TjtaAut;
 	}
 
 	public void setDispL2TjtaAut(String dispL2TjtaAut) {
@@ -3119,7 +3458,8 @@ public class DataToReturn {
 	}
 
 	public String getDispFlotCuotasL2TjtaAut() {
-		return dispFlotCuotasL2TjtaAut;
+		
+		return (dispFlotCuotasL2TjtaAut == null)? "" : dispFlotCuotasL2TjtaAut;
 	}
 
 	public void setDispFlotCuotasL2TjtaAut(String dispFlotCuotasL2TjtaAut) {
@@ -3127,7 +3467,8 @@ public class DataToReturn {
 	}
 
 	public String getDispFlotAvceL2TjtaAut() {
-		return dispFlotAvceL2TjtaAut;
+		
+		return (dispFlotAvceL2TjtaAut == null)? "" : dispFlotAvceL2TjtaAut;
 	}
 
 	public void setDispFlotAvceL2TjtaAut(String dispFlotAvceL2TjtaAut) {
@@ -3135,7 +3476,8 @@ public class DataToReturn {
 	}
 
 	public String getDispFlotAvceCuotaL1L2Tjta() {
-		return dispFlotAvceCuotaL1L2Tjta;
+		
+		return (dispFlotAvceCuotaL1L2Tjta == null)? "" : dispFlotAvceCuotaL1L2Tjta;
 	}
 
 	public void setDispFlotAvceCuotaL1L2Tjta(String dispFlotAvceCuotaL1L2Tjta) {
@@ -3143,7 +3485,8 @@ public class DataToReturn {
 	}
 
 	public String getAutPendL1TjtaAut() {
-		return autPendL1TjtaAut;
+		
+		return (autPendL1TjtaAut == null)? "" : autPendL1TjtaAut;
 	}
 
 	public void setAutPendL1TjtaAut(String autPendL1TjtaAut) {
@@ -3151,7 +3494,8 @@ public class DataToReturn {
 	}
 
 	public String getAutPendL2TjtaAut() {
-		return autPendL2TjtaAut;
+		
+		return (autPendL2TjtaAut == null)? "" : autPendL2TjtaAut;
 	}
 
 	public void setAutPendL2TjtaAut(String autPendL2TjtaAut) {
@@ -3159,7 +3503,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaVctoTjtaAut() {
-		return fechaVctoTjtaAut;
+		
+		return (fechaVctoTjtaAut == null)? "" : fechaVctoTjtaAut;
 	}
 
 	public void setFechaVctoTjtaAut(String fechaVctoTjtaAut) {
@@ -3167,7 +3512,8 @@ public class DataToReturn {
 	}
 
 	public String getNombreBandaTjtaAut() {
-		return nombreBandaTjtaAut;
+		
+		return (nombreBandaTjtaAut == null)? "" : nombreBandaTjtaAut;
 	}
 
 	public void setNombreBandaTjtaAut(String nombreBandaTjtaAut) {
@@ -3175,7 +3521,8 @@ public class DataToReturn {
 	}
 
 	public String getOffsetTjtaAut() {
-		return offsetTjtaAut;
+		
+		return (offsetTjtaAut == null)? "" : offsetTjtaAut;
 	}
 
 	public void setOffsetTjtaAut(String offsetTjtaAut) {
@@ -3183,7 +3530,8 @@ public class DataToReturn {
 	}
 
 	public String getCvv2TjtaAut() {
-		return cvv2TjtaAut;
+		
+		return (cvv2TjtaAut == null)? "" : cvv2TjtaAut;
 	}
 
 	public void setCvv2TjtaAut(String cvv2TjtaAut) {
@@ -3191,7 +3539,8 @@ public class DataToReturn {
 	}
 
 	public String getFlagCuotaFijaTjtaAut() {
-		return flagCuotaFijaTjtaAut;
+		
+		return (flagCuotaFijaTjtaAut == null)? "" : flagCuotaFijaTjtaAut;
 	}
 
 	public void setFlagCuotaFijaTjtaAut(String flagCuotaFijaTjtaAut) {
@@ -3199,7 +3548,8 @@ public class DataToReturn {
 	}
 
 	public String getFlagAvceCuotasTjtaAut() {
-		return flagAvceCuotasTjtaAut;
+		
+		return (flagAvceCuotasTjtaAut == null)? "" : flagAvceCuotasTjtaAut;
 	}
 
 	public void setFlagAvceCuotasTjtaAut(String flagAvceCuotasTjtaAut) {
@@ -3207,7 +3557,8 @@ public class DataToReturn {
 	}
 
 	public String getFlagNcuotasTjtaAut() {
-		return flagNcuotasTjtaAut;
+		
+		return (flagNcuotasTjtaAut == null)? "" : flagNcuotasTjtaAut;
 	}
 
 	public void setFlagNcuotasTjtaAut(String flagNcuotasTjtaAut) {
@@ -3215,7 +3566,8 @@ public class DataToReturn {
 	}
 
 	public String getFlag3cpcTjtaAut() {
-		return flag3cpcTjtaAut;
+		
+		return (flag3cpcTjtaAut == null)? "" : flag3cpcTjtaAut;
 	}
 
 	public void setFlag3cpcTjtaAut(String flag3cpcTjtaAut) {
@@ -3223,7 +3575,8 @@ public class DataToReturn {
 	}
 
 	public String getFlagCompraNormalTjtaAut() {
-		return flagCompraNormalTjtaAut;
+		
+		return (flagCompraNormalTjtaAut == null)? "" : flagCompraNormalTjtaAut;
 	}
 
 	public void setFlagCompraNormalTjtaAut(String flagCompraNormalTjtaAut) {
@@ -3231,7 +3584,8 @@ public class DataToReturn {
 	}
 
 	public String getFlagAvceEfecvoTjtaAut() {
-		return flagAvceEfecvoTjtaAut;
+		
+		return (flagAvceEfecvoTjtaAut == null)? "" : flagAvceEfecvoTjtaAut;
 	}
 
 	public void setFlagAvceEfecvoTjtaAut(String flagAvceEfecvoTjtaAut) {
@@ -3239,7 +3593,8 @@ public class DataToReturn {
 	}
 
 	public String getMonto12() {
-		return monto12;
+		
+		return (monto12 == null)? "" : monto12;
 	}
 
 	public void setMonto12(String monto12) {
@@ -3247,7 +3602,8 @@ public class DataToReturn {
 	}
 
 	public String getMonto22() {
-		return monto22;
+		
+		return (monto22 == null)? "" : monto22;
 	}
 
 	public void setMonto22(String monto22) {
@@ -3255,7 +3611,8 @@ public class DataToReturn {
 	}
 
 	public String getMonto32() {
-		return monto32;
+		
+		return (monto32 == null)? "" : monto32;
 	}
 
 	public void setMonto32(String monto32) {
@@ -3263,7 +3620,8 @@ public class DataToReturn {
 	}
 
 	public String getNumero12() {
-		return numero12;
+		
+		return (numero12 == null)? "" : numero12;
 	}
 
 	public void setNumero12(String numero12) {
@@ -3271,7 +3629,8 @@ public class DataToReturn {
 	}
 
 	public String getNumero22() {
-		return numero22;
+		
+		return (numero22 == null)? "" : numero22;
 	}
 
 	public void setNumero22(String numero22) {
@@ -3279,7 +3638,8 @@ public class DataToReturn {
 	}
 
 	public String getNumero32() {
-		return numero32;
+		
+		return (numero32 == null)? "" : numero32;
 	}
 
 	public void setNumero32(String numero32) {
@@ -3287,7 +3647,8 @@ public class DataToReturn {
 	}
 
 	public String getFlag12() {
-		return flag12;
+		
+		return (flag12 == null)? "" : flag12;
 	}
 
 	public void setFlag12(String flag12) {
@@ -3295,7 +3656,8 @@ public class DataToReturn {
 	}
 
 	public String getFlag22() {
-		return flag22;
+		
+		return (flag22 == null)? "" : flag22;
 	}
 
 	public void setFlag22(String flag22) {
@@ -3303,7 +3665,8 @@ public class DataToReturn {
 	}
 
 	public String getFlag32() {
-		return flag32;
+		
+		return (flag32 == null)? "" : flag32;
 	}
 
 	public void setFlag32(String flag32) {
@@ -3311,7 +3674,8 @@ public class DataToReturn {
 	}
 
 	public String getString12() {
-		return string12;
+		
+		return (string12 == null)? "" : string12;
 	}
 
 	public void setString12(String string12) {
@@ -3319,7 +3683,8 @@ public class DataToReturn {
 	}
 
 	public String getString22() {
-		return string22;
+		
+		return (string22 == null)? "" : string22;
 	}
 
 	public void setString22(String string22) {
@@ -3327,7 +3692,8 @@ public class DataToReturn {
 	}
 
 	public String getString32() {
-		return string32;
+		
+		return (string32 == null)? "" : string32;
 	}
 
 	public void setString32(String string32) {
@@ -3335,7 +3701,8 @@ public class DataToReturn {
 	}
 
 	public String getFiller08() {
-		return filler08;
+		
+		return (filler08 == null)? "" : filler08;
 	}
 
 	public void setFiller08(String filler08) {
@@ -3343,7 +3710,8 @@ public class DataToReturn {
 	}
 
 	public String getCdgoBanco() {
-		return cdgoBanco;
+		
+		return (cdgoBanco == null)? "" : cdgoBanco;
 	}
 
 	public void setCdgoBanco(String cdgoBanco) {
@@ -3351,7 +3719,8 @@ public class DataToReturn {
 	}
 
 	public String getDescBanco() {
-		return descBanco;
+		
+		return (descBanco == null)? "" : descBanco;
 	}
 
 	public void setDescBanco(String descBanco) {
@@ -3359,7 +3728,8 @@ public class DataToReturn {
 	}
 
 	public String getTipoPac() {
-		return tipoPac;
+		
+		return (tipoPac == null)? "" : tipoPac;
 	}
 
 	public void setTipoPac(String tipoPac) {
@@ -3367,7 +3737,8 @@ public class DataToReturn {
 	}
 
 	public String getNroCtactePac() {
-		return nroCtactePac;
+		
+		return (nroCtactePac == null)? "" : nroCtactePac;
 	}
 
 	public void setNroCtactePac(String nroCtactePac) {
@@ -3375,7 +3746,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaPac() {
-		return fechaPac;
+		
+		return (fechaPac == null)? "" : fechaPac;
 	}
 
 	public void setFechaPac(String fechaPac) {
@@ -3383,7 +3755,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaActivPac() {
-		return fechaActivPac;
+		
+		return (fechaActivPac == null)? "" : fechaActivPac;
 	}
 
 	public void setFechaActivPac(String fechaActivPac) {
@@ -3391,7 +3764,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaModifPac() {
-		return fechaModifPac;
+		
+		return (fechaModifPac == null)? "" : fechaModifPac;
 	}
 
 	public void setFechaModifPac(String fechaModifPac) {
@@ -3399,7 +3773,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaRenunciaPac() {
-		return fechaRenunciaPac;
+		
+		return (fechaRenunciaPac == null)? "" : fechaRenunciaPac;
 	}
 
 	public void setFechaRenunciaPac(String fechaRenunciaPac) {
@@ -3407,7 +3782,8 @@ public class DataToReturn {
 	}
 
 	public String getMonto13() {
-		return monto13;
+		
+		return (monto13 == null)? "" : monto13;
 	}
 
 	public void setMonto13(String monto13) {
@@ -3415,7 +3791,8 @@ public class DataToReturn {
 	}
 
 	public String getMonto23() {
-		return monto23;
+		
+		return (monto23 == null)? "" : monto23;
 	}
 
 	public void setMonto23(String monto23) {
@@ -3423,7 +3800,8 @@ public class DataToReturn {
 	}
 
 	public String getNumero13() {
-		return numero13;
+		
+		return (numero13 == null)? "" : numero13;
 	}
 
 	public void setNumero13(String numero13) {
@@ -3431,7 +3809,8 @@ public class DataToReturn {
 	}
 
 	public String getNumero23() {
-		return numero23;
+		
+		return (numero23 == null)? "" : numero23;
 	}
 
 	public void setNumero23(String numero23) {
@@ -3439,7 +3818,8 @@ public class DataToReturn {
 	}
 
 	public String getFlag13() {
-		return flag13;
+		
+		return (flag13 == null)? "" : flag13;
 	}
 
 	public void setFlag13(String flag13) {
@@ -3447,7 +3827,8 @@ public class DataToReturn {
 	}
 
 	public String getFlag23() {
-		return flag23;
+		
+		return (flag23 == null)? "" : flag23;
 	}
 
 	public void setFlag23(String flag23) {
@@ -3455,7 +3836,8 @@ public class DataToReturn {
 	}
 
 	public String getString13() {
-		return string13;
+		
+		return (string13 == null)? "" : string13;
 	}
 
 	public void setString13(String string13) {
@@ -3463,7 +3845,8 @@ public class DataToReturn {
 	}
 
 	public String getString23() {
-		return string23;
+		
+		return (string23 == null)? "" : string23;
 	}
 
 	public void setString23(String string23) {
@@ -3471,7 +3854,8 @@ public class DataToReturn {
 	}
 
 	public String getDiasMora() {
-		return diasMora;
+		
+		return (diasMora == null)? "" : diasMora;
 	}
 
 	public void setDiasMora(String diasMora) {
@@ -3479,7 +3863,8 @@ public class DataToReturn {
 	}
 
 	public String getFechaInicioMora() {
-		return fechaInicioMora;
+		
+		return (fechaInicioMora == null)? "" : fechaInicioMora;
 	}
 
 	public void setFechaInicioMora(String fechaInicioMora) {
@@ -3487,7 +3872,8 @@ public class DataToReturn {
 	}
 
 	public String getMontoMora1() {
-		return montoMora1;
+		
+		return (montoMora1 == null)? "" : montoMora1;
 	}
 
 	public void setMontoMora1(String montoMora1) {
@@ -3495,7 +3881,8 @@ public class DataToReturn {
 	}
 
 	public String getMontoMora2() {
-		return montoMora2;
+		
+		return (montoMora2 == null)? "" : montoMora2;
 	}
 
 	public void setMontoMora2(String montoMora2) {
@@ -3503,7 +3890,8 @@ public class DataToReturn {
 	}
 
 	public String getMontoMora3() {
-		return montoMora3;
+		
+		return (montoMora3 == null)? "" : montoMora3;
 	}
 
 	public void setMontoMora3(String montoMora3) {
@@ -3511,7 +3899,8 @@ public class DataToReturn {
 	}
 
 	public String getMontoMora4() {
-		return montoMora4;
+		
+		return (montoMora4 == null)? "" : montoMora4;
 	}
 
 	public void setMontoMora4(String montoMora4) {
@@ -3519,7 +3908,8 @@ public class DataToReturn {
 	}
 
 	public String getMontoMora5() {
-		return montoMora5;
+		
+		return (montoMora5 == null)? "" : montoMora5;
 	}
 
 	public void setMontoMora5(String montoMora5) {
@@ -3527,7 +3917,8 @@ public class DataToReturn {
 	}
 
 	public String getMontoMora6() {
-		return montoMora6;
+		
+		return (montoMora6 == null)? "" : montoMora6;
 	}
 
 	public void setMontoMora6(String montoMora6) {
@@ -3535,7 +3926,8 @@ public class DataToReturn {
 	}
 
 	public String getMontoMora7() {
-		return montoMora7;
+		
+		return (montoMora7 == null)? "" : montoMora7;
 	}
 
 	public void setMontoMora7(String montoMora7) {
@@ -3543,7 +3935,8 @@ public class DataToReturn {
 	}
 
 	public String getMontoMora8() {
-		return montoMora8;
+		
+		return (montoMora8 == null)? "" : montoMora8;
 	}
 
 	public void setMontoMora8(String montoMora8) {
@@ -3551,7 +3944,8 @@ public class DataToReturn {
 	}
 
 	public String getMonto14() {
-		return monto14;
+		
+		return (monto14 == null)? "" : monto14;
 	}
 
 	public void setMonto14(String monto14) {
@@ -3559,7 +3953,8 @@ public class DataToReturn {
 	}
 
 	public String getMonto24() {
-		return monto24;
+		
+		return (monto24 == null)? "" : monto24;
 	}
 
 	public void setMonto24(String monto24) {
@@ -3567,7 +3962,8 @@ public class DataToReturn {
 	}
 
 	public String getNumero14() {
-		return numero14;
+		
+		return (numero14 == null)? "" : numero14;
 	}
 
 	public void setNumero14(String numero14) {
@@ -3575,7 +3971,8 @@ public class DataToReturn {
 	}
 
 	public String getNumero24() {
-		return numero24;
+		
+		return (numero24 == null)? "" : numero24;
 	}
 
 	public void setNumero24(String numero24) {
@@ -3583,7 +3980,8 @@ public class DataToReturn {
 	}
 
 	public String getFlag14() {
-		return flag14;
+		
+		return (flag14 == null)? "" : flag14;
 	}
 
 	public void setFlag14(String flag14) {
@@ -3591,7 +3989,8 @@ public class DataToReturn {
 	}
 
 	public String getFlag24() {
-		return flag24;
+		
+		return (flag24 == null)? "" : flag24;
 	}
 
 	public void setFlag24(String flag24) {
@@ -3599,7 +3998,8 @@ public class DataToReturn {
 	}
 
 	public String getString14() {
-		return string14;
+		
+		return (string14 == null)? "" : string14;
 	}
 
 	public void setString14(String string14) {
@@ -3607,7 +4007,8 @@ public class DataToReturn {
 	}
 
 	public String getString24() {
-		return string24;
+		
+		return (string24 == null)? "" : string24;
 	}
 
 	public void setString24(String string24) {
@@ -3615,7 +4016,8 @@ public class DataToReturn {
 	}
 
 	public String getCuentaCastigo() {
-		return cuentaCastigo;
+		
+		return (cuentaCastigo == null)? "" : cuentaCastigo;
 	}
 
 	public void setCuentaCastigo(String cuentaCastigo) {
@@ -3623,7 +4025,8 @@ public class DataToReturn {
 	}
 
 	public String getMontoCastigo() {
-		return montoCastigo;
+		
+		return (montoCastigo == null)? "" : montoCastigo;
 	}
 
 	public void setMontoCastigo(String montoCastigo) {
@@ -3631,7 +4034,8 @@ public class DataToReturn {
 	}
 
 	public String getFiller09() {
-		return filler09;
+		
+		return (filler09 == null)? "" : filler09;
 	}
 
 	public void setFiller09(String filler09) {
