@@ -19,7 +19,6 @@ public class DataConsultaServicio {
 
 	public void loadDataCM(Exchange exchange) {
 		exchange.setProperty("CODIGO_SERVICIO", System.getenv().getOrDefault("COD-SERVICIO", ""));
-		exchange.setProperty("ID_EMISOR", System.getenv().getOrDefault("ID-EMISOR", ""));
 		exchange.setProperty("USER_CALL_SOAP", System.getenv().getOrDefault("USER-CALL-SOAP", ""));
 		exchange.setProperty("PASSWORD_CALL_SOAP", System.getenv().getOrDefault("PASSWORD-CALL-SOAP", ""));
 		exchange.setProperty("CODIGO_USUARIO", System.getenv().getOrDefault("COD-USUARIO", ""));
@@ -32,6 +31,10 @@ public class DataConsultaServicio {
 		byte bytes[] = new byte[20];
 		r.nextBytes(bytes);
 		exchange.setProperty("ID_REQ", dateFormat.format(date) + "" + String.format("%03d", r.nextInt(1000)) + String.format("%03d", r.nextInt(1000)));
+		exchange.setProperty("ID_EMISOR", dateFormat.format(date) + "" + String.format("%03d", r.nextInt(1000)));
+			
+		
+		
 	}
 	
 	public void loadDataXPATH(Exchange exchange) {

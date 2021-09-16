@@ -8,18 +8,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class DataInput {
 	@JsonProperty("canal")
-	@NotNull(message = "NotNull canal")
-	@Size(min=1, max=8, message = "Largo caracteres canal")
+	@NotNull(message = "Not Found")
+	@Size(min=2, max=2, message = "Largo de caracteres invalido")
 	private String canal;
 	
 	@JsonProperty("num_cta_tar")
-	@NotNull(message = "NotNull numCta")
-	@Size(min=01, max=19, message = "Largo caracteres numCta")
+	@NotNull(message = "Not Found")
+	@Size(min=19, max=19, message = "Largo caracteres  invalido")
 	private String numCtaTar;
 	
 	@JsonProperty("secuencia_tarjeta")
-	@NotNull(message = "NotNull secuenciaTarjeta")
-	@Size(min=4, max=4, message = "Largo caracteres secuenciaTarjeta")
+	@NotNull(message = "Not Found")
+	@Size(min=4, max=4, message = "Largo caracteres  invalido")
 	private String secuenciaTarjeta;
 
 	public String getCanal() {
