@@ -1,9 +1,11 @@
 package cl.bcointer.consultasaldo.bean;
 
+import java.security.SecureRandom;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Random;
+
+import javax.validation.constraints.NotNull;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.builder.xml.XPathBuilder;
@@ -16,24 +18,19 @@ public class DataConsultaServicio {
     private static final Logger logger = Logger.getLogger("LoadData");
 
 	public void loadDataCM(Exchange exchange) {
-		exchange.setProperty("CODIGO_SERVICIO", System.getenv().getOrDefault("COD-SERVICIO", "No existe en CONFIG-MAP"));
-		exchange.setProperty("ID_EMISOR", System.getenv().getOrDefault("ID-EMISOR", "No existe en CONFIG-MAP"));
-		exchange.setProperty("USER_CALL_SOAP", System.getenv().getOrDefault("USER-CALL-SOAP", "No existe en SECRET"));
-		exchange.setProperty("PASSWORD_CALL_SOAP", System.getenv().getOrDefault("PASSWORD-CALL-SOAP", "No existe en SECRET"));
-		exchange.setProperty("CODIGO_USUARIO", System.getenv().getOrDefault("COD-USUARIO", "No existe en SECRET"));
-		exchange.setProperty("DIR_IP", System.getenv().getOrDefault("DIR-IP", "No existe en SECRET"));
-		
-		logger.info(">>> CODIGO-SERVICIO : " + exchange.getProperty("CODIGO_SERVICIO"));
-		logger.info(">>> ID-EMISOR : " + exchange.getProperty("ID_EMISOR"));
-		logger.info(">>> USER-CALL-SOAP : " + exchange.getProperty("USER_CALL_SOAP"));
-		logger.info(">>> PASSWORD-CALL-SOAP : " + exchange.getProperty("PASSWORD_CALL_SOAP"));
-		logger.info(">>> CODIGO-USUARIO : " + exchange.getProperty("CODIGO_USUARIO"));
-		logger.info(">>> DIR-IP : " + exchange.getProperty("DIR_IP"));
-		
+		exchange.setProperty("CODIGO_SERVICIO", System.getenv().getOrDefault("COD-SERVICIO", ""));
+		exchange.setProperty("ID_EMISOR", System.getenv().getOrDefault("ID-EMISOR", ""));
+		exchange.setProperty("USER_CALL_SOAP", System.getenv().getOrDefault("USER-CALL-SOAP", ""));
+		exchange.setProperty("PASSWORD_CALL_SOAP", System.getenv().getOrDefault("PASSWORD-CALL-SOAP", ""));
+		exchange.setProperty("CODIGO_USUARIO", System.getenv().getOrDefault("COD-USUARIO", ""));
+		exchange.setProperty("DIR_IP", System.getenv().getOrDefault("DIR-IP", ""));
+
 		
 		DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmssSSS");
 		Date date = new Date();
-		Random r = new Random( System.currentTimeMillis() );
+		SecureRandom r = new SecureRandom(); 
+		byte bytes[] = new byte[20];
+		r.nextBytes(bytes);
 		exchange.setProperty("ID_REQ", dateFormat.format(date) + "" + String.format("%03d", r.nextInt(1000)) + String.format("%03d", r.nextInt(1000)));
 	}
 	
@@ -180,31 +177,44 @@ public class DataConsultaServicio {
 		object.setIdEmisorServicio(exchange.getProperty("ID_EMISOR", String.class));
 	}
 	
-	private String setNumbD(String num) {
-		String entero = this.setNumb(num);
+	private String setNumbD(@NotNull String num) {
 		String decimal = "00";
-		if (!entero.equals("0")) {
-			if (entero.length() > 2) {
-				entero = entero.substring(0, entero.length()-2);				
-			}else {
-				entero = "0";
-			}			
-			decimal = num.substring(num.length()-2,num.length());
-		} 
+		String entero = "0";
+		try{
+			entero = this.setNumb(num);
+			if (!entero.equals("0")) {
+				if (entero.length() > 2) {
+					entero = entero.substring(0, entero.length()-2);				
+				}else {
+					entero = "0";
+				}			
+				decimal = num.substring(num.length()-2,num.length());
+			} 
+		}catch(Exception e){
+			logger.error(">>> PROBLEMAS EN OBTENCION DE NUMERO");
+		}
+		
 		return entero.concat("," + decimal);
+
+		
 	}
 
-	private String setNumb(String num) {
+	private String setNumb(@NotNull String num) {
 		String newNum = "0";
-		if ( num != null && !num.isEmpty()) {			
-			String signo = (num.contains("-"))? "-" : "";
-			long entero = Long.parseLong(num.substring(1,num.length()));
-			if (signo.isEmpty()) {
-				newNum =  String.valueOf(entero);
-			} else {
-				newNum = "-" + String.valueOf(entero);;
+		try{
+			if ( num != null && !num.isEmpty()) {			
+				String signo = (num.contains("-"))? "-" : "";
+				long entero = Long.parseLong(num.substring(1,num.length()));
+				if (signo.isEmpty()) {
+					newNum =  String.valueOf(entero);
+				} else {
+					newNum = "-" + entero;
+				}
 			}
+		}catch(Exception e){
+			logger.error(">>> PROBLEMAS EN OBTENCION DE NUMERO");
 		}
+		
 		return newNum;
 	}
 
@@ -218,7 +228,7 @@ public class DataConsultaServicio {
 			object.setFechaUltFactDolar(fechasStr1[0]);
 			if (fechasStr1.length > 1) {
 				object.setFechaVencFactDolar(fechasStr1[1]);
-			}			
+			}		
 		}
 		
 		

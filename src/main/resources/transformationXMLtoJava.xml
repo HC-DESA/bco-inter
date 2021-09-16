@@ -4,7 +4,7 @@
         <wildcard>false</wildcard>
     </configuration>
     <mapping>
-        <class-a>generated_1631563748131.DATA</class-a>
+        <class-a>cl.bcointer.consultasaldo.map.DATA</class-a>
         <class-b>cl.bcointer.consultasaldo.objetos.DataToReturn</class-b>
         <field>
             <a>autPendDolarL1CtaAut</a>

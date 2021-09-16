@@ -1,5 +1,5 @@
 
-package generated_1631563748131;
+package cl.bcointer.consultasaldo.map;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

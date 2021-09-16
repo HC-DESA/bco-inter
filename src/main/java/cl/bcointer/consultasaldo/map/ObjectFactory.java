@@ -1,5 +1,5 @@
 
-package generated_1631563748131;
+package cl.bcointer.consultasaldo.map;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
@@ -24,11 +24,12 @@ public class ObjectFactory {
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: generated
+  
+	    public ObjectFactory() {
+	    }
      * 
      */
-    public ObjectFactory() {
-    }
-
+	
     /**
      * Create an instance of {@link DATA }
      * 

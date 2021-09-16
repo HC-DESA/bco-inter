@@ -5,7 +5,7 @@
     </configuration>
     <mapping>
         <class-a>cl.bcointer.consultasaldo.objetos.DataToReturn</class-a>
-        <class-b>mensajerespuestaconsultadesaldos.MensajeRespuestaConsultaDeSaldos</class-b>
+        <class-b>cl.bcointer.consultasaldo.map.MensajeRespuestaConsultaDeSaldos</class-b>
         <field>
             <a>mora91120d</a>
             <b>mora91120d</b>

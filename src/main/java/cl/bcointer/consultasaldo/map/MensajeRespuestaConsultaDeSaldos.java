@@ -1,5 +1,5 @@
 
-package mensajerespuestaconsultadesaldos;
+package cl.bcointer.consultasaldo.map;
 
 import javax.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;

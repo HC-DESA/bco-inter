@@ -10,8 +10,7 @@
            
             <bean id="_bean1" method="loadDataCM" ref="loadDataConsultaServicio"/>
             <convertBodyTo type="String"/>
-            <log id="_Log_TRAZA1" loggingLevel="INFO" message=">>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] [REQ] [${headers.CamelHttpMethod} ${headers.CamelServletContextPath}] [${body}]"/>
-													<!--             [AAAA-MM-DDTHH:MM:SS.mmmmmm{+|-}TT:ZZ] [INFO]  [AAAAMMDDHHMMSSmmm{DIGITOS ALEATORIOS}] [TIPO_LOG] "METODO ENDPOINT" "ID_APP_CLIENTE"  "CODIGO_EJECUCION"  [{"DATA":"INPUT"}/<DATA>INPUT</DATA>] -->
+            <log id="_Log_TRAZA1" loggingLevel="INFO" message=">>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &#34;REQ&#34;  [${headers.CamelHttpMethod} ${headers.CamelServletContextPath}] [${body}]"/>
             <doTry id="_doTry_ReceptionAndValdiateData">
                 <unmarshal id="_transObjectConsultaSaldo" ref="jsonToObjectConsultaSaldo"/>
                 <setProperty propertyName="OBJECT_REQUEST">
