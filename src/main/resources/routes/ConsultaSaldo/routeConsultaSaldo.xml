@@ -101,7 +101,7 @@
             <setProperty id="_setProperty10" propertyName="XML_RESPONSE_NEXUS">
                 <simple>${body}</simple>
             </setProperty>
-            <doTry>          
+            <doTry>
                 <to id="_toTransformXmlToJson" uri="ref:XMLtoJava"/>
                 <setProperty id="_setProperty11" propertyName="TIMESTAMP_RESPONSE">
                     <simple>${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}</simple>
@@ -132,8 +132,7 @@
                         <constant>500</constant>
                     </setHeader>
                     <to id="_toVelocityResponseJson_-ErrorMapingResponse" uri="velocity:velocity/JsonErrorCase.vm"/>
-                    <stop id="_stopInvalidJson"/>
-
+                    <stop id="_stopInvalidJsonResponse"/>
                 </doCatch>
             </doTry>
         </route>
