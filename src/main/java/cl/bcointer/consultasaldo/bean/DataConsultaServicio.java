@@ -32,9 +32,7 @@ public class DataConsultaServicio {
 		r.nextBytes(bytes);
 		exchange.setProperty("ID_REQ", dateFormat.format(date) + "" + String.format("%03d", r.nextInt(1000)) + String.format("%03d", r.nextInt(1000)));
 		exchange.setProperty("ID_EMISOR", dateFormat.format(date) + "" + String.format("%03d", r.nextInt(1000)));
-			
-		
-		
+		exchange.setProperty("DATE_TIME_SERVICIO_MILLIS", date.toInstant().toEpochMilli());
 	}
 	
 	public void loadDataXPATH(Exchange exchange) {
@@ -205,7 +203,7 @@ public class DataConsultaServicio {
 	private String setNumb(@NotNull String num) {
 		String newNum = "0";
 		try{
-			if ( num != null && !num.isEmpty()) {			
+			if ( !num.isEmpty()) {			
 				String signo = (num.contains("-"))? "-" : "";
 				long entero = Long.parseLong(num.substring(1,num.length()));
 				if (signo.isEmpty()) {
@@ -257,5 +255,10 @@ public class DataConsultaServicio {
 		}else {
 			object.setFechaVigEeccDesde(string3.substring(0, string3.trim().length()));
 		}
-	}	
+	}
+	
+	public void getExecutionTime(Exchange exchange) {
+		Date date = new Date();
+		exchange.setProperty("TIEMPO_EJECUCION", (date.toInstant().toEpochMilli() - exchange.getProperty("DATE_TIME_SERVICIO_MILLIS" ,  Long.class)));
+	}
 }
