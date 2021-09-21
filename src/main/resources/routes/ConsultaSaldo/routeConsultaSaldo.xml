@@ -7,7 +7,10 @@
         <route id="_route_ReceptionData" streamCache="true">
             <from id="_fromIR1" uri="direct:routeConsultaSaldos"/>
             <bean id="_bean_REQ" method="loadDataCM" ref="loadDataConsultaServicio"/>
-            <log id="_Log_TRAZA_REQ" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;ID_APP_CLIENTE&quot; &quot;0&quot;  &quot;0&quot; [${body}]"/>
+            <setProperty id="_Property_SAVE_CANAL" propertyName="INPUT_CANAL">
+            	<jsonpath>$.canal</jsonpath>
+            </setProperty>  
+            <log id="_Log_TRAZA_REQ" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;0&quot;  &quot;0&quot; [${body}]"/>
             <doTry id="_doTry_ReceptionAndValdiateData">
                 <unmarshal id="_transObjectConsultaSaldo" ref="jsonToObjectConsultaSaldo"/>
                 <setProperty id="_setProperty1" propertyName="OBJECT_REQUEST">
@@ -38,7 +41,7 @@
                     </setHeader>
                     <to id="_toVelocityResponseJsonERRORInvalid" uri="velocity:velocity/JsonErrorCase.vm"/>
                     <bean id="_bean_REQ_ERRORInvalidJson" method="getExecutionTime" ref="loadDataConsultaServicio"/>
-                    <log id="_Log_TRAZA_REQ_ERRORInvalidJson" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ-SOAP&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;ID_APP_CLIENTE&quot; &quot;1&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
+                    <log id="_Log_TRAZA_REQ_ERRORInvalidJson" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ-SOAP&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;1&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
                     <stop id="_stopInvalidJson"/>
                 </doCatch>
                 <doCatch id="_doCatchErrorJsonInvalido">
@@ -62,7 +65,7 @@
                     </setHeader>
                     <to id="_toVelocityResponseJsonERRORInvalidate" uri="velocity:velocity/JsonErrorCase.vm"/>
                     <bean id="_bean_REQ_JsonERRORInvalidate" method="getExecutionTime" ref="loadDataConsultaServicio"/>
-                    <log id="_Log_TRAZA_REQ_JsonERRORInvalidate" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ-SOAP&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;ID_APP_CLIENTE&quot; &quot;1&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
+                    <log id="_Log_TRAZA_REQ_JsonERRORInvalidate" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ-SOAP&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;1&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
                     <stop id="_stopJsonInvalido"/>
                 </doCatch>
                 <doCatch id="_doCatchErrorValidate">
@@ -88,21 +91,21 @@
                     </setHeader>
                     <to id="_toVelocityResponseJsonERRORValidate" uri="velocity:velocity/JsonErrorCaseValidate.vm"/>
                     <bean id="_bean_REQ_JsonERRORValidate" method="getExecutionTime" ref="loadDataConsultaServicio"/>
-                    <log id="_Log_TRAZA_REQ_JsonERRORValidate" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ-SOAP&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;ID_APP_CLIENTE&quot; &quot;1&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
+                    <log id="_Log_TRAZA_REQ_JsonERRORValidate" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ-SOAP&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;1&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
                     <stop id="_stop2"/>
                 </doCatch>
             </doTry>
             <log id="_log-CONSULTA-SALDOS_ValidacionCorrecta" message="*** Los datos fueron validados correctamente ***"/>
             <to id="_SetDatosParaSOAP" uri="velocity:velocity/ConsultaSaldo/DataForSOAP.vm"/>            
             <bean id="_bean_REQ_SOAP" method="getExecutionTime" ref="loadDataConsultaServicio"/>
-            <log id="_Log_TRAZA_REQ-SOAP" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ-SOAP&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;ID_APP_CLIENTE&quot; &quot;0&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
+            <log id="_Log_TRAZA_REQ-SOAP" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ-SOAP&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;0&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
             <to id="_to_callSOAP-CONSULTA-SALDO-RESP" uri="direct:generateResponseConsultaSaldo"/>
             <!-- <to id="_to_callSOAP-CONSULTA-SALDO" uri="direct:routeConsultaSaldosSOAP"/> -->
         </route>
         <route id="_route_GenerarRespuestaCS">
             <from id="_fromGenerarRespuestaCS" uri="direct:generateResponseConsultaSaldo"/>
             <bean id="_bean_REST_SOAP" method="getExecutionTime" ref="loadDataConsultaServicio"/>
-            <log id="_Log_TRAZA_RES-SOAP" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;RES-SOAP&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;ID_APP_CLIENTE&quot; &quot;0&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
+            <log id="_Log_TRAZA_RES-SOAP" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;RES-SOAP&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;0&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
             <setHeader headerName="Content-Type" id="_setHeaderResp-ConsultaSaldos">
                 <constant>application/json; charset:utf-8</constant>
             </setHeader>
@@ -118,7 +121,7 @@
                 <bean id="_beanSetDataINObject" method="loadDataXPATH" ref="loadDataConsultaServicio"/>
                 <to id="_toTransfomObjectInResponseJson" uri="ref:ObjectToJson"/>
                 <bean id="_bean_RES" method="getExecutionTime" ref="loadDataConsultaServicio"/>
-                <log id="_Log_TRAZA_RES" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;RES&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;ID_APP_CLIENTE&quot; &quot;0&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
+                <log id="_Log_TRAZA_RES" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;RES&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;0&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
                 <doCatch>
                     <exception>org.apache.camel.InvalidPayloadException</exception>
                     <exception>com.fasterxml.jackson.databind.JsonMappingException</exception>
@@ -143,7 +146,7 @@
                     </setHeader>
                     <to id="_toVelocityResponseJson_ErrorMapingResponse" uri="velocity:velocity/JsonERRORValidateCase.vm"/>
                     <bean id="_bean_REQ_ErrorMapingResponse" method="getExecutionTime" ref="loadDataConsultaServicio"/>
-                    <log id="_Log_TRAZA_REQ_ErrorMapingResponse" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ-SOAP&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;ID_APP_CLIENTE&quot; &quot;1&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
+                    <log id="_Log_TRAZA_REQ_ErrorMapingResponse" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ-SOAP&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;1&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
                     <stop id="_stopInvalidJsonResponse"/>
                 </doCatch>
             </doTry>

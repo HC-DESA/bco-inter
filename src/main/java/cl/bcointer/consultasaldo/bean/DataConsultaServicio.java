@@ -28,11 +28,12 @@ public class DataConsultaServicio {
 		DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmssSSS");
 		Date date = new Date();
 		SecureRandom r = new SecureRandom(); 
-		byte bytes[] = new byte[20];
-		r.nextBytes(bytes);
+		r.nextBytes(new byte[20]);
 		exchange.setProperty("ID_REQ", dateFormat.format(date) + "" + String.format("%03d", r.nextInt(1000)) + String.format("%03d", r.nextInt(1000)));
 		exchange.setProperty("ID_EMISOR", dateFormat.format(date) + "" + String.format("%03d", r.nextInt(1000)));
+		exchange.setProperty("ID_APP_CLIENTE", dateFormat.format(date) + "" + String.format("%03d", r.nextInt(1000)));
 		exchange.setProperty("DATE_TIME_SERVICIO_MILLIS", date.toInstant().toEpochMilli());
+		
 	}
 	
 	public void loadDataXPATH(Exchange exchange) {
