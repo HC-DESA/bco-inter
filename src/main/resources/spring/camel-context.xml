@@ -28,18 +28,13 @@
             <log message="*** Exception Validation *** : ${exception}, ${body}, ${date:now}"/>
         </onException>
         <!--         Configuracion base REST DSL -->
-        <restConfiguration bindingMode="off" component="servlet" contextPath="/rest"/>
+        <restConfiguration bindingMode="off" component="servlet" contextPath="/api"/>
         <rest apiDocs="true" consumes="application/json" id="rest-1"
-            path="/service" produces="application/json">
+            path="/v1" produces="application/json">
             <!-- Metodo POST servicio ** CONSULTA-SALDOS ** -->
             <post id="METODO-1_Consulta-Saldos" uri="consultaSaldos">
                 <to uri="direct:routeConsultaSaldos"/>
             </post>
         </rest>
-<!--         <route id="_routete"> -->
-<!--             <from id="_fromGenerarRespS" uri="direct:trans"/> -->
-<!--             <to id="_to1" uri="ref:XMLtoJava"/> -->
-<!--             <to id="_to2_routete" uri="ref:ObjectToJson"/> -->
-<!--         </route> -->
     </camelContext>
 </beans>
