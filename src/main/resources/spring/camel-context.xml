@@ -5,10 +5,12 @@
     <!-- Importar rutas para servicio ConsultaSaldo -->
     <import resource="../routes/ConsultaSaldo/routeConsultaSaldo.xml"/>
     <import resource="../routes/ConsultaSaldo/routeCallSOAP.xml"/>
+    <import resource="../routes/ConsultaSaldo/routeErrorConsultaSaldo.xml"/>
     <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
         <!-- Declaracion de rutas Importadas para ConsultaSaldo-->
         <routeContextRef ref="routeConsultaSaldo"/>
         <routeContextRef ref="routeCallSOAP"/>
+        <routeContextRef ref="routeErrorConsultaSaldo"/>
         <!-- Declaracion de transformaciones -->
         <endpoint id="ObjectToJson" uri="dozer:ObjectToJson?sourceModel=cl.bcointer.consultasaldo.objetos.DataToReturn&amp;targetModel=cl.bcointer.consultasaldo.map.MensajeRespuestaConsultaDeSaldos&amp;marshalId=transform-json&amp;mappingFile=transformation-ObjectToJson.xml"/>
         <endpoint id="XMLtoJava" uri="dozer:XMLtoJava?sourceModel=cl.bcointer.consultasaldo.map.DATA&amp;targetModel=cl.bcointer.consultasaldo.objetos.DataToReturn&amp;unmarshalId=xmlinputtojava&amp;mappingFile=transformationXMLtoJava.xml"/>
@@ -25,7 +27,8 @@
             <handled>
                 <simple>true</simple>
             </handled>
-            <log message="*** Exception Validation *** : ${exception}, ${body}, ${date:now}"/>
+            <log message=">>>>> ERROR  GENERAL "/>
+            <to id="_to_RouteError4" uri="direct:errorGenerateResponse"/>
         </onException>
         <!--         Configuracion base REST DSL -->
         <restConfiguration bindingMode="off" component="servlet" contextPath="/api"/>

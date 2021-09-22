@@ -7,96 +7,38 @@
         <route id="_route_ReceptionData" streamCache="true">
             <from id="_fromIR1" uri="direct:routeConsultaSaldos"/>
             <bean id="_bean_REQ" method="loadDataCM" ref="loadDataConsultaServicio"/>
-            <setProperty id="_Property_SAVE_CANAL" propertyName="INPUT_CANAL">
-            	<jsonpath>$.canal</jsonpath>
-            </setProperty>  
             <log id="_Log_TRAZA_REQ" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;0&quot;  &quot;0&quot; [${body}]"/>
+
             <doTry id="_doTry_ReceptionAndValdiateData">
                 <unmarshal id="_transObjectConsultaSaldo" ref="jsonToObjectConsultaSaldo"/>
                 <setProperty id="_setProperty1" propertyName="OBJECT_REQUEST">
                     <simple>${body}</simple>
-                </setProperty>
+                </setProperty>                
+                <setProperty id="_Property_SAVE_CANAL" propertyName="INPUT_CANAL">
+                    <simple>${body.getCanal()}</simple>
+                </setProperty>                
                 <to id="_beanValidatorConsultaSaldo" uri="bean-validator://dataInputConsultaSaldo"/>
                 <doCatch id="_doCatchErrorNoData">
                     <exception>org.apache.camel.InvalidPayloadException</exception>
                     <exception>com.fasterxml.jackson.databind.JsonMappingException</exception>
-                    <log id="_log_Error_UnmarshalInvalid" message="Error -> Falta Json Entrante"/>
-                    <setHeader headerName="Content-Type" id="_setHeaderResp-NoJSON">
-                        <constant>application/json; charset:utf-8</constant>
-                    </setHeader>
-                    <setProperty id="_setProperty2Invalid" propertyName="CODE_ERROR">
-                        <simple>CCCS-05</simple>
-                    </setProperty>
-                    <setProperty id="_setPropertyInvalid3" propertyName="MSG_ERROR">
-                        <simple>Falta Json entrante</simple>
-                    </setProperty>
-                    <setProperty id="_setProperty4Invalid" propertyName="TIMESTAMP_RESPONSE_ERROR">
-                        <simple>${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}</simple>
-                    </setProperty>
-                    <setProperty id="_setPropertyInvalid5" propertyName="CANAL">
-                        <simple>-</simple>
-                    </setProperty>
-                    <setHeader headerName="Exchange.HTTP_RESPONSE_CODE" id="_setHeaderEx7Invalid">
-                        <constant>500</constant>
-                    </setHeader>
-                    <to id="_toVelocityResponseJsonERRORInvalid" uri="velocity:velocity/JsonErrorCase.vm"/>
-                    <bean id="_bean_REQ_ERRORInvalidJson" method="getExecutionTime" ref="loadDataConsultaServicio"/>
-                    <log id="_Log_TRAZA_REQ_ERRORInvalidJson" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ-SOAP&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;1&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
-                    <stop id="_stopInvalidJson"/>
+                    <to id="_to_RouteError1" uri="direct:errorNoDataJson"/>
+                </doCatch>
+
+                <doCatch id="_doCatchErrorValidate">
+                    <exception>org.apache.camel.component.bean.validator.BeanValidationException</exception>
+                    <to id="_to_RouteError3" uri="direct:errorValidateData"/>
                 </doCatch>
                 <doCatch id="_doCatchErrorJsonInvalido">
                     <exception>com.fasterxml.jackson.core.JsonParseException</exception>
-                    <log message="Error -> Consistencia de datos: ${exception}, ${body}, ${date:now}"/>
-                    <log id="_log_Error_Unmarshal" message="Error -> Json Malformado"/>
-                    <setProperty id="_setProperty2" propertyName="CODE_ERROR">
-                        <simple>CCCS-04</simple>
-                    </setProperty>
-                    <setProperty id="_setProperty3" propertyName="MSG_ERROR">
-                        <simple>JSON Invalido</simple>
-                    </setProperty>
-                    <setProperty id="_setProperty4" propertyName="TIMESTAMP_RESPONSE_ERROR">
-                        <simple>${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}</simple>
-                    </setProperty>
-                    <setProperty id="_setProperty5" propertyName="CANAL">
-                        <simple>-</simple>
-                    </setProperty>
-                    <setHeader headerName="Exchange.HTTP_RESPONSE_CODE" id="_setHeaderEx7">
-                        <constant>500</constant>
-                    </setHeader>
-                    <to id="_toVelocityResponseJsonERRORInvalidate" uri="velocity:velocity/JsonErrorCase.vm"/>
-                    <bean id="_bean_REQ_JsonERRORInvalidate" method="getExecutionTime" ref="loadDataConsultaServicio"/>
-                    <log id="_Log_TRAZA_REQ_JsonERRORInvalidate" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ-SOAP&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;1&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
-                    <stop id="_stopJsonInvalido"/>
+                    <to id="_to_RouteError2" uri="direct:errorJsonInvalid"/>
                 </doCatch>
-                <doCatch id="_doCatchErrorValidate">
-                    <exception>org.apache.camel.component.bean.validator.BeanValidationException</exception>
-                    <log message="Error -> Consistencia de datos: ${exception}, ${body}, ${date:now}"/>
-                    <setHeader headerName="CamelExceptionHandler" id="_setHeader1Validate">
-                        <simple>${exception}</simple>
-                    </setHeader>
-                    <setProperty id="_setProperty6" propertyName="CODE_ERROR">
-                        <simple>CCCS-06</simple>
-                    </setProperty>
-                    <setProperty id="_setProperty7" propertyName="MSG_ERROR">
-                        <simple>DATOS INVALIDOS</simple>
-                    </setProperty>
-                    <setProperty id="_setProperty8" propertyName="TIMESTAMP_RESPONSE_ERROR">
-                        <simple>${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}</simple>
-                    </setProperty>
-                    <setProperty id="_setProperty9" propertyName="CANAL">
-                        <jsonpath>$.canal</jsonpath>
-                    </setProperty>
-                    <setHeader headerName="Exchange.HTTP_RESPONSE_CODE" id="_setHeaderEx7">
-                        <constant>500</constant>
-                    </setHeader>
-                    <to id="_toVelocityResponseJsonERRORValidate" uri="velocity:velocity/JsonErrorCaseValidate.vm"/>
-                    <bean id="_bean_REQ_JsonERRORValidate" method="getExecutionTime" ref="loadDataConsultaServicio"/>
-                    <log id="_Log_TRAZA_REQ_JsonERRORValidate" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ-SOAP&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;1&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
-                    <stop id="_stop2"/>
+                <doCatch id="_doCatchErrorJsonInvalido">
+                    <exception>java.lang.Exception</exception>
+                    <to id="_to_RouteErrorji" uri="direct:errorJsonInvalid"/>
                 </doCatch>
             </doTry>
             <log id="_log-CONSULTA-SALDOS_ValidacionCorrecta" message="*** Los datos fueron validados correctamente ***"/>
-            <to id="_SetDatosParaSOAP" uri="velocity:velocity/ConsultaSaldo/DataForSOAP.vm"/>            
+            <to id="_SetDatosParaSOAP" uri="velocity:velocity/ConsultaSaldo/DataForSOAP.vm"/>
             <bean id="_bean_REQ_SOAP" method="getExecutionTime" ref="loadDataConsultaServicio"/>
             <log id="_Log_TRAZA_REQ-SOAP" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ-SOAP&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;0&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
             <to id="_to_callSOAP-CONSULTA-SALDO-RESP" uri="direct:generateResponseConsultaSaldo"/>
@@ -126,28 +68,7 @@
                     <exception>org.apache.camel.InvalidPayloadException</exception>
                     <exception>com.fasterxml.jackson.databind.JsonMappingException</exception>
                     <exception>com.fasterxml.jackson.core.JsonParseException</exception>
-                    <setHeader headerName="Content-Type" id="_setHeaderResp-ErrorMapingResponse">
-                        <constant>application/json; charset:utf-8</constant>
-                    </setHeader>
-                    <setProperty id="_setProperty_Code-ErrorMapingResponse" propertyName="CODE_ERROR">
-                        <simple>CCCS-05</simple>
-                    </setProperty>
-                    <setProperty id="_setProperty_MSG-ErrorMapingResponse" propertyName="MSG_ERROR">
-                        <simple>Error generando Response</simple>
-                    </setProperty>
-                    <setProperty id="_setProperty_DATETIME-ErrorMapingResponse" propertyName="TIMESTAMP_RESPONSE_ERROR">
-                        <simple>${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}</simple>
-                    </setProperty>
-                    <setProperty id="_setProperty-ErrorMapingResponse" propertyName="CANAL">
-                        <simple>-</simple>
-                    </setProperty>
-                    <setHeader headerName="Exchange.HTTP_RESPONSE_CODE" id="_setHeader_HTTP-ErrorMapingResponse">
-                        <constant>500</constant>
-                    </setHeader>
-                    <to id="_toVelocityResponseJson_ErrorMapingResponse" uri="velocity:velocity/JsonERRORValidateCase.vm"/>
-                    <bean id="_bean_REQ_ErrorMapingResponse" method="getExecutionTime" ref="loadDataConsultaServicio"/>
-                    <log id="_Log_TRAZA_REQ_ErrorMapingResponse" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ-SOAP&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;1&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
-                    <stop id="_stopInvalidJsonResponse"/>
+                    <to id="_to_RouteError4" uri="direct:errorGenerateResponse"/>
                 </doCatch>
             </doTry>
         </route>
