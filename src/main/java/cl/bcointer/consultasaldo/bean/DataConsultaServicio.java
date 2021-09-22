@@ -27,7 +27,7 @@ public class DataConsultaServicio {
 		
 		DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmssSSS");
 		Date date = new Date();
-		SecureRandom r = new SecureRandom(); 
+		SecureRandom r = new SecureRandom();
 		r.nextBytes(new byte[20]);
 		exchange.setProperty("ID_REQ", dateFormat.format(date) + "" + String.format("%03d", r.nextInt(1000)) + String.format("%03d", r.nextInt(1000)));
 		exchange.setProperty("ID_EMISOR", dateFormat.format(date) + "" + String.format("%03d", r.nextInt(1000)));
@@ -193,23 +193,21 @@ public class DataConsultaServicio {
 			} 
 		}catch(Exception e){
 			logger.error(">>> PROBLEMAS EN OBTENCION DE NUMERO");
-		}
-		
-		return entero.concat("," + decimal);
-
-		
+		}		
+		return entero.concat("," + decimal);		
 	}
 
 	private String setNumb(@NotNull String num) {
 		String newNum = "0";
 		try{
-			if ( !num.isEmpty()) {			
-				String signo = (num.contains("-"))? "-" : "";
-				long entero = Long.parseLong(num.substring(1,num.length()));
-				if (signo.isEmpty()) {
-					newNum =  String.valueOf(entero);
+			if ( !num.isEmpty()) {
+				String firstValue = num.substring(1, 2);				
+				if (!firstValue.equals("+") && !firstValue.equals("-") ) {
+					newNum =  String.valueOf(Long.parseLong(num));
 				} else {
-					newNum = "-" + entero;
+					String signo = (firstValue.contains("-"))? "-" : "";
+					String entero = String.valueOf(Long.parseLong(num.substring(2, num.length())));
+					newNum = signo.concat(entero);
 				}
 			}
 		}catch(Exception e){
@@ -218,6 +216,7 @@ public class DataConsultaServicio {
 		
 		return newNum;
 	}
+	
 
 	private void getDateOfString(Exchange exchange) {
 		String bodyXML  = exchange.getProperty("XML_RESPONSE_NEXUS", String.class);
