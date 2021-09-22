@@ -31,7 +31,6 @@ public class DataConsultaServicio {
 		r.nextBytes(new byte[20]);
 		exchange.setProperty("ID_REQ", dateFormat.format(date) + "" + String.format("%03d", r.nextInt(1000)) + String.format("%03d", r.nextInt(1000)));
 		exchange.setProperty("ID_EMISOR", dateFormat.format(date) + "" + String.format("%03d", r.nextInt(1000)));
-		exchange.setProperty("ID_APP_CLIENTE", dateFormat.format(date) + "" + String.format("%03d", r.nextInt(1000)));
 		exchange.setProperty("DATE_TIME_SERVICIO_MILLIS", date.toInstant().toEpochMilli());
 		
 	}
