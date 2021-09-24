@@ -102,8 +102,8 @@
   <deuda_int_cta>-000000000072730</deuda_int_cta>
   <deuda_l2_cta>+0000000000000</deuda_l2_cta>
   <deuda_mora_nac_cta>+0000000000000</deuda_mora_nac_cta>
-  <deuda_mora_int_cta>+000000000000100</deuda_mora_int_cta>
-  <deuda_nac_fact_cta>5000001513274</deuda_nac_fact_cta>
+  <deuda_mora_int_cta>+000000000000000</deuda_mora_int_cta>
+  <deuda_nac_fact_cta>+0000001513274</deuda_nac_fact_cta>
   <deuda_int_fact_cta>+000000000072730</deuda_int_fact_cta>
   <disp_nac_cta>+0000008376630</disp_nac_cta>
   <disp_int_cta>+000000001434700</disp_int_cta>

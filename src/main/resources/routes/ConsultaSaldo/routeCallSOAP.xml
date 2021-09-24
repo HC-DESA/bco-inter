@@ -1,21 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans                                                  http://www.springframework.org/schema/beans/spring-beans.xsd                                                  http://camel.apache.org/schema/spring                                                  http://camel.apache.org/schema/spring/camel-spring-2.25.4.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring-2.25.4.xsd">
     <routeContext id="routeCallSOAP" xmlns="http://camel.apache.org/schema/spring">
-        <route id="routeCallSOAP">
+        <route id="routeCallSOAP" streamCache="true">
             <from id="route_CallSOAP" uri="direct:routeConsultaSaldosSOAP"/>
             <log id="_loginiciorutacalldummy" message="*** INICIO RUTA CALL DUMMY NEXUS ***: \n${body}"/>
             <to id="_tovelocityreq" uri="velocity:velocity/ConsultaSaldo/DUMMY-Request-NEXUS.vm"/>
             <log id="_logantesdummy" message="antes de llamar a ws dummy nexus: \n${body}"/>
             <convertBodyTo id="_convertBodyTo1" type="javax.xml.transform.stream.StreamSource"/>
-            <!--             <to uri="cxf:http://127.0.0.1:8088/mockBasic?dataFormat=MESSAGE&amp;exchangePattern=InOut"/> -->
+            <removeHeaders id="_removeHeaders1" pattern="*"/>
             <setHeader headerName="SOAPAction" id="_setHeader1">
                 <simple>http://tempuri.org/IWSST247/MolST247Consultas</simple>
             </setHeader>
-            <to id="_tocalldummy" uri="cxf:http://bco-inter-dummy-git-bco-inter.apps.shared-na46.openshift.opentlc.com/dummyNexus/wsDummyNexus_Service?dataFormat=MESSAGE&amp;exchangePattern=InOut"/>
-            <convertBodyTo id="_convertBodyTo2" type="java.lang.String"/>
+            <log id="_logantesdummy" message="nexus-dummy"/>
+            <doTry>
+            	<to id="_tocalldummys" uri="jetty:https://nexus-dummy-qa.apps.pre.ocp.binter.cl/dummyNexus/wsDummyNexus_Service?bridgeEndpoint=true&amp;throwExceptionOnFailure=false&amp;connectTimeout=30000&amp;sslContextParameters=#sslContextParameters"/>
+                <doCatch id="_doCatchEx">
+                	<exception>java.lang.Exception</exception>
+                    <log id="_logFailCert" message="EXCEPCION en certificado \nbody: \n${body}\nError: ${exception.message}"/>
+                </doCatch>
+           	</doTry>
+            <filter id="_filter1">
+                <simple>${body} == ""</simple>
+                <log id="_log2" message="body vacio ${body}"/>
+            </filter>
+            <log id="_log1" message="test1"/>
+            <setProperty id="bodyx" propertyName="bodyx">
+                <simple resultType="String">${body}</simple>
+            </setProperty>
+            <setBody id="_setBody1">
+                <simple resultType="org.w3c.dom.Document">${exchangeProperty.bodyx}</simple>
+            </setBody>
             <log id="_logheaders" message="despues de llamar a ws: \n${body}"/>
-            <!--             <to id="_SetDatosResponseSOAP" uri="velocity:velocity/ConsultaSaldo/DUMMY-Response-NEXUS.vm"/> -->
             <setBody id="_setBodyDATA">
                 <xpath>//*[local-name()='XmlOutMol']/text()</xpath>
             </setBody>

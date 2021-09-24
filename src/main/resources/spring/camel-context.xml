@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:camel="http://camel.apache.org/schema/spring"
     xmlns:context="http://www.springframework.org/schema/context"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd      http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring-2.25.4.xsd">
+	<camel:sslContextParameters certAlias="root" id="sslContextParameters" secureSocketProtocol="TLSv1.2">
+        <camel:trustManagers>
+            <camel:keyStore password="Test123"
+                resource="/jks/JavaKeystore.jks" type="JKS"/>
+        </camel:trustManagers>
+    </camel:sslContextParameters>
     <!-- Importar rutas para servicio ConsultaSaldo -->
     <import resource="../routes/ConsultaSaldo/routeConsultaSaldo.xml"/>
     <import resource="../routes/ConsultaSaldo/routeCallSOAP.xml"/>

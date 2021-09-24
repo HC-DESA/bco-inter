@@ -27,7 +27,7 @@ public class DataConsultaServicio {
 		
 		DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmssSSS");
 		Date date = new Date();
-		SecureRandom r = new SecureRandom();
+		SecureRandom r = new SecureRandom(); 
 		r.nextBytes(new byte[20]);
 		exchange.setProperty("ID_REQ", dateFormat.format(date) + "" + String.format("%03d", r.nextInt(1000)) + String.format("%03d", r.nextInt(1000)));
 		exchange.setProperty("ID_EMISOR", dateFormat.format(date) + "" + String.format("%03d", r.nextInt(1000)));
@@ -178,7 +178,7 @@ public class DataConsultaServicio {
 		object.setIdEmisorServicio(exchange.getProperty("ID_EMISOR", String.class));
 	}
 	
-	private String setNumbD(@NotNull String num) {
+	String setNumbD(@NotNull String num) {
 		String decimal = "00";
 		String entero = "0";
 		try{
@@ -202,7 +202,7 @@ public class DataConsultaServicio {
 		try{
 			if ( !num.isEmpty()) {
 				String firstValue = num.substring(1, 2);				
-				if (!firstValue.equals("+") && !firstValue.equals("-") ) {
+				if (!firstValue.equals("+") && !firstValue.equals("-")) {
 					newNum =  String.valueOf(Long.parseLong(num));
 				} else {
 					String signo = (firstValue.contains("-"))? "-" : "";
@@ -216,7 +216,6 @@ public class DataConsultaServicio {
 		
 		return newNum;
 	}
-	
 
 	private void getDateOfString(Exchange exchange) {
 		String bodyXML  = exchange.getProperty("XML_RESPONSE_NEXUS", String.class);
