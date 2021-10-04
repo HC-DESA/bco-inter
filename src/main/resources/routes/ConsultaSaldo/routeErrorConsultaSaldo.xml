@@ -11,33 +11,33 @@
             <setProperty id="_setP_ConnRefused_MSG" propertyName="MSG_ERROR">
                 <simple>Nexus API Error</simple>
             </setProperty>
-            <setHeader id="_setP_ConnRefused_CODE-HTTP" headerName="Exchange.HTTP_RESPONSE_CODE">
+            <setHeader headerName="Exchange.HTTP_RESPONSE_CODE" id="_setP_ConnRefused_CODE-HTTP">
                 <constant>404</constant>
             </setHeader>
             <setProperty id="_setProperty_TYPE-CONN-REFUSED" propertyName="TIPO_LOG">
                 <simple>REQ-SOAP</simple>
             </setProperty>
-            <to uri="direct:errorError"/>
+            <to id="_to1" uri="direct:errorError"/>
         </route>
-         <route id="_routeConnectionTimeout">
-            <from uri="direct:errorConnectionTimeout"/>
-            <log message="Error -> Json Malformado:  ${exception}, ${body}, ${date:now}"/>
-            <setProperty propertyName="CODE_ERROR">
+        <route id="_routeConnectionTimeout">
+            <from id="_from1" uri="direct:errorConnectionTimeout"/>
+            <log id="_log1" message="Error -> Json Malformado:  ${exception}, ${body}, ${date:now}"/>
+            <setProperty id="_setProperty_CODE_ERROR" propertyName="CODE_ERROR">
                 <simple>CCCS-03</simple>
             </setProperty>
-            <setProperty  propertyName="MSG_ERROR">
+            <setProperty id="_setProperty_MSG_ERROR" propertyName="MSG_ERROR">
                 <simple>Nexus API Error</simple>
             </setProperty>
             <!-- <setProperty  propertyName="CANAL">
                 <simple>-</simple>
             </setProperty> -->
-            <setHeader headerName="Exchange.HTTP_RESPONSE_CODE">
+            <setHeader headerName="Exchange.HTTP_RESPONSE_CODE" id="_setHeader1">
                 <constant>404</constant>
             </setHeader>
             <setProperty id="_setProperty_TYPE-CONN-TIMEOUT" propertyName="TIPO_LOG">
                 <simple>REQ-SOAP</simple>
             </setProperty>
-            <to uri="direct:errorError"/>
+            <to id="_to2" uri="direct:errorError"/>
         </route>
         <route id="_routeErrorJsonInvalido">
             <from id="_fromErrorJsonInvalido" uri="direct:errorJsonInvalid"/>
@@ -45,16 +45,16 @@
             <setProperty id="_setProp_CodeErrorJsonInvalido" propertyName="CODE_ERROR">
                 <simple>CCCS-04</simple>
             </setProperty>
-            <setProperty  propertyName="MSG_ERROR">
+            <setProperty id="_setProperty3_MSG_ERROR" propertyName="MSG_ERROR">
                 <simple>JSON Invalido</simple>
             </setProperty>
-            <setHeader headerName="Exchange.HTTP_RESPONSE_CODE">
+            <setHeader headerName="Exchange.HTTP_RESPONSE_CODE" id="_setHeader2">
                 <constant>500</constant>
             </setHeader>
             <setProperty id="_setProperty_TYPE-ErrorJsonInvalido" propertyName="TIPO_LOG">
                 <simple>REQ</simple>
             </setProperty>
-            <to uri="direct:errorError"/>
+            <to id="_to3" uri="direct:errorError"/>
         </route>
         <route id="_routeErrorNoDataJson">
             <from id="_fromErrorNoDataJson" uri="direct:errorNoDataJson"/>
@@ -68,14 +68,14 @@
             <setProperty id="_setPropertyInvalid3" propertyName="MSG_ERROR">
                 <simple>Json invalido</simple>
             </setProperty>
-            <setHeader headerName="Exchange.HTTP_RESPONSE_CODE">
+            <setHeader headerName="Exchange.HTTP_RESPONSE_CODE" id="_setHeader3">
                 <constant>500</constant>
             </setHeader>
             <setProperty id="_setProperty_TYPE-ErrorMapingNoDataJson" propertyName="TIPO_LOG">
                 <simple>REQ</simple>
             </setProperty>
-            <to uri="direct:errorError"/>
-        </route>       
+            <to id="_to4" uri="direct:errorError"/>
+        </route>
         <route id="_routeErrorValidateData">
             <from id="_fromErrorNoDataJson" uri="direct:errorValidateData"/>
             <setHeader headerName="CamelExceptionHandler" id="_setHeader1Validate">
@@ -87,12 +87,14 @@
             <setProperty id="_setProperty8" propertyName="TIMESTAMP_RESPONSE_ERROR">
                 <simple>${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}</simple>
             </setProperty>
-            <setHeader headerName="Exchange.HTTP_RESPONSE_CODE">
+            <setHeader headerName="Exchange.HTTP_RESPONSE_CODE" id="_setHeader4">
                 <constant>500</constant>
             </setHeader>
             <to id="_toVelocityResponseJsonERRORValidate" uri="velocity:velocity/JsonErrorCaseValidate.vm"/>
-            <bean id="_bean_REQ_JsonERRORValidate" method="getExecutionTime" ref="loadDataConsultaServicio"/>
-            <log id="_Log_TRAZA_REQ_JsonERRORValidate" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;1&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
+            <bean id="_bean_REQ_JsonERRORValidate"
+                method="getExecutionTime" ref="loadDataConsultaServicio"/>
+            <log id="_Log_TRAZA_REQ_JsonERRORValidate"
+                loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;1&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
             <stop id="_stop2"/>
         </route>
         <route id="_routeErrorGenerateResponse">
@@ -116,7 +118,7 @@
             <setProperty id="_setProperty_TYPE-ErrorMapingResponse" propertyName="TIPO_LOG">
                 <simple>RES</simple>
             </setProperty>
-            <to uri="direct:errorError"/>
+            <to id="_to5" uri="direct:errorError"/>
         </route>
         <route id="_routeERROR">
             <from id="_from_ERROR" uri="direct:errorError"/>
@@ -125,8 +127,9 @@
             </setProperty>
             <to id="_setP_Velocity" uri="velocity:velocity/JsonErrorCase.vm"/>
             <bean id="_bean_REQ_Error" method="getExecutionTime" ref="loadDataConsultaServicio"/>
-            <log id="_Log_TRAZA_REQ_ErrorMapingResponse" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;${exchangeProperty.TIPO_LOG}&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;1&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
-            <stop id="_set_Error-STOP" />
+            <log id="_Log_TRAZA_REQ_ErrorMapingResponse"
+                loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;${exchangeProperty.TIPO_LOG}&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;1&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
+            <stop id="_set_Error-STOP"/>
         </route>
     </routeContext>
 </beans>

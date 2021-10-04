@@ -6,6 +6,9 @@
     <routeContext id="routeConsultaSaldo" xmlns="http://camel.apache.org/schema/spring">
         <route id="_route_ReceptionData" streamCache="true">
             <from id="_fromIR1" uri="direct:routeConsultaSaldos"/>
+            <setProperty id="_setPropertyOperation" propertyName="Operation">
+                <constant>ConsultaSaldos</constant>
+            </setProperty>
             <bean id="_bean_REQ" method="loadDataCM" ref="loadDataConsultaServicio"/>
             <log id="_Log_TRAZA_REQ" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;0&quot;  &quot;0&quot; [${body}]"/>
             <doTry id="_doTry_ReceptionAndValdiateData">
@@ -34,19 +37,21 @@
             </doTry>
             <log id="_log-CONSULTA-SALDOS_ValidacionCorrecta" message="*** Los datos fueron validados correctamente ***"/>
             <to id="_SetDatosParaSOAP" uri="velocity:velocity/ConsultaSaldo/DataForSOAP.vm"/>
+            <!--
             <bean id="_bean_REQ_SOAP" method="getExecutionTime" ref="loadDataConsultaServicio"/>
             <log id="_Log_TRAZA_REQ-SOAP" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ-SOAP&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;0&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
-<!--             <to id="_to_callSOAP-CONSULTA-SALDO-RESP" uri="direct:generateResponseConsultaSaldo"/> -->
+            -->
             <to id="_to_callSOAP-CONSULTA-SALDO" uri="direct:routeConsultaSaldosSOAP"/>
         </route>
         <route id="_route_GenerarRespuestaCS">
             <from id="_fromGenerarRespuestaCS" uri="direct:generateResponseConsultaSaldo"/>
+            <!--
             <bean id="_bean_REST_SOAP" method="getExecutionTime" ref="loadDataConsultaServicio"/>
             <log id="_Log_TRAZA_RES-SOAP" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;RES-SOAP&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;0&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
+            !-->
             <setHeader headerName="Content-Type" id="_setHeaderResp-ConsultaSaldos">
                 <constant>application/json; charset:utf-8</constant>
             </setHeader>
-<!--             <to id="Delete_SetDatosResponseSOAP" uri="velocity:velocity/ConsultaSaldo/DUMMY-Response-NEXUS.vm"/> -->
             <setProperty id="_setProperty10" propertyName="XML_RESPONSE_NEXUS">
                 <simple>${body}</simple>
             </setProperty>

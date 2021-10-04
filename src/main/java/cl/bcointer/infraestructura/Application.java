@@ -18,8 +18,8 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
     @Bean
-    ServletRegistrationBean servletRegistrationBean() {
-        ServletRegistrationBean servlet = new ServletRegistrationBean(
+    ServletRegistrationBean<CamelHttpTransportServlet> servletRegistrationBean() {
+        ServletRegistrationBean<CamelHttpTransportServlet> servlet = new ServletRegistrationBean<>(
             new CamelHttpTransportServlet(), "/api/*");
         servlet.setName("CamelServlet");
         return servlet;

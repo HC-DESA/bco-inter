@@ -2,11 +2,8 @@
    <soapenv:Header/>
    <soapenv:Body>
       <tem:MolST247Consultas>
-         <!--Optional:-->
          <tem:Usuario>?</tem:Usuario>
-         <!--Optional:-->
          <tem:Clave>?</tem:Clave>
-         <!--Optional:-->
          <tem:XmlInMol><![CDATA[<DATA>
    <cod_servicio>DMCONSAL</cod_servicio>
    <cod_usuario> BCO-INT-USER</cod_usuario>

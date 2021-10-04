@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:camel="http://camel.apache.org/schema/spring"
+    xmlns:camel="http://camel.apache.org/schema/spring"
     xmlns:context="http://www.springframework.org/schema/context"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd      http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring-2.25.4.xsd">
-	<camel:sslContextParameters certAlias="root" id="sslContextParameters" secureSocketProtocol="TLSv1.2">
+	<camel:sslContextParameters certAlias="root"
+        id="sslContextParameters" secureSocketProtocol="TLSv1.2">
         <camel:trustManagers>
             <camel:keyStore password="Test123"
                 resource="/jks/JavaKeystore.jks" type="JKS"/>
         </camel:trustManagers>
     </camel:sslContextParameters>
+<!-- 
+	<camel:sslContextParameters certAlias="root"
+        id="sslContextParameters" secureSocketProtocol="TLSv1.2">
+        <camel:trustManagers>
+            <camel:keyStore password="Test123"
+                resource="C:\\BancoInter\\GIT\\credit-card-api\\jks\\JavaKeystore.jks" type="JKS"/>
+        </camel:trustManagers>
+    </camel:sslContextParameters>
+-->
     <!-- Importar rutas para servicio ConsultaSaldo -->
     <import resource="../routes/ConsultaSaldo/routeConsultaSaldo.xml"/>
     <import resource="../routes/ConsultaSaldo/routeCallSOAP.xml"/>
@@ -45,6 +55,11 @@
             <post id="METODO-1_Consulta-Saldos" uri="consultaSaldos">
                 <to uri="direct:routeConsultaSaldos"/>
             </post>
+            <!-- Metodo POST servicio ** TRX NO FACTURADAS **
+            <post id="METODO-2_Trx-No-Facturadas" uri="trxNoFacturadas">
+                <to uri="direct:routeTrxNoFacturadas"/>
+            </post>
+             -->
         </rest>
     </camelContext>
 </beans>
