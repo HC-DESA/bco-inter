@@ -10,7 +10,7 @@
   <properties>
     <spring-boot.version>2.3.9.RELEASE</spring-boot.version>
     <camel-spring-boot.version>2.23.2.fuse-790054-redhat-00001</camel-spring-boot.version>
-    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+    <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <cxf.version>3.4.4</cxf.version>
     <fuse.bom.version>7.9.0.fuse-sb2-790065-redhat-00001</fuse.bom.version>
@@ -100,7 +100,8 @@
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-velocity</artifactId>
-      <version>${camel-spring-boot.version}</version>
+      <version>3.5.0</version>
+      <!-- <version>${camel-spring-boot.version}</version> -->
     </dependency>
     <dependency>
       <groupId>org.apache.camel</groupId>
@@ -229,6 +230,67 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+
+
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.jkube</groupId>
+        <artifactId>openshift-maven-plugin</artifactId>
+        <version>1.4.0</version>
+<!--         <executions> -->
+<!--           <execution> -->
+<!--             <id>jkube</id> -->
+<!--             <goals> -->
+<!--               <goal>resource</goal> -->
+<!--               <goal>build</goal> -->
+<!--               <goal>helm</goal> -->
+<!--             </goals> -->
+<!--           </execution> -->
+<!--         </executions> -->
+        <configuration>
+          <images>
+            <image>
+              <name>${image.user}/${image.name}:%l</name>
+              <alias>bcointer-fuse-rest-img</alias>
+              <build>
+                <from>fuse7/fuse-java-openshift:1.8-19</from>
+                <assembly>
+                  <layers>
+                    <layer>
+                      <baseDirectory>/deployments</baseDirectory>
+                    </layer>
+                  </layers>
+                </assembly>
+                <env>
+                  <JAVA_LIB_DIR>/deployments</JAVA_LIB_DIR>
+                  <JAVA_MAIN_CLASS>org.apache.camel.cdi.Main</JAVA_MAIN_CLASS>
+                </env>
+              </build>
+            </image>
+          </images>
+          <resources>
+            <labels>
+              <all>
+                <group>quickstarts</group>
+              </all>
+            </labels>
+            <replicas>2</replicas>
+            <controllerName>${project.artifactId}</controllerName>
+            <annotations>
+              <all>
+                <version>${project.version}</version>
+                <artifactId>${project.artifactId}</artifactId>
+              </all>
+              <deployment>
+                <my>deployment</my>
+              </deployment>
+            </annotations>
+          </resources>
+        </configuration>
       </plugin>
     </plugins>
   </build>

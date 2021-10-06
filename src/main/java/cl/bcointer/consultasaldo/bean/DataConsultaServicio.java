@@ -18,16 +18,19 @@ public class DataConsultaServicio {
     private static final Logger logger = Logger.getLogger("LoadData");
 
 	public void loadDataCM(Exchange exchange) {
-		exchange.setProperty("CODIGO_SERVICIO", System.getenv().getOrDefault("COD-SERVICIO", ""));
-		exchange.setProperty("USER_CALL_SOAP", System.getenv().getOrDefault("USER-CALL-SOAP", ""));
-		exchange.setProperty("PASSWORD_CALL_SOAP", System.getenv().getOrDefault("PASSWORD-CALL-SOAP", ""));
-		exchange.setProperty("CODIGO_USUARIO", System.getenv().getOrDefault("COD-USUARIO", ""));
-		exchange.setProperty("DIR_IP", System.getenv().getOrDefault("DIR-IP", ""));
+		String data1 = System.getenv().getOrDefault("COD-SERVICIO", "DMCONSAL-LOCAL");
+		exchange.setProperty("CODIGO_SERVICIO", data1);
+
+		// exchange.setProperty("CODIGO_SERVICIO", System.getenv().getOrDefault("COD-SERVICIO", "DMCONSAL-LOCAL"));
+		exchange.setProperty("USER_CALL_SOAP", System.getenv().getOrDefault("USER-CALL-SOAP", "UserCallSOAP-LOCAL"));
+		exchange.setProperty("PASSWORD_CALL_SOAP", System.getenv().getOrDefault("PASSWORD-CALL-SOAP", "cGFzc3dvcmQ=-LOCAL"));
+		exchange.setProperty("CODIGO_USUARIO", System.getenv().getOrDefault("COD-USUARIO", "User01-LOCAL"));
+		exchange.setProperty("DIR_IP", System.getenv().getOrDefault("DIR-IP", "10.10.10.10-LOCAL"));
 
 		
 		DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmssSSS");
-		var date = new Date();
-		var r = new SecureRandom(); 
+		Date date = new Date();
+		SecureRandom r = new SecureRandom(); 
 		r.nextBytes(new byte[20]);
 		exchange.setProperty("ID_REQ", dateFormat.format(date) + "" + String.format("%03d", r.nextInt(1000)) + String.format("%03d", r.nextInt(1000)));
 		exchange.setProperty("ID_EMISOR", dateFormat.format(date) + "" + String.format("%03d", r.nextInt(1000)));
@@ -179,8 +182,8 @@ public class DataConsultaServicio {
 	}
 	
 	String setNumbD(@NotNull String num) {
-		var decimal = "00";
-		var entero = "0";
+		String decimal = "00";
+		String entero = "0";
 		try{
 			entero = this.setNumb(num);
 			if (!entero.equals("0")) {
@@ -198,15 +201,15 @@ public class DataConsultaServicio {
 	}
 
 	private String setNumb(@NotNull String num) {
-		var newNum = "0";
+		String newNum = "0";
 		try{
 			if ( !num.isEmpty()) {
-				var firstValue = num.substring(1, 2);				
+				String firstValue = num.substring(1, 2);				
 				if (!firstValue.equals("+") && !firstValue.equals("-")) {
 					newNum =  String.valueOf(Long.parseLong(num));
 				} else {
-					var signo = (firstValue.contains("-"))? "-" : "";
-					var entero = String.valueOf(Long.parseLong(num.substring(2, num.length())));
+					String signo = (firstValue.contains("-"))? "-" : "";
+					String entero = String.valueOf(Long.parseLong(num.substring(2, num.length())));
 					newNum = signo.concat(entero);
 				}
 			}
@@ -218,10 +221,10 @@ public class DataConsultaServicio {
 	}
 
 	private void getDateOfString(Exchange exchange) {
-		var bodyXML  = exchange.getProperty("XML_RESPONSE_NEXUS", String.class);
+		String bodyXML  = exchange.getProperty("XML_RESPONSE_NEXUS", String.class);
 		DataToReturn object = exchange.getIn().getBody(DataToReturn.class);
 
-		var string1 = XPathBuilder.xpath("/DATA/string1").evaluate(exchange.getContext(), bodyXML);
+		String string1 = XPathBuilder.xpath("/DATA/string1").evaluate(exchange.getContext(), bodyXML);
 		if(string1.trim().length() > 0) {			
 			String [] fechasStr1 = string1.trim().split(";");			
 			object.setFechaUltFactDolar(fechasStr1[0]);
@@ -231,7 +234,7 @@ public class DataConsultaServicio {
 		}
 		
 		
-		var string2 = XPathBuilder.xpath("/DATA/string2").evaluate(exchange.getContext(), bodyXML);	
+		String string2 = XPathBuilder.xpath("/DATA/string2").evaluate(exchange.getContext(), bodyXML);	
 		if(string2.trim().length() > 0) {			
 			String [] fechasStr2 = string2.trim().split(";");			
 			object.setFechaProxFactCalend(fechasStr2[0]);
@@ -240,7 +243,7 @@ public class DataConsultaServicio {
 			}			
 		}
 		
-		var string3 = XPathBuilder.xpath("/DATA/string3").evaluate(exchange.getContext(), bodyXML);
+		String string3 = XPathBuilder.xpath("/DATA/string3").evaluate(exchange.getContext(), bodyXML);
 		int lCaracteres = string3.trim().length();
 		if(lCaracteres > 8) {			
 			object.setFechaVigEeccDesde(string3.substring(0, 8));
@@ -256,7 +259,7 @@ public class DataConsultaServicio {
 	}
 	
 	public void getExecutionTime(Exchange exchange) {
-		var date = new Date();
+		Date date = new Date();
 		exchange.setProperty("TIEMPO_EJECUCION", (date.toInstant().toEpochMilli() - exchange.getProperty("DATE_TIME_SERVICIO_MILLIS" ,  Long.class)));
 	}
 }

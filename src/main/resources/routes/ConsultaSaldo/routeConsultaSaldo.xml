@@ -36,7 +36,12 @@
                 </doCatch>
             </doTry>
             <log id="_log-CONSULTA-SALDOS_ValidacionCorrecta" message="*** Los datos fueron validados correctamente ***"/>
+            <!-- <log message=">>>> ${exchange.properties.CODIGO_SERVICIO}"/> -->
+            <log message=">>>> ${exchangeProperty.CODIGO_SERVICIO}"/>
+            <log message=">>>> ${exchangeProperty[CODIGO_SERVICIO].class}"/>
+
             <to id="_SetDatosParaSOAP" uri="velocity:velocity/ConsultaSaldo/DataForSOAP.vm"/>
+            <stop/>
             <!--
             <bean id="_bean_REQ_SOAP" method="getExecutionTime" ref="loadDataConsultaServicio"/>
             <log id="_Log_TRAZA_REQ-SOAP" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ-SOAP&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;0&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>

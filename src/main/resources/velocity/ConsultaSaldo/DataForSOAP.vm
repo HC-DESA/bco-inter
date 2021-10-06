@@ -1,5 +1,5 @@
 <DATA>
-  <cod_servicio>$!{exchange.properties.CODIGO_SERVICIO}</cod_servicio>
+  <cod_servicio>${exchange.properties.CODIGO_SERVICIO}</cod_servicio>
   <cod_usuario>$!{exchange.properties.CODIGO_USUARIO}</cod_usuario>
   <dir_ip>$!{exchange.properties.DIR_IP}</dir_ip>
   <id_emisor_servicio>$!{exchange.properties.ID_EMISOR}</id_emisor_servicio>
