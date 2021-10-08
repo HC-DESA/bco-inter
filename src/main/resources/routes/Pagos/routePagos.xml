@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd                                 http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring-2.25.4.xsd">
+    <!-- <bean class="cl.bcointer.consultasaldo.objetos.DataInput" id="dataInputConsultaSaldo"/> -->
+    <bean class="cl.bcointer.pagos.bean.LoadDataCoreIBS" id="loadDataCoreIBS"/>
+    <routeContext id="routePagos" xmlns="http://camel.apache.org/schema/spring">
+        <route id="_route_ReceptionDataPagos" streamCache="true">
+            <from id="_fromRD-Pagos" uri="direct:routePayments"/>
+            <setProperty id="_setPropertyOperationPagos" propertyName="Operation">
+                <constant>Pagos</constant>
+            </setProperty>
+            <doTry id="_doTry_ReceptionAndValdiateDataPagos">
+                <unmarshal id="_transObjectInputPagos" ref="jsonToObjectPagos"/>
+                <setProperty id="_setPropertyInputObject" propertyName="OBJECT_REQUEST_PAYMENT">
+                    <simple>${body}</simple>
+                </setProperty>
+                <log message=">>>>> BODY : \n ${body}"/>
+                <!-- <to id="_beanValidatorPayment" uri="bean-validator://dataInputConsultaSaldo"/> -->
+                <doCatch id="_doCatchErrorNoData-Pagos">
+                    <exception>org.apache.camel.InvalidPayloadException</exception>
+                    <exception>com.fasterxml.jackson.databind.JsonMappingException</exception>
+                    <to id="_to_RouteError1-Pagos" uri="direct:errorNoDataJson"/>
+                </doCatch>
+                <doCatch id="_doCatchErrorValidate-Pagos">
+                    <exception>org.apache.camel.component.bean.validator.BeanValidationException</exception>
+                    <to id="_to_RouteError3-Pagos" uri="direct:errorValidateData"/>
+                </doCatch>
+                <doCatch id="_doCatchErrorJsonInvalido-Pagos">
+                    <exception>com.fasterxml.jackson.core.JsonParseException</exception>
+                    <exception>java.lang.Exception</exception>
+                    <to id="_to_RouteError2-Pagos" uri="direct:errorJsonInvalid"/>
+                </doCatch>
+            </doTry>
+            <log id="_log-Pagos_ValidacionCorrecta" message="*** Los datos fueron validados correctamente ***"/>
+            <to id="to_ValidateCONNNEXUS" uri="direct:routeValdiateCONNNExus"/>
+            <log message=">>> TIPO TRANSACCION :  ${exchangeProperty[OBJECT_REQUEST_PAYMENT].getTipoTxMonetaria()}"/>
+            <choice>
+                <when id="_whenParamsPagosCLP">
+                    <simple>${exchangeProperty[OBJECT_REQUEST_PAYMENT].getTipoTxMonetaria()} contains '001' &amp;&amp;  {exchangeProperty[OBJECT_REQUEST_PAYMENT].getTipoTxMonetaria()} contains 'CLP'</simple>
+                    <log id="_OtherwiseAvance" message=">>>> EJECUTAR RESERVA "/>
+                    <!-- TODO: DEPENDE DE MONEDA. SE REALIZA COMPARACIONES EN METODO JAVA PARA ASIGNACION DE  H01OPECOD -->                   
+                    <to id="_to_CallCoreIBS-Avance" uri="direct:routeCallCoreIBS"/>               
+                </when>
+                <otherwise id="_otherwiseTrazaRES">
+                        <log id="_OtherwiseAvance" message=">>>> EJECUTAR AVANCE "/>
+                        <setProperty propertyName="TIPO_TX_MONETARIA">
+                            <constant>002</constant>
+                        </setProperty>
+                        <setProperty propertyName="H01OPECOD">
+                            <constant>0004</constant>
+                        </setProperty>
+                </otherwise>
+            </choice>
+            <to id="_toCallEjecutarPagoAvance" uri="direct:routeCallNexus"/>
+            <to id="_toCall" uri="direct:routeCallCoreIBS"/>
+        </route>
+        
+        <route id="_route_ValidateCONN-NEXUS" streamCache="true">
+            <from id="_fromValdiateCONN-nexus" uri="direct:routeValdiateCONNNExus"/>
+            <to id="_SetDatosParaNEXUS" uri="velocity:velocity/Pagos/JsonForConsultaSaldo.vm"/>
+            <log message=">>> BODY to REQUEST Validate NEXUS : \n ${body}"/>
+            <doTry id="_doTryValidateNexus">
+                <toD id="_toValidateNEXUS" uri="{{url.rest.consultasaldo.url}}"/>
+                <log message=">>> BODY to RESPONSE Validate NEXUS : \n ${body}"/>
+                <setProperty id="_setPropertyMSGERROR" propertyName="RESP_ERROR_NEXUS">
+                    <jsonpath >$.coderror</jsonpath>
+                </setProperty>
+                <doCatch id="_doCatchValidateNexus">
+                    <exception>java.lang.Exception</exception>
+                    <log message=">>> ERROR TO CALL NEXUS : ${exception}, ${body}, ${date:now}"/>
+                    <stop id="_stop_ValidateNexus"/>
+                </doCatch>
+            </doTry>
+            <log message=">>> RESP_ERROR_NEXUS : ${exchangeProperty[RESP_ERROR_NEXUS]}"/>
+            <!-- TODO: ERRORES CONEXION INDEPENDIENTE ?? -->
+            <filter id="_filterErrorNESUS">
+                <simple>${exchangeProperty[RESP_ERROR_NEXUS]} != '0000'</simple>
+                <log message="¡¡¡  ERROR NEXUS  !!!"/>
+                <stop id="_stop_ERROR-NEXUS"/>
+            </filter>
+        </route>
+
+        <route id="_route_CALL_CORE-IBS" streamCache="true">
+            <from id="_fromCALL_CORE-IBS" uri="direct:routeCallCoreIBS"/>
+            <setBody>
+                <simple>${exchangeProperty[OBJECT_REQUEST_PAYMENT]}</simple>
+            </setBody>
+            <bean id="_bean_REQ_CoreIBS" method="setDataCoreIBS" ref="loadDataCoreIBS"/>
+            <to id="_toVelocitySetDataCoreIBS" uri="velocity:velocity/Pagos/JsonToCoreIBS.vm?allowContextMapAll=true"/>
+            <log message=">>> BODY to CORE IBS : \n ${body}"/>
+            <doTry id="_doTryCallCoreIBS">
+                <toD id="_toCallCoreIBS" uri="{{url.rest.pagos.coreIBS.url}}"/>
+                <doCatch id="_doCatchCallCoreIBS">
+                    <exception>java.lang.Exception</exception>
+                    <log message=">>> ERROR TO CALL CoreIBS : ${exception}, ${body}, ${date:now}"/>
+                    <stop id="_stop_CallCoreIBS"/>
+                </doCatch>
+            </doTry>
+            <log message=">>> BODY to RESPONSE CORE IBS : \n ${body}"/>
+        </route>
+        
+        <route id="_route_CALL_NEXUS" streamCache="true">
+            <from id="_fromCall-nexus" uri="direct:routeCallNexus"/>
+            <setBody>
+                <simple>${exchangeProperty[OBJECT_REQUEST_PAYMENT]}</simple>
+            </setBody>
+            <to id="_toVelocitySetDataNexusPayment" uri="velocity:velocity/Pagos/DataForNexus.vm?allowContextMapAll=true"/>
+            <log message=">>> BODY to NEXUS : \n ${body}"/>
+            <log message=">>> TODO: GENERAR LLAMADO HACIA NEXUS"/>
+            <stop/>
+        </route>
+
+        <route id="_route_GenerateResponse" streamCache="true">
+            <from id="_fromCallNexus-nexus" uri="direct:routeGenerateResponse"/>
+            <log message=">>> TODO: GENERAR RESPONSE"/>
+        </route>
+        
+    </routeContext>
+</beans>
