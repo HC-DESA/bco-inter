@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd                                 http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring-2.25.4.xsd">
-    <bean class="cl.bcointer.consultasaldo.objetos.DataInput" id="dataInputConsultaSaldo"/>
-    <bean class="cl.bcointer.consultasaldo.bean.DataConsultaServicio" id="loadDataConsultaServicio"/>
+    <bean class="cl.bcointer.models.DataInputConsultaSaldo" id="dataInputConsultaSaldo"/>
+    <bean class="cl.bcointer.bean.DataConsultaServicio" id="loadDataConsultaServicio"/>
     <routeContext id="routeConsultaSaldo" xmlns="http://camel.apache.org/schema/spring">
         <route id="_route_ReceptionData" streamCache="true">
             <from id="_fromIR1" uri="direct:routeConsultaSaldos"/>
@@ -36,21 +36,15 @@
                 </doCatch>
             </doTry>
             <log id="_log-CONSULTA-SALDOS_ValidacionCorrecta" message="*** Los datos fueron validados correctamente ***"/>
-     
-            <to id="_SetDatosParaSOAP" uri="velocity:velocity/ConsultaSaldo/DataForSOAP.vm"/>
-            <!-- <stop/> -->
-            <!--
-            <bean id="_bean_REQ_SOAP" method="getExecutionTime" ref="loadDataConsultaServicio"/>
-            <log id="_Log_TRAZA_REQ-SOAP" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ-SOAP&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;0&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
-            -->
+            <to id="_SetDatosParaSOAP" uri="velocity:velocity/ConsultaSaldo/DataForSOAP.vm?allowContextMapAll=true"/>
             <to id="_to_callSOAP-CONSULTA-SALDO" uri="direct:routeConsultaSaldosSOAP"/>
+            <to id="_toRouteforResponseConsultaSaldos" uri="direct:generateResponseConsultaSaldo"/>
         </route>
         <route id="_route_GenerarRespuestaCS">
             <from id="_fromGenerarRespuestaCS" uri="direct:generateResponseConsultaSaldo"/>
-            <!--
-            <bean id="_bean_REST_SOAP" method="getExecutionTime" ref="loadDataConsultaServicio"/>
-            <log id="_Log_TRAZA_RES-SOAP" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;RES-SOAP&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;0&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
-            !-->
+            <setBody id="_setBodyDATA">
+                <xpath>//*[local-name()='XmlOutMol']/text()</xpath>
+            </setBody>
             <setHeader headerName="Content-Type" id="_setHeaderResp-ConsultaSaldos">
                 <constant>application/json; charset:utf-8</constant>
             </setHeader>
@@ -58,12 +52,12 @@
                 <simple>${body}</simple>
             </setProperty>
             <doTry id="_doTry1">
-                <to id="_toTransformXmlToJson" uri="ref:XMLtoJava"/>
+                <to id="_toTransformXmlToJson" uri="ref:transformationXmltoObjectConsultaSaldo"/>
                 <setProperty id="_setProperty11" propertyName="TIMESTAMP_RESPONSE">
                     <simple>${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}</simple>
                 </setProperty>
                 <bean id="_beanSetDataINObject" method="loadDataXPATH" ref="loadDataConsultaServicio"/>
-                <to id="_toTransfomObjectInResponseJson" uri="ref:ObjectToJson"/>
+                <to id="_toTransfomObjectInResponseJson" uri="ref:transformationObjectToJsonConsultaSaldo"/>
                 <bean id="_bean_RES" method="getExecutionTime" ref="loadDataConsultaServicio"/>
                 <log id="_Log_TRAZA_RES" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;RES&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;0&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
                 <doCatch id="_doCatch1">

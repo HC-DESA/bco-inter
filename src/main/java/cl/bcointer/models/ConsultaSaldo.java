@@ -1,6 +1,6 @@
-package cl.bcointer.consultasaldo.objetos;
+package cl.bcointer.models;
 
-public class DataToReturn {
+public class ConsultaSaldo {
 	private String coderror;
 	private String msgerror;
 	private String timestamp;
@@ -4042,7 +4042,7 @@ public class DataToReturn {
 		this.filler09 = filler09;
 	}
 
-	public DataToReturn() {
+	public ConsultaSaldo() {
 		super();
 	}	
 }

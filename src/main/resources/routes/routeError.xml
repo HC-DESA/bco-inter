@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans                                                  http://www.springframework.org/schema/beans/spring-beans.xsd                                                  http://camel.apache.org/schema/spring                                                  http://camel.apache.org/schema/spring/camel-spring-2.25.4.xsd">
-    <routeContext id="routeErrorConsultaSaldo" xmlns="http://camel.apache.org/schema/spring">
+    <routeContext id="routeError" xmlns="http://camel.apache.org/schema/spring">
         <route id="_routeConnectionRefused">
             <from id="_from_ConnRefused" uri="direct:errorConnectionRefused"/>
             <log id="_log_Error-ConnRefused" message="Error -> Json Malformado: ${exception}, ${body}, ${date:now}"/>

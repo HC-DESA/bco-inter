@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd                                 http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring-2.25.4.xsd">
-    <!-- <bean class="cl.bcointer.consultasaldo.objetos.DataInput" id="dataInputConsultaSaldo"/> -->
+    <!-- TODO: Validacion datos numericos -->
     <bean class="cl.bcointer.pagos.bean.LoadDataCoreIBS" id="loadDataCoreIBS"/>
     <routeContext id="routePagos" xmlns="http://camel.apache.org/schema/spring">
         <route id="_route_ReceptionDataPagos" streamCache="true">
@@ -32,6 +32,9 @@
                 </doCatch>
             </doTry>
             <log id="_log-Pagos_ValidacionCorrecta" message="*** Los datos fueron validados correctamente ***"/>
+
+            <to uri="velocity:velocity/Pagos/JsonResponseCorrectPago.vm"/>
+            <stop/>
             <to id="to_ValidateCONNNEXUS" uri="direct:routeValdiateCONNNExus"/>
             <log message=">>> TIPO TRANSACCION :  ${exchangeProperty[OBJECT_REQUEST_PAYMENT].getTipoTxMonetaria()}"/>
             <choice>
@@ -60,7 +63,7 @@
             <to id="_SetDatosParaNEXUS" uri="velocity:velocity/Pagos/JsonForConsultaSaldo.vm"/>
             <log message=">>> BODY to REQUEST Validate NEXUS : \n ${body}"/>
             <doTry id="_doTryValidateNexus">
-                <toD id="_toValidateNEXUS" uri="{{url.rest.consultasaldo.url}}"/>
+                <!-- <to id="_toValidateNEXUS" uri="http4://credit-card-api-qa.apps.pre.ocp.binter.cl/api/v1/creditcard/balance"/> -->
                 <log message=">>> BODY to RESPONSE Validate NEXUS : \n ${body}"/>
                 <setProperty id="_setPropertyMSGERROR" propertyName="RESP_ERROR_NEXUS">
                     <jsonpath >$.coderror</jsonpath>
@@ -89,7 +92,7 @@
             <to id="_toVelocitySetDataCoreIBS" uri="velocity:velocity/Pagos/JsonToCoreIBS.vm?allowContextMapAll=true"/>
             <log message=">>> BODY to CORE IBS : \n ${body}"/>
             <doTry id="_doTryCallCoreIBS">
-                <toD id="_toCallCoreIBS" uri="{{url.rest.pagos.coreIBS.url}}"/>
+                <toD id="_toCallCoreIBS" uri="http4://dbinterbrn.binter.cl/Internacional.WebAPI_DEV/Api/servidor"/>
                 <doCatch id="_doCatchCallCoreIBS">
                     <exception>java.lang.Exception</exception>
                     <log message=">>> ERROR TO CALL CoreIBS : ${exception}, ${body}, ${date:now}"/>

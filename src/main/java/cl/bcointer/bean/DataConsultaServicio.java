@@ -1,4 +1,4 @@
-package cl.bcointer.consultasaldo.bean;
+package cl.bcointer.bean;
 
 import java.security.SecureRandom;
 import java.text.DateFormat;
@@ -11,26 +11,24 @@ import org.apache.camel.Exchange;
 import org.apache.camel.builder.xml.XPathBuilder;
 import org.jboss.logging.Logger;
 
-import cl.bcointer.consultasaldo.objetos.DataInput;
-import cl.bcointer.consultasaldo.objetos.DataToReturn;
+import cl.bcointer.models.DataInputConsultaSaldo;
+import cl.bcointer.models.ConsultaSaldo;
 
 public class DataConsultaServicio {
     private static final Logger logger = Logger.getLogger("LoadData");
 
 	public void loadDataCM(Exchange exchange) {
-		String data1 = System.getenv().getOrDefault("COD-SERVICIO", "DMCONSAL-LOCAL");
-		exchange.setProperty("CODIGO_SERVICIO", data1);
-
-		// exchange.setProperty("CODIGO_SERVICIO", System.getenv().getOrDefault("COD-SERVICIO", "DMCONSAL-LOCAL"));
-		exchange.setProperty("USER_CALL_SOAP", System.getenv().getOrDefault("USER-CALL-SOAP", "UserCallSOAP-LOCAL"));
-		exchange.setProperty("PASSWORD_CALL_SOAP", System.getenv().getOrDefault("PASSWORD-CALL-SOAP", "cGFzc3dvcmQ=-LOCAL"));
-		exchange.setProperty("CODIGO_USUARIO", System.getenv().getOrDefault("COD-USUARIO", "User01-LOCAL"));
-		exchange.setProperty("DIR_IP", System.getenv().getOrDefault("DIR-IP", "10.10.10.10-LOCAL"));
+		exchange.setProperty("CODIGO_SERVICIO", System.getenv().getOrDefault("COD-SERVICIO", "DMCONSAL"));
+		exchange.setProperty("CODIGO_SERVICIO_TRX_NO_FACT", System.getenv().getOrDefault("CODIGO-SERVICIO-TRX-NO-FACT", "DMTNOFAC"));
+		exchange.setProperty("USER_CALL_SOAP", System.getenv().getOrDefault("USER-CALL-SOAP", ""));
+		exchange.setProperty("PASSWORD_CALL_SOAP", System.getenv().getOrDefault("PASSWORD-CALL-SOAP", ""));
+		exchange.setProperty("CODIGO_USUARIO", System.getenv().getOrDefault("COD-USUARIO", ""));
+		exchange.setProperty("DIR_IP", System.getenv().getOrDefault("DIR-IP", ""));
 
 		
 		DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmssSSS");
-		Date date = new Date();
-		SecureRandom r = new SecureRandom(); 
+		var date = new Date();
+		var r = new SecureRandom(); 
 		r.nextBytes(new byte[20]);
 		exchange.setProperty("ID_REQ", dateFormat.format(date) + "" + String.format("%03d", r.nextInt(1000)) + String.format("%03d", r.nextInt(1000)));
 		exchange.setProperty("ID_EMISOR", dateFormat.format(date) + "" + String.format("%03d", r.nextInt(1000)));
@@ -39,7 +37,7 @@ public class DataConsultaServicio {
 	}
 	
 	public void loadDataXPATH(Exchange exchange) {
-		DataToReturn object = exchange.getIn().getBody(DataToReturn.class);
+		ConsultaSaldo object = exchange.getIn().getBody(ConsultaSaldo.class);
 
 	    this.getDateOfString(exchange);
 		
@@ -177,13 +175,13 @@ public class DataConsultaServicio {
 		object.setDispL2TjtaAut(this.setNumb(object.getDispL2TjtaAut()));
 		
 		object.setTimestamp(exchange.getProperty("TIMESTAMP_RESPONSE",String.class));
-		object.setCanal(exchange.getProperty("OBJECT_REQUEST", DataInput.class).getCanal());
+		object.setCanal(exchange.getProperty("OBJECT_REQUEST", DataInputConsultaSaldo.class).getCanal());
 		object.setIdEmisorServicio(exchange.getProperty("ID_EMISOR", String.class));
 	}
 	
-	String setNumbD(@NotNull String num) {
-		String decimal = "00";
-		String entero = "0";
+	public String setNumbD(@NotNull String num) {
+		var decimal = "00";
+		var entero = "0";
 		try{
 			entero = this.setNumb(num);
 			if (!entero.equals("0")) {
@@ -201,15 +199,15 @@ public class DataConsultaServicio {
 	}
 
 	private String setNumb(@NotNull String num) {
-		String newNum = "0";
+		var newNum = "0";
 		try{
 			if ( !num.isEmpty()) {
-				String firstValue = num.substring(1, 2);				
+				var firstValue = num.substring(1, 2);				
 				if (!firstValue.equals("+") && !firstValue.equals("-")) {
 					newNum =  String.valueOf(Long.parseLong(num));
 				} else {
-					String signo = (firstValue.contains("-"))? "-" : "";
-					String entero = String.valueOf(Long.parseLong(num.substring(2, num.length())));
+					var signo = (firstValue.contains("-"))? "-" : "";
+					var entero = String.valueOf(Long.parseLong(num.substring(2, num.length())));
 					newNum = signo.concat(entero);
 				}
 			}
@@ -221,10 +219,10 @@ public class DataConsultaServicio {
 	}
 
 	private void getDateOfString(Exchange exchange) {
-		String bodyXML  = exchange.getProperty("XML_RESPONSE_NEXUS", String.class);
-		DataToReturn object = exchange.getIn().getBody(DataToReturn.class);
+		var bodyXML  = exchange.getProperty("XML_RESPONSE_NEXUS", String.class);
+		ConsultaSaldo object = exchange.getIn().getBody(ConsultaSaldo.class);
 
-		String string1 = XPathBuilder.xpath("/DATA/string1").evaluate(exchange.getContext(), bodyXML);
+		var string1 = XPathBuilder.xpath("/DATA/string1").evaluate(exchange.getContext(), bodyXML);
 		if(string1.trim().length() > 0) {			
 			String [] fechasStr1 = string1.trim().split(";");			
 			object.setFechaUltFactDolar(fechasStr1[0]);
@@ -234,7 +232,7 @@ public class DataConsultaServicio {
 		}
 		
 		
-		String string2 = XPathBuilder.xpath("/DATA/string2").evaluate(exchange.getContext(), bodyXML);	
+		var string2 = XPathBuilder.xpath("/DATA/string2").evaluate(exchange.getContext(), bodyXML);	
 		if(string2.trim().length() > 0) {			
 			String [] fechasStr2 = string2.trim().split(";");			
 			object.setFechaProxFactCalend(fechasStr2[0]);
@@ -243,7 +241,7 @@ public class DataConsultaServicio {
 			}			
 		}
 		
-		String string3 = XPathBuilder.xpath("/DATA/string3").evaluate(exchange.getContext(), bodyXML);
+		var string3 = XPathBuilder.xpath("/DATA/string3").evaluate(exchange.getContext(), bodyXML);
 		int lCaracteres = string3.trim().length();
 		if(lCaracteres > 8) {			
 			object.setFechaVigEeccDesde(string3.substring(0, 8));
@@ -259,7 +257,7 @@ public class DataConsultaServicio {
 	}
 	
 	public void getExecutionTime(Exchange exchange) {
-		Date date = new Date();
+		var date = new Date();
 		exchange.setProperty("TIEMPO_EJECUCION", (date.toInstant().toEpochMilli() - exchange.getProperty("DATE_TIME_SERVICIO_MILLIS" ,  Long.class)));
 	}
 }

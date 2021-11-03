@@ -1,0 +1,10 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:MolST247Transacciones>
+         <tem:Usuario>$!{exchange.properties.NxUsuario}</tem:Usuario>
+         <tem:Clave>$!{exchange.properties.NxClave}</tem:Clave>
+         <tem:XmlInMol><![CDATA[$!{body}]]></tem:XmlInMol>
+      </tem:MolST247Transacciones>
+   </soapenv:Body>
+</soapenv:Envelope>

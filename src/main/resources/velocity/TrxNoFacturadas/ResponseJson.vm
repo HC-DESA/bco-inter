@@ -1,0 +1,7 @@
+{
+  "MolST247ConsultasResult":"$!{exchange.properties.prtyMolST247ConsultasResult}",
+  "coderror":"$!{exchange.properties.prtyCoderror}",
+  "msgerror":"$!{exchange.properties.prtyMsgerror}",
+  "idwsst247":"$!{exchange.properties.prtyIdwsst247}",
+   $!{exchange.properties.prtyXmlData}
+}

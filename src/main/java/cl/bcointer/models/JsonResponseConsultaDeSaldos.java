@@ -1,5 +1,5 @@
 
-package cl.bcointer.consultasaldo.map;
+package cl.bcointer.models;
 
 import javax.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -414,7 +414,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "monto_castigo",
     "filler_09"
 })
-public class MensajeRespuestaConsultaDeSaldos {
+public class JsonResponseConsultaDeSaldos {
 
     @JsonProperty("coderror")
     private String coderror;

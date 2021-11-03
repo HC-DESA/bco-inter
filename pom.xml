@@ -8,19 +8,19 @@
   <name>Spring-Boot :: Camel XML</name>
   <description>API REST - Spring Boot con Camel XML DSL</description>
   <properties>
-    <spring-boot.version>2.3.9.RELEASE</spring-boot.version>
-    <camel-spring-boot.version>2.23.2.fuse-790054-redhat-00001</camel-spring-boot.version>
-    <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <cxf.version>3.4.4</cxf.version>
-    <fuse.bom.version>7.9.0.fuse-sb2-790065-redhat-00001</fuse.bom.version>
+    <camel-spring-boot.version>2.23.2.fuse-790054-redhat-00001</camel-spring-boot.version>
+    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <docker.image.version>registry.redhat.io/fuse7/fuse-java-openshift-rhel8:1.9</docker.image.version>
+    <fuse.bom.version>7.9.0.fuse-sb2-790065-redhat-00001</fuse.bom.version>
+    <spring-boot.version>2.3.9.RELEASE</spring-boot.version>
   </properties>
   <dependencies>
     <dependency>
-        <groupId>org.glassfish</groupId>
-        <artifactId>jakarta.el</artifactId>
-        <version>3.0.4</version>
+      <groupId>org.glassfish</groupId>
+      <artifactId>jakarta.el</artifactId>
+      <version>3.0.4</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -30,7 +30,7 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
-      <version>${spring-boot.version}</version>
+      <version>2.3.10.RELEASE</version>
     </dependency>
     <dependency>
       <groupId>org.apache.camel</groupId>
@@ -79,6 +79,11 @@
     </dependency>
     <dependency>
       <groupId>org.apache.camel</groupId>
+      <artifactId>camel-http4</artifactId>
+      <version>${camel-spring-boot.version}</version>
+	  </dependency>
+    <dependency>
+      <groupId>org.apache.camel</groupId>
       <artifactId>camel-bean-validator</artifactId>
       <version>${camel-spring-boot.version}</version>
     </dependency>
@@ -97,16 +102,16 @@
       <artifactId>jaxb-runtime</artifactId>
       <version>2.3.3</version>
     </dependency>
+<!--     <dependency> -->
+<!--       <groupId>org.apache.camel</groupId> -->
+<!--       <artifactId>camel-velocity</artifactId> -->
+<!--       <version>${camel-spring-boot.version}</version> -->
+<!--     </dependency> -->
     <dependency>
-      <groupId>org.apache.camel</groupId>
-      <artifactId>camel-velocity</artifactId>
-      <version>${camel-spring-boot.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.camel</groupId>
-      <artifactId>camel-http4</artifactId>
-      <version>${camel-spring-boot.version}</version>
-	  </dependency>
+	  <groupId>org.apache.camel</groupId>
+	  <artifactId>camel-velocity-starter</artifactId>
+	  <version>${camel-spring-boot.version}</version>
+	</dependency>
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-dozer-starter</artifactId>
@@ -118,15 +123,20 @@
       <version>${camel-spring-boot.version}</version>
     </dependency>
     <dependency>
-	    <groupId>org.junit.jupiter</groupId>
-	    <artifactId>junit-jupiter-api</artifactId>
-	    <version>5.6.3</version>
-	    <scope>test</scope>
-	</dependency>
-	<dependency>
-	   <groupId>org.apache.camel</groupId>
-	   <artifactId>camel-jetty</artifactId>
-	   <version>${camel-spring-boot.version}</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>5.6.3</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-jetty</artifactId>
+      <version>${camel-spring-boot.version}</version>
+    </dependency>
+    <dependency>
+	  <groupId>org.apache.camel</groupId>
+	  <artifactId>camel-groovy-starter</artifactId>
+	  <version>2.25.4</version>
 	</dependency>
   </dependencies>
   <repositories>
@@ -157,8 +167,6 @@
       <url>https://repository.jboss.org/nexus/content/groups/ea</url>
     </pluginRepository>
   </pluginRepositories>
-  
-  
   <build>
     <defaultGoal>spring-boot:run</defaultGoal>
     <resources>
@@ -234,67 +242,6 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
-
-
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.eclipse.jkube</groupId>
-        <artifactId>openshift-maven-plugin</artifactId>
-        <version>1.4.0</version>
-<!--         <executions> -->
-<!--           <execution> -->
-<!--             <id>jkube</id> -->
-<!--             <goals> -->
-<!--               <goal>resource</goal> -->
-<!--               <goal>build</goal> -->
-<!--               <goal>helm</goal> -->
-<!--             </goals> -->
-<!--           </execution> -->
-<!--         </executions> -->
-        <configuration>
-          <images>
-            <image>
-              <name>${image.user}/${image.name}:%l</name>
-              <alias>bcointer-fuse-rest-img</alias>
-              <build>
-                <from>fuse7/fuse-java-openshift:1.8-19</from>
-                <assembly>
-                  <layers>
-                    <layer>
-                      <baseDirectory>/deployments</baseDirectory>
-                    </layer>
-                  </layers>
-                </assembly>
-                <env>
-                  <JAVA_LIB_DIR>/deployments</JAVA_LIB_DIR>
-                  <JAVA_MAIN_CLASS>org.apache.camel.cdi.Main</JAVA_MAIN_CLASS>
-                </env>
-              </build>
-            </image>
-          </images>
-          <resources>
-            <labels>
-              <all>
-                <group>quickstarts</group>
-              </all>
-            </labels>
-            <replicas>2</replicas>
-            <controllerName>${project.artifactId}</controllerName>
-            <annotations>
-              <all>
-                <version>${project.version}</version>
-                <artifactId>${project.artifactId}</artifactId>
-              </all>
-              <deployment>
-                <my>deployment</my>
-              </deployment>
-            </annotations>
-          </resources>
-        </configuration>
       </plugin>
     </plugins>
   </build>

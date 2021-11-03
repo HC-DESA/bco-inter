@@ -19,7 +19,7 @@ public class Application {
     }
     @Bean
     ServletRegistrationBean<CamelHttpTransportServlet> servletRegistrationBean() {
-        ServletRegistrationBean<CamelHttpTransportServlet> servlet = new ServletRegistrationBean<CamelHttpTransportServlet>(
+        ServletRegistrationBean<CamelHttpTransportServlet> servlet = new ServletRegistrationBean<>(
             new CamelHttpTransportServlet(), "/api/*");
         servlet.setName("CamelServlet");
         return servlet;

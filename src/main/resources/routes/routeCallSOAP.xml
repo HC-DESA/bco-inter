@@ -18,15 +18,19 @@
             <choice id="_choice1">
                 <when id="_when1">
                     <simple>${exchangeProperty.Operation} == 'ConsultaSaldos'</simple>
-                    <!--<to id="_tovelocityreq" uri="velocity:velocity/ConsultaSaldo/DUMMY-Request-NEXUS.vm"/>-->
                     <setHeader headerName="SOAPAction" id="_setHeaderMolST247Consultas">
                         <simple>http://tempuri.org/IWSST247/MolST247Consultas</simple>
                     </setHeader>
                 </when>
                 <when id="_when2">
                     <simple>${exchangeProperty.Operation} == 'TrxNoFacturadas'</simple>
+                    <!--
                     <setHeader headerName="SOAPAction" id="_setHeaderMolST247Transacciones">
                         <simple>http://tempuri.org/IWSST247/MolST247Transacciones</simple>
+                    </setHeader>
+                    -->
+                    <setHeader headerName="SOAPAction" id="_setHeaderMolST247Consultas2">
+                        <simple>http://tempuri.org/IWSST247/MolST247Consultas</simple>
                     </setHeader>
                 </when>
                 <otherwise id="_otherwise1">
@@ -37,30 +41,31 @@
             <bean id="_bean_REQ_SOAP" method="getExecutionTime" ref="loadDataConsultaServicio"/>
             <log id="_Log_TRAZA_REQ-SOAP" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;REQ-SOAP&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;0&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
             <doTry id="_doTry_tocalldummys">
-                <to id="_tocalldummys" uri="jetty:https://nexus-dummy-qa.apps.pre.ocp.binter.cl/dummyNexus/wsDummyNexus_Service?bridgeEndpoint=true&amp;throwExceptionOnFailure=false&amp;connectTimeout=30000&amp;sslContextParameters=#sslContextParameters"/>
+                <!--
+				<to id="_tocalldummys" uri="jetty:https://nexus-dummy-qa.apps.pre.ocp.binter.cl/dummyNexus/wsDummyNexus_Service?bridgeEndpoint=true&amp;throwExceptionOnFailure=false&amp;connectTimeout=30000&amp;sslContextParameters=#sslContextParameters"/>
+				<to id="_tocalldummys22" uri="jetty:http://localhost:9090/dummyNexus/wsDummyNexus_Service?bridgeEndpoint=true&amp;throwExceptionOnFailure=false&amp;connectTimeout=30000"/>
+				-->
+                <!--to id="_tocalldummys" uri="jetty:https://nexus-dummy-qa.apps.pre.ocp.binter.cl/dummyNexus/wsDummyNexus_Service?bridgeEndpoint=true&amp;throwExceptionOnFailure=false&amp;connectTimeout=30000&amp;sslContextParameters=#sslContextParameters"/>-->
+                <!--<to id="nexussa" uri="jetty:http://nxpaiqaws01.nexussa.cl/WST247_BANCO/WSST247.svc?bridgeEndpoint=true&amp;throwExceptionOnFailure=false&amp;connectTimeout=30000"/>-->
+				<to id="nexussa" uri="jetty:https://192.168.108.217:443/WST247_BANCO/WSST247.svc?bridgeEndpoint=true&amp;throwExceptionOnFailure=false&amp;connectTimeout=30000"/>
+                <log id="_responseNexussa" message="response nexussa: ${body}"/>
                 <!-- mover a la ruta de exeption -->
                 <!-- timeout -->
                 <!-- conexion refuse -->
                 <!-- certificado -->
                 <doCatch id="_doCatchEx">
                     <exception>java.lang.Exception</exception>
-                    <log id="_logFailCert" message="EXCEPCION en certificado \nbody: \n${body}\nError: ${exception.message}"/>
+                    <!--<log id="_logFailCert" message="EXCEPCION en certificado \nbody: \n${body}\nError: ${exception.message}"/>-->
+                    <log id="_logFailNexussa" message="EXCEPCION en \nbody: \n${body}\nError: ${exception.message}"/>
+                </doCatch>
+				<doCatch id="_doCatchEx">
+                    <exception>java.net.SocketTimeoutException</exception>
+                    <to id="_err_tmeout_Nx" uri="direct:errorConnectionTimeout"/>
                 </doCatch>
             </doTry>
             <bean id="_bean_REST_SOAP" method="getExecutionTime" ref="loadDataConsultaServicio"/>
             <log id="_Log_TRAZA_RES-SOAP" loggingLevel="INFO" message=">>>>> [${date:now:yyyy-MM-dd'T'HH:mm:ss.SSSXXX}] [INFO] [${exchangeProperty.ID_REQ}] &quot;RES-SOAP&quot;  &quot;${headers.CamelHttpMethod} ${headers.CamelServletContextPath}&quot;  &quot;${exchangeProperty.INPUT_CANAL}&quot; &quot;0&quot;  &quot;${exchangeProperty.TIEMPO_EJECUCION}&quot; [${body}]"/>
-            <setProperty id="bodyx" propertyName="bodyx">
-                <simple resultType="String">${body}</simple>
-            </setProperty>
-            <setBody id="_setBody1">
-                <simple resultType="org.w3c.dom.Document">${exchangeProperty.bodyx}</simple>
-            </setBody>
-            <log id="_logheaders" message="despues de llamar a ws: \n${body}"/>
-            <setBody id="_setBodyDATA">
-                <xpath>//*[local-name()='XmlOutMol']/text()</xpath>
-            </setBody>
             <log id="_log_INFO_SOAP_RESPONSE" message="RESPONSE DATA OF SOAP: \n${body}"/>
-            <to id="_toRouteforResponseConsultaSaldos" uri="direct:generateResponseConsultaSaldo"/>
         </route>
     </routeContext>
 </beans>

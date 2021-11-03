@@ -1,4 +1,4 @@
-package cl.bcointer.consultasaldo.bean;
+package cl.bcointer.bean;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 

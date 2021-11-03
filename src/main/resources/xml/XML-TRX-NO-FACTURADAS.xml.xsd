@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DATA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="coderror"/>
+        <xs:element type="xs:string" name="msgerror"/>
+        <xs:element type="xs:string" name="idwsst247"/>
+        <xs:element type="xs:string" name="organizacion_s"/>
+        <xs:element type="xs:string" name="num_cuenta_s"/>
+        <xs:element type="xs:string" name="apaterno"/>
+        <xs:element type="xs:string" name="amaterno"/>
+        <xs:element type="xs:string" name="nombre_clte"/>
+        <xs:element type="xs:string" name="ciclo_fac"/>
+        <xs:element type="xs:string" name="codigo_fv"/>
+        <xs:element type="xs:string" name="fec_ult_fac_cal"/>
+        <xs:element type="xs:string" name="fec_prox_fac_cal"/>
+        <xs:element type="xs:string" name="fec_ini_fac_act"/>
+        <xs:element type="xs:string" name="fec_consulta"/>
+        <xs:element type="xs:string" name="fec_ult_proc"/>
+        <xs:element type="xs:string" name="fec_ult_trans"/>
+        <xs:element type="xs:string" name="fec_prim_trans"/>
+        <xs:element type="xs:string" name="ind_presencia_datos"/>
+        <xs:element type="xs:string" name="ind_trans_restantes"/>
+        <xs:element type="xs:string" name="transacciones_c"/>
+        <xs:element name="transacciones">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RECORD" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="num_tarjeta_s"/>
+                    <xs:element type="xs:string" name="correlativo"/>
+                    <xs:element type="xs:string" name="origen_trans"/>
+                    <xs:element type="xs:string" name="fec_trans"/>
+                    <xs:element type="xs:string" name="fec_posteo"/>
+                    <xs:element type="xs:string" name="codigo_trans"/>
+                    <xs:element type="xs:string" name="tipo_trans"/>
+                    <xs:element type="xs:string" name="monto_compra"/>
+                    <xs:element type="xs:string" name="numero_cuota"/>
+                    <xs:element type="xs:string" name="total_de_cuotas"/>
+                    <xs:element type="xs:string" name="tasa"/>
+                    <xs:element type="xs:string" name="descripcion_trans"/>
+                    <xs:element type="xs:string" name="glosa_trans"/>
+                    <xs:element type="xs:string" name="microfilm23"/>
+                    <xs:element type="xs:string" name="cdgo_comercio_tbk"/>
+                    <xs:element type="xs:string" name="cdgo_comercio_int"/>
+                    <xs:element type="xs:string" name="rubro"/>
+                    <xs:element type="xs:string" name="nombre_comercio"/>
+                    <xs:element type="xs:string" name="rut_comercio"/>
+                    <xs:element type="xs:string" name="dvrut_comercio"/>
+                    <xs:element type="xs:string" name="nro_solicitud"/>
+                    <xs:element type="xs:string" name="desc_rubro"/>
+                    <xs:element type="xs:string" name="codigo_pais_iata"/>
+                    <xs:element type="xs:string" name="ciudad"/>
+                    <xs:element type="xs:string" name="moneda_fact_9"/>
+                    <xs:element type="xs:string" name="moneda_origen_9"/>
+                    <xs:element type="xs:string" name="monto_mon_origen"/>
+                    <xs:element type="xs:string" name="codaut"/>
+                    <xs:element type="xs:string" name="fecha_autorizador_s"/>
+                    <xs:element type="xs:string" name="hora_autorizador_s"/>
+                    <xs:element type="xs:string" name="estado_trans"/>
+                    <xs:element type="xs:string" name="monto11"/>
+                    <xs:element type="xs:string" name="monto21"/>
+                    <xs:element type="xs:string" name="monto31"/>
+                    <xs:element type="xs:string" name="numero11"/>
+                    <xs:element type="xs:string" name="numero21"/>
+                    <xs:element type="xs:string" name="numero31"/>
+                    <xs:element type="xs:string" name="flag11"/>
+                    <xs:element type="xs:string" name="flag21"/>
+                    <xs:element type="xs:string" name="flag31"/>
+                    <xs:element type="xs:string" name="string11"/>
+                    <xs:element type="xs:string" name="string21"/>
+                    <xs:element type="xs:string" name="string31"/>
+                    <xs:element type="xs:string" name="filler_03"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element type="xs:string" name="monto1"/>
+        <xs:element type="xs:string" name="monto2"/>
+        <xs:element type="xs:string" name="monto3"/>
+        <xs:element type="xs:string" name="monto4"/>
+        <xs:element type="xs:string" name="monto5"/>
+        <xs:element type="xs:string" name="monto6"/>
+        <xs:element type="xs:string" name="monto7"/>
+        <xs:element type="xs:string" name="numero1"/>
+        <xs:element type="xs:string" name="numero2"/>
+        <xs:element type="xs:string" name="numero3"/>
+        <xs:element type="xs:string" name="numero4"/>
+        <xs:element type="xs:string" name="numero5"/>
+        <xs:element type="xs:string" name="numero6"/>
+        <xs:element type="xs:string" name="numero7"/>
+        <xs:element type="xs:string" name="flag1"/>
+        <xs:element type="xs:string" name="flag2"/>
+        <xs:element type="xs:string" name="flag3"/>
+        <xs:element type="xs:string" name="flag4"/>
+        <xs:element type="xs:string" name="flag5"/>
+        <xs:element type="xs:string" name="flag6"/>
+        <xs:element type="xs:string" name="flag7"/>
+        <xs:element type="xs:string" name="string1"/>
+        <xs:element type="xs:string" name="string2"/>
+        <xs:element type="xs:string" name="string3"/>
+        <xs:element type="xs:string" name="string4"/>
+        <xs:element type="xs:string" name="string5"/>
+        <xs:element type="xs:string" name="string6"/>
+        <xs:element type="xs:string" name="string7"/>
+        <xs:element type="xs:string" name="filler_04"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

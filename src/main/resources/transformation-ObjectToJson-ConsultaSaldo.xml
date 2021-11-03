@@ -4,8 +4,8 @@
         <wildcard>false</wildcard>
     </configuration>
     <mapping>
-        <class-a>cl.bcointer.consultasaldo.objetos.DataToReturn</class-a>
-        <class-b>cl.bcointer.consultasaldo.map.MensajeRespuestaConsultaDeSaldos</class-b>
+        <class-a>cl.bcointer.models.ConsultaSaldo</class-a>
+        <class-b>cl.bcointer.models.JsonResponseConsultaDeSaldos</class-b>
         <field>
             <a>mora91120d</a>
             <b>mora91120d</b>
